@@ -34,6 +34,8 @@ const StyledBtn = styled.button`
   color: white;
   padding: 5px;
   border-radius: 5px;
+  display: block;
+  margin: auto;
 `
 
 const AddCatagory = () => {
@@ -100,7 +102,7 @@ const AddCatagory = () => {
       })}
 
 
-      <p>progress percent is {porgressPercent}</p>
+      <p style={{textAlign:"center"}}>progress percent is {porgressPercent}</p>
       <StyledBtn onClick={handleAddImage}>Add Image</StyledBtn>
 
       <StyledForm onSubmit={handleSubmit}>

@@ -12,6 +12,8 @@ const StyeldDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1rem;
+  max-width: 700px;
+  margin: auto;
 
   span button{
     background: black;
