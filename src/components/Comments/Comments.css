@@ -1,0 +1,41 @@
+.comments{
+    background-color: black;    
+    padding: 50px;
+    margin-top: 50px;
+}
+
+.comments h3{
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.comments section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto;
+}
+
+.comments div{
+    background-color:aliceblue;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.comments small{
+    color: rgb(137, 134, 134);
+    display: block;
+    margin: 5px 0;
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .comments section{
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

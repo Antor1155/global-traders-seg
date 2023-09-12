@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import BootstrapCarousel from "../BootstrapCarousel/BootstrapCarousel";
 import "./Home.css"
+
 import SingleProduct from "../SingleProduct/SingleProduct";
+import Comments from "../Comments/Comments";
 
 const Home = () => {
     return (
@@ -56,6 +58,28 @@ const Home = () => {
                 <SingleProduct image="/iphone8-red.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
                 <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
             </div>
+
+            <button className='see-more'> See More</button>
+
+            <div className='adds'>
+                <img src='/adds/add1.png' alt='product add' />
+                <img src='/adds/add2.png' alt='product add' />
+                <img src='/adds/add3.png' alt='product add' />
+                <img src='/adds/add4.png' alt='product add' />
+            </div>
+
+            <Link to="top-seller">
+                <img className='sub-banner' src="/staticImages/third-banner.png" alt="second banner" />
+            </Link>
+
+            <div className='products'>
+                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
+                <SingleProduct image="/iphone8-red.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
+                <SingleProduct image="/iphone8-green.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
+                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
+            </div>
+
+            <Comments></Comments>
 
         </main>
     );

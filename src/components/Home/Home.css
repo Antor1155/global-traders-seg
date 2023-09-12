@@ -23,11 +23,13 @@
     margin-right: 5px;
 }
 
+
 .sub-banner{
     width: 90vw;
     margin: auto;
     margin-top: 50px;
     border-radius: 5px;
+    display: block;
 }
 
 .sub-banner:hover {
