@@ -1,4 +1,5 @@
 .admin-all-product{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }

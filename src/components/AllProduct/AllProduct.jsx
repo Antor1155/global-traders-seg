@@ -13,7 +13,7 @@ const AllProduct = () => {
     return (
         <div className='admin-all-product'>
             {allProduct.map(product =>{
-                return <SingleProductForAdmin key={product?._id} product={product}></SingleProductForAdmin>
+                return <SingleProductForAdmin key={product?._id} product={product} setAllProduct={setAllProduct}></SingleProductForAdmin>
             })}
         </div>
     );
