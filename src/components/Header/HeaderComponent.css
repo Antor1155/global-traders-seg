@@ -30,8 +30,9 @@ header{
 
 .product-search button{
     position: absolute;
-    top: 13px;
+    top: 8px;
     right: 15px;
+    background-color: transparent;
 }
 
 .product-search svg{
@@ -45,6 +46,7 @@ header{
     font-size: 17px;
     border-radius: 4px;
     padding-left: 5px;
+    border: none;
 }
 
 .mobile-product-search{
