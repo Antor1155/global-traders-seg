@@ -1,9 +1,0 @@
-.catagory-link{
-    border: 2px solid rgb(63, 59, 59);
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-.catagory-link a{
-    color: blue;
-}
