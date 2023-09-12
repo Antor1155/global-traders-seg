@@ -35,27 +35,33 @@ const ImgePrevDiv = styled.div`
 
 `
 
-const ImagesForCatagory = ({image, setImages}) => {
+const ImagesForCatagory = ({ image, setImages }) => {
 
-    function handleDeleteFromFirebase(im){
-        const delRef = ref(storage, im?.filename)
+  function handleDeleteFromFirebase(im) {
+    const delRef = ref(storage, im?.filename)
 
-        deleteObject(delRef)
-        .then(()=> {
-            alert("deleted the image")
-            setImages(prev => prev.filter(item => item.filename !== im.filename))
-        
-        })
-        .catch(error => console.log("error ***: ", error))
-    }
-      
+    deleteObject(delRef)
+      .then(() => {
+        alert("deleted the image")
+        setImages(prev => prev.filter(item => item.filename !== im.filename))
+      })
+      .catch(error => {
 
-    return (
-        <ImgePrevDiv>
-            <button onClick={()=>handleDeleteFromFirebase(image)}> Delete </button>
-            <img src={image?.url} alt='product image' />
-        </ImgePrevDiv>
-    )
+        const doNotExist = error.message.includes("(storage/object-not-found)")
+        if(doNotExist){
+          setImages(prev => prev.filter(item => item.filename !== im.filename))
+        }
+      })
+
+  }
+
+
+  return (
+    <ImgePrevDiv>
+      <button onClick={() => handleDeleteFromFirebase(image)}> Delete </button>
+      <img src={image?.url} alt='product image' />
+    </ImgePrevDiv>
+  )
 }
 
 export default ImagesForCatagory
