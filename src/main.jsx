@@ -19,6 +19,7 @@ import Resources from "./components/Resources/Resources.jsx"
 import Contactus  from "./components/Contactus/Contactus.jsx"
 import Offer from "./components/Offer/Offer.jsx"
 import Home from './components/Home/Home.jsx'
+import AdminSecret from './components/AdminSecret/AdminSecret';
 
 
 
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path:"offer",
         element:<Offer></Offer>
+      },
+      {
+        path:"admin-secret",
+        element:<AdminSecret></AdminSecret>
       },
 
     ]
