@@ -25,6 +25,8 @@ import AdminSecret from './components/AdminSecret/AdminSecret';
 import AddCatagory from './components/AddCatagory/AddCatagory';
 import AdminCatagory from './components/AdminCatagory/AdminCatagory';
 import AdminHome from './components/AdminHome/AdminHome';
+import AllProduct from './components/AllProduct/AllProduct';
+import AddProduct from './components/AddProduct/AddProduct';
 
 
 
@@ -90,6 +92,14 @@ const router = createBrowserRouter([
                 element: <AddCatagory></AddCatagory>
               }
             ]
+          },
+          {
+            path:"products",
+            element:<AllProduct></AllProduct>
+          },
+          {
+            path:"addproduct",
+            element:<AddProduct></AddProduct>
           }
         ]
       },
