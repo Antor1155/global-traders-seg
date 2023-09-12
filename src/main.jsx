@@ -19,6 +19,8 @@ import Resources from "./components/Resources/Resources.jsx"
 import Contactus  from "./components/Contactus/Contactus.jsx"
 import Offer from "./components/Offer/Offer.jsx"
 import Home from './components/Home/Home.jsx'
+
+import Catagory from './components/AdminCatagory/Catagory.jsx';
 import AdminSecret from './components/AdminSecret/AdminSecret';
 
 
@@ -66,7 +68,13 @@ const router = createBrowserRouter([
       },
       {
         path:"admin-secret",
-        element:<AdminSecret></AdminSecret>
+        element:<AdminSecret></AdminSecret>,
+        children:[
+          {
+            path:"catagory",
+            element:<Catagory></Catagory>
+          }
+        ]
       },
 
     ]
