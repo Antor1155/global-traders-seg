@@ -1,7 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
+// styles and css 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
+
+
+import App from './App.jsx'
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Cart from './components/Cart/Cart.jsx'
@@ -13,6 +18,7 @@ import Wholesale from "./components/Wholesale/Wholesale.jsx"
 import Resources from "./components/Resources/Resources.jsx"
 import Contactus  from "./components/Contactus/Contactus.jsx"
 import Offer from "./components/Offer/Offer.jsx"
+import Home from './components/Home/Home.jsx'
 
 
 
@@ -21,6 +27,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App></App>,
     children: [
+      {
+        path:"",
+        element:<Home></Home>
+      },
       {
         path: "cart",
         element: <Cart></Cart>
@@ -52,7 +62,7 @@ const router = createBrowserRouter([
       {
         path:"offer",
         element:<Offer></Offer>
-      }
+      },
 
     ]
   },

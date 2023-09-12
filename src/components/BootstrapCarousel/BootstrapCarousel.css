@@ -1,0 +1,15 @@
+
+.carosel-img{
+    width: 100vw;
+    height: 50vh;
+}
+
+@media screen and (max-width:550px) {
+    .carosel-img{
+        height: 25vh;
+    }
+
+    a.carousel-control-prev, a.carousel-control-next, .carousel-indicators{
+        display: none;
+    }
+}
