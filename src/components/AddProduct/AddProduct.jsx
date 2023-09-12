@@ -21,6 +21,7 @@ const StyledDiv = styled.div`
 const AddProduct = () => {
     const [allCatagories, setCatagories] = useState([])
     const [product, setProduct] = useState({parentCatagory:"", image:"", description:"", storage:"", color:"", price:"", discountPrice:"", originalPrice:"", reviewScore:"", peopleReviewed:"", condition:"", color:{name: "", value: ""}})
+    
     const [images, setImages] = useState([])
     const [selectedImage, setSelectedImage] = useState()
   
