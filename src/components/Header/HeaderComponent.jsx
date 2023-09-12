@@ -61,11 +61,11 @@ const HeaderComponent = () => {
       </form>
 
       <nav ref={navEle}>
-        <Link to="pre-owned">PRE-OWNED</Link>
+        <Link to="preowned">PRE-OWNED</Link>
         <Link to="refubrished">REFUBRISHED</Link>
-        <Link to="whole-sale">WHOLESLE</Link>
+        <Link to="wholesale">WHOLESALE</Link>
         <Link to="resources">RESOURCES</Link>
-        <Link to="contact-us">CONTACT US</Link>
+        <Link to="contactus">CONTACT US</Link>
         <Link to="offer">OFFER</Link>
       </nav>
 
