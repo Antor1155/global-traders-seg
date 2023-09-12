@@ -35,7 +35,7 @@ const StyledForm = styled.form`
     }
 `
 
-function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImages }) {
+function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImages, setSelectedImage }) {
 
     const availableColors = [{ name: "BLACK", value: "#000000" },
     { name: "SIERRA BLUE", value: "#9BB5CE" },
@@ -67,7 +67,8 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
                         let images = allCatagories.find(ele => ele._id === e.target.value).images
                         setImages(images)
                     }else{
-                        setImages([])
+                        setImages([]);
+                        setSelectedImage("")
                     }
                     
                     }}>
@@ -83,7 +84,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
             <br />
 
             <label htmlFor='description'>Short description</label>
-            <textarea id='description' name="description" type="text" placeholder='description' required 
+            <textarea id='description' name="description" type="text" placeholder='description'  
                 value={product.description}
                 onChange={(e) => setProduct(prev => {
                     const newPrev = {...prev, description: e.target.value}
@@ -173,7 +174,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
             <br />
 
             <label htmlFor='discountPrice'> Please select the discountPrice $</label>
-            <input id='discountPrice' name="discountPrice" type='number' required 
+            <input id='discountPrice' name="discountPrice" type='number'  
                 value={product.discountPrice}
                 onChange={(e) => setProduct(prev => {
                     const newPrev = {...prev, discountPrice: e.target.value}
@@ -186,7 +187,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
             <br />
 
             <label htmlFor='originalPrice'> Please select the original new price $</label>
-            <input id='originalPrice' name="originalPrice" type='number' required 
+            <input id='originalPrice' name="originalPrice" type='number'  
                 value={product.originalPrice}
                 onChange={(e) => setProduct(prev => {
                     const newPrev = {...prev, originalPrice: e.target.value}

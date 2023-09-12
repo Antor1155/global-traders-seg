@@ -29,7 +29,6 @@ const AddProduct = () => {
     const [images, setImages] = useState([])
     const [selectedImage, setSelectedImage] = useState()
 
-    console.log(images)
 
     useEffect(() => {
         axiosInstance.get("catagory")
@@ -40,9 +39,15 @@ const AddProduct = () => {
     function handleSubmit(e) {
         e.preventDefault()
         product.image = selectedImage
-        
-        axiosInstance.post("addsingleproduct", product)
-            .then(res => setProduct({ parentCatagory: "", description: "", storage: "", color: "", price: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } }))
+
+        axiosInstance.post("product", product)
+            .then(res => {
+
+                setProduct({ parentCatagory: "", description: "", storage: "", color: "", price: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } })
+
+                setSelectedImage("")
+
+            })
             .catch(error => alert("error happened !!"))
     }
 
@@ -56,7 +61,7 @@ const AddProduct = () => {
                 })}
             </ImagesHolder>
 
-            <ProductForm setImages={setImages} allCatagories={allCatagories} handleSubmit={handleSubmit} product={product} setProduct={setProduct} />
+            <ProductForm setSelectedImage={setSelectedImage} setImages={setImages} allCatagories={allCatagories} handleSubmit={handleSubmit} product={product} setProduct={setProduct} />
 
         </StyledDiv >
     )
