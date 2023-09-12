@@ -22,6 +22,7 @@ import Home from './components/Home/Home.jsx'
 
 import Catagory from './components/AdminCatagory/Catagory.jsx';
 import AdminSecret from './components/AdminSecret/AdminSecret';
+import AddCatagory from './components/AddCatagory/AddCatagory';
 
 
 
@@ -72,7 +73,13 @@ const router = createBrowserRouter([
         children:[
           {
             path:"catagory",
-            element:<Catagory></Catagory>
+            element:<Catagory></Catagory>,
+            children:[
+              {
+                path:"addcatagory",
+                element:<AddCatagory></AddCatagory>
+              }
+            ]
           }
         ]
       },
