@@ -68,7 +68,7 @@ const Home = () => {
                 <img src='/adds/add4.png' alt='product add' />
             </div>
 
-            <Link to="top-seller">
+            <Link to="preowned">
                 <img className='sub-banner' src="/staticImages/third-banner.png" alt="second banner" />
             </Link>
 
