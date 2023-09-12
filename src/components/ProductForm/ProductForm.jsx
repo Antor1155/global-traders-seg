@@ -199,7 +199,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
             <br />
 
             <label htmlFor='reviewScore'> Add review score / 5</label>
-            <input id='reviewScore' name="reviewScore" type='number' min={0} max={5} required 
+            <input id='reviewScore' name="reviewScore" type='number' min={0} max={5} step={0.5} required 
                 value={product.reviewScore}
                 onChange={(e) => setProduct(prev => {
                     const newPrev = {...prev, reviewScore: e.target.value}
@@ -212,7 +212,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
             <br />
 
             <label htmlFor='peopleReviewed'> people reviewed</label>
-            <input id='peopleReviewed' name="peopleReviewed" type='number' required 
+            <input id='peopleReviewed' name="peopleReviewed" type='number'
                 value={product.peopleReviewed}
                 onChange={(e) => setProduct(prev => {
                     const newPrev = {...prev, peopleReviewed: e.target.value}
