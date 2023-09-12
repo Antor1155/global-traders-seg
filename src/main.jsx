@@ -16,7 +16,7 @@ import Preowned from "./components/Preowned/Preowned.jsx"
 import Refubrished from "./components/Refubrished/Refubrished.jsx"
 import Wholesale from "./components/Wholesale/Wholesale.jsx"
 import Resources from "./components/Resources/Resources.jsx"
-import Contactus  from "./components/Contactus/Contactus.jsx"
+import Contactus from "./components/Contactus/Contactus.jsx"
 import Offer from "./components/Offer/Offer.jsx"
 import Home from './components/Home/Home.jsx'
 
@@ -24,6 +24,7 @@ import Catagory from './components/AllCatagory/Catagory.jsx';
 import AdminSecret from './components/AdminSecret/AdminSecret';
 import AddCatagory from './components/AddCatagory/AddCatagory';
 import AdminCatagory from './components/AdminCatagory/AdminCatagory';
+import AdminHome from './components/AdminHome/AdminHome';
 
 
 
@@ -33,8 +34,8 @@ const router = createBrowserRouter([
     element: <App></App>,
     children: [
       {
-        path:"",
-        element:<Home></Home>
+        path: "",
+        element: <Home></Home>
       },
       {
         path: "cart",
@@ -45,44 +46,48 @@ const router = createBrowserRouter([
         element: <MyAccount></MyAccount>
       },
       {
-        path:"preowned",
-        element:<Preowned></Preowned>
+        path: "preowned",
+        element: <Preowned></Preowned>
       },
       {
-        path:"refubrished",
-        element:<Refubrished></Refubrished>
+        path: "refubrished",
+        element: <Refubrished></Refubrished>
       },
       {
-        path:"wholesale",
-        element:<Wholesale></Wholesale>
+        path: "wholesale",
+        element: <Wholesale></Wholesale>
       },
       {
-        path:"resources",
-        element:<Resources></Resources>
+        path: "resources",
+        element: <Resources></Resources>
       },
       {
-        path:"contactus",
-        element:<Contactus></Contactus>
+        path: "contactus",
+        element: <Contactus></Contactus>
       },
       {
-        path:"offer",
-        element:<Offer></Offer>
+        path: "offer",
+        element: <Offer></Offer>
       },
       {
-        path:"admin-secret",
-        element:<AdminSecret></AdminSecret>,
-        children:[
+        path: "admin-secret",
+        element: <AdminSecret></AdminSecret>,
+        children: [
           {
-            path:"catagory",
-            element:<AdminCatagory></AdminCatagory>,
-            children:[
+            path:"",
+            element:<AdminHome></AdminHome>
+          },
+          {
+            path: "catagory",
+            element: <AdminCatagory></AdminCatagory>,
+            children: [
               {
-                path:"",
-                element:<Catagory></Catagory>,
+                path: "",
+                element: <Catagory></Catagory>,
               },
               {
-                path:"addcatagory",
-                element:<AddCatagory></AddCatagory>
+                path: "addcatagory",
+                element: <AddCatagory></AddCatagory>
               }
             ]
           }
