@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import "./HeaderComponent.css"
@@ -14,6 +14,8 @@ const HeaderComponent = () => {
     e.preventDefault()
     const searchValue = e.target.search.value
     e.target.search.value = ""
+    
+    console.log(searchValue)
   }
 
   function handleNav() {
