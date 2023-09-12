@@ -20,9 +20,10 @@ import Contactus  from "./components/Contactus/Contactus.jsx"
 import Offer from "./components/Offer/Offer.jsx"
 import Home from './components/Home/Home.jsx'
 
-import Catagory from './components/AdminCatagory/Catagory.jsx';
+import Catagory from './components/AllCatagory/Catagory.jsx';
 import AdminSecret from './components/AdminSecret/AdminSecret';
 import AddCatagory from './components/AddCatagory/AddCatagory';
+import AdminCatagory from './components/AdminCatagory/AdminCatagory';
 
 
 
@@ -73,8 +74,12 @@ const router = createBrowserRouter([
         children:[
           {
             path:"catagory",
-            element:<Catagory></Catagory>,
+            element:<AdminCatagory></AdminCatagory>,
             children:[
+              {
+                path:"",
+                element:<Catagory></Catagory>,
+              },
               {
                 path:"addcatagory",
                 element:<AddCatagory></AddCatagory>

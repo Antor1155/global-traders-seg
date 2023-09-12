@@ -1,5 +1,5 @@
 import SingleCatagory from '../AdminSingleCatagory/SingleCatagory.jsx'
-import axiosInstance from '../../utilities/axiosInstance'
+import axiosInstance from '../../utilities/axiosInstance.js'
 
 import "./Catagory.css"
 
@@ -18,11 +18,6 @@ const AllCatagories = () => {
   console.log(allCatagories)
   return (
     <div>
-
-      <div className='catagory-link'>
-        <Link to="">All catagories</Link>
-        <Link to="addcatagory">Add catagories</Link>
-      </div>
 
       <Outlet></Outlet>
 
