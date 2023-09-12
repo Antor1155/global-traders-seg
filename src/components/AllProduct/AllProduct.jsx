@@ -1,10 +1,19 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import "./AllProduct.css"
+import axiosInstance from '../../utilities/axiosInstance';
+import SingleProductForAdmin from '../SingleProduct/SingleProductForAdmin';
 
 const AllProduct = () => {
+    const [allProduct, setAllProduct] = useState([])
+
+    useEffect(()=>{
+        axiosInstance.get("product").then(res =>setAllProduct(res.data))
+    }, [])
     return (
-        <div>
-            <h3>this is all product page</h3>
+        <div className='admin-all-product'>
+            {allProduct.map(product =>{
+                return <SingleProductForAdmin key={product?._id} product={product}></SingleProductForAdmin>
+            })}
         </div>
     );
 };

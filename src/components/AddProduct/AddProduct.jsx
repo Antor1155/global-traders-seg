@@ -24,7 +24,7 @@ const ImagesHolder = styled.div`
 
 const AddProduct = () => {
     const [allCatagories, setCatagories] = useState([])
-    const [product, setProduct] = useState({ parentCatagory: "", image: "", description: "", storage: "", color: "", price: "", discountPrice: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } })
+    const [product, setProduct] = useState({ parentCatagory: "", productName:"", image: "", description: "", storage: "", color: "", price: "", discountPrice: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } })
 
     const [images, setImages] = useState([])
     const [selectedImage, setSelectedImage] = useState()
@@ -40,10 +40,17 @@ const AddProduct = () => {
         e.preventDefault()
         product.image = selectedImage
 
+        let productN = ""
+        if(product.parentCatagory){
+            productN = allCatagories.find(c => c._id == product.parentCatagory)?.modelName
+        }
+
+        product.productName = productN
+
         axiosInstance.post("product", product)
             .then(res => {
 
-                setProduct({ parentCatagory: "", description: "", storage: "", color: "", price: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } })
+                setProduct({productName: "", parentCatagory: "", description: "", storage: "", color: "", price: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } })
 
                 setSelectedImage("")
 

@@ -1,8 +1,7 @@
 import "./singleproduct.css"
 
 
-const SingleProduct = (props) => {
-  const {image, description} = props
+const SingleProduct = ({image, description}) => {
   
   return (
     <div className='single-product'>
