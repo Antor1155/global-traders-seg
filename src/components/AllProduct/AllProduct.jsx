@@ -7,7 +7,8 @@ const AllProduct = () => {
     const [allProduct, setAllProduct] = useState([])
 
     useEffect(()=>{
-        axiosInstance.get("product").then(res =>setAllProduct(res.data))
+        axiosInstance.get("product").then(res =>setAllProduct(res.data)).catch(error => console.log(error))
+
     }, [])
     return (
         <div className='admin-all-product'>
