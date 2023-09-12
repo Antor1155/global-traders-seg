@@ -5,10 +5,10 @@ const AdminSecret = () => {
     return (
         <div>
             <nav>
-                <Link to="/admin-secret"> Admin home</Link>
-                <Link to="/admin-secret/catagory"> catagory</Link>
-                <Link to="/admin-secret/products">All products</Link>
-                <Link to="/admin-secret/add-product"> Add product</Link>
+                <Link to=""> Admin home</Link>
+                <Link to="catagory"> catagory</Link>
+                <Link to="products">All products</Link>
+                <Link to="addproduct"> Add product</Link>
             </nav>
 
             <Outlet></Outlet>
