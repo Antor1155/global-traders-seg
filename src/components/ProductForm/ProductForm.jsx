@@ -135,7 +135,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
 
             <label htmlFor='color'> select Color</label>
             <select id='color' name='color' required
-                value={product.color.name ? product.color.name + ":" + product.color.value : ""}
+                value={product.color?.name ? product.color.name + ":" + product.color.value : ""}
 
                 onChange={(e) => setProduct(prev => {
                     let newPrev = {...prev}
