@@ -27,6 +27,7 @@ import AdminCatagory from './components/AdminCatagory/AdminCatagory';
 import AdminHome from './components/AdminHome/AdminHome';
 import AllProduct from './components/AllProduct/AllProduct';
 import AddProduct from './components/AddProduct/AddProduct';
+import EditProduct from './components/EditProduct/EditProduct';
 
 
 
@@ -95,11 +96,15 @@ const router = createBrowserRouter([
           },
           {
             path:"products",
-            element:<AllProduct></AllProduct>
+            element:<AllProduct></AllProduct>,
           },
           {
             path:"addproduct",
             element:<AddProduct></AddProduct>
+          },
+          {
+            path:"editProduct/:id",
+            element:<EditProduct></EditProduct>
           }
         ]
       },

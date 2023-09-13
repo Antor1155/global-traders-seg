@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import axiosInstance from '../../utilities/axiosInstance';
 import "./SingleProductForAdmin.css"
+import { useNavigate } from 'react-router-dom';
 
 const SingleProductForAdmin = ({ product, setAllProduct }) => {
+    const navigate = useNavigate()
+
     const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
 
     function handleDelete (){
@@ -16,6 +19,10 @@ const SingleProductForAdmin = ({ product, setAllProduct }) => {
                 return newProducts
             }))
         }
+    }
+
+    function handleEdit () {
+        navigate(`/admin-secret/editProduct/${_id}`)
     }
 
 
@@ -36,7 +43,7 @@ const SingleProductForAdmin = ({ product, setAllProduct }) => {
             </div>
 
             <div>
-                <button className='edit'>Edit </button>
+                <button className='edit' onClick={handleEdit}>Edit </button>
                 <button onClick={handleDelete} className='delete'>Delete </button>
             </div>
         </div>
