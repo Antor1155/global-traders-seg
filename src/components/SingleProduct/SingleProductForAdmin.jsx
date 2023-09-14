@@ -10,7 +10,6 @@ const SingleProductForAdmin = ({ product, setAllProduct }) => {
 
     function handleDelete (){
         const confirm = window.confirm("are  you sure ? It will be deleted parmanently ?")
-        console.log(confirm)
 
         if(confirm){
             axiosInstance.delete(`product/${_id}`)

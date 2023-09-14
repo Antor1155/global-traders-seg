@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./EditProduct.css"
 
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../utilities/axiosInstance';
 import styled from 'styled-components';
 import ProductForm from '../ProductForm/ProductForm';
@@ -25,9 +26,10 @@ const ImagesHolder = styled.div`
 
 const EditProduct = () => {
     const params = useParams()
+    const navigate = useNavigate()
 
     const [product, setProduct] = useState({})
-    const [allCatagories, setCatagories] = useState([])
+    const [allCatagories, setAllCatagories] = useState([])
 
 
     const [images, setImages] = useState([])
@@ -37,18 +39,20 @@ const EditProduct = () => {
     useEffect(() => {
         axiosInstance.get("catagory")
             .then(result => {
-                setCatagories(result.data)
+                setAllCatagories(result.data)
 
-                
+                const allCat = result.data
                 // here we do one calculation with allCatagories , so both request might have a race condition 
                 // thats why one request in another , then after finish, do the calculation
                 axiosInstance.get(`product/${params.id}`)
                     .then(res => {
                         setProduct(res.data)
 
-                        const imgs = allCatagories.find(c => c._id === product.parentCatagory)?.images
+                        const prod = res.data
+
+                        const imgs = allCat.find(c => c._id === prod.parentCatagory).images
                         setImages(imgs)
-                        setSelectedImage(product.image)
+                        setSelectedImage(prod.image)
                     })
                     .catch(error => console.log(error))
 
@@ -67,15 +71,15 @@ const EditProduct = () => {
 
         product.productName = productN
 
-        // axiosInstance.post("product", product)
-        //     .then(res => {
+        axiosInstance.patch(`product/${product._id}`, product)
+            .then(res => {
+                if(window.confirm("updated ! go back to all product ?")){
+                    navigate("/admin-secret/products")
+                }
 
-        //         alert("updated ")
 
-        //         setSelectedImage("")
-
-        //     })
-        //     .catch(error => alert("error happened !!"))
+            })
+            .catch(error => alert("error happened !!"))
     }
 
     return (
@@ -83,7 +87,7 @@ const EditProduct = () => {
             <h3>Add a product</h3>
 
             <ImagesHolder>
-                {images?.map((image, ind) => {
+                {images && images.map((image, ind) => {
                     return <ImageToSelect key={ind} setSelectedImage={setSelectedImage} selectedImage={selectedImage} ImgUrl={image?.url}></ImageToSelect>
                 })}
             </ImagesHolder>
