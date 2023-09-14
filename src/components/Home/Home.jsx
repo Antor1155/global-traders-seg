@@ -4,18 +4,34 @@ import "./Home.css"
 
 import SingleProduct from "../SingleProduct/SingleProduct";
 import Comments from "../Comments/Comments";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axiosInstance from "../../utilities/axiosInstance";
 
 const Home = () => {
     const [nProducts, setNproducts] = useState([])
-    const firstNproducts = 12
+    const [moreProductsInDb, setMoreProductsInDb] = useState(true)
+    const prodcutsReq = 8
+    const productSkip = useRef(0)
 
-    useEffect(()=>{
-        axiosInstance.get(`products/${firstNproducts}`)
-        .then(res => setNproducts(res.data))
+
+    const requestProduct = ()=>{
+        axiosInstance.get(`products/${prodcutsReq}/${productSkip.current}`)
+        .then(res =>{
+           if(res.data.length){
+            setNproducts(prev => [...prev, ...res.data])
+           }else{
+            setMoreProductsInDb(false)
+           }
+        })
         .catch(error => console.log(error))
-    },[])
+    }
+
+    useEffect(requestProduct,[])
+
+    const handleSeeMore = () => {
+        productSkip.current += prodcutsReq
+        requestProduct()
+    }
 
 
     return (
@@ -61,13 +77,13 @@ const Home = () => {
 
 
             <div className='products'>
-                {nProducts && nProducts.slice(0, 8).map(product =>{
-                    return <SingleProduct product={product}></SingleProduct>
+                {nProducts && nProducts.map(product =>{
+                    return <SingleProduct key={product._id} product={product}></SingleProduct>
                 })}
                 
             </div>
 
-            <button className='see-more'> See More</button>
+            <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false: true}> See More</button>
 
             <div className='adds'>
                 <img src='/adds/add1.png' alt='product add' />
@@ -81,8 +97,8 @@ const Home = () => {
             </Link>
 
             <div className='products'>
-            {nProducts && nProducts.slice(8, 12).map(product =>{
-                    return <SingleProduct product={product}></SingleProduct>
+            {nProducts && nProducts.slice(0, 4).map(product =>{
+                    return <SingleProduct key={product._id} product={product}></SingleProduct>
                 })}
             </div>
 
