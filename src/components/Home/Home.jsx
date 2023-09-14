@@ -4,8 +4,20 @@ import "./Home.css"
 
 import SingleProduct from "../SingleProduct/SingleProduct";
 import Comments from "../Comments/Comments";
+import { useEffect, useState } from "react";
+import axiosInstance from "../../utilities/axiosInstance";
 
 const Home = () => {
+    const [nProducts, setNproducts] = useState([])
+    const firstNproducts = 12
+
+    useEffect(()=>{
+        axiosInstance.get(`products/${firstNproducts}`)
+        .then(res => setNproducts(res.data))
+        .catch(error => console.log(error))
+    },[])
+
+
     return (
         <main>
             <BootstrapCarousel></BootstrapCarousel>
@@ -49,14 +61,10 @@ const Home = () => {
 
 
             <div className='products'>
-                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8-red.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8-green.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8-green.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8-red.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
+                {nProducts && nProducts.slice(0, 8).map(product =>{
+                    return <SingleProduct product={product}></SingleProduct>
+                })}
+                
             </div>
 
             <button className='see-more'> See More</button>
@@ -73,10 +81,9 @@ const Home = () => {
             </Link>
 
             <div className='products'>
-                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8-red.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8-green.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
-                <SingleProduct image="/iphone8.png" description="iPhone 8 64 GB Unlocked"></SingleProduct>
+            {nProducts && nProducts.slice(8, 12).map(product =>{
+                    return <SingleProduct product={product}></SingleProduct>
+                })}
             </div>
 
             <Comments></Comments>

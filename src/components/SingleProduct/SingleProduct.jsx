@@ -1,8 +1,9 @@
 import "./singleproduct.css"
 
 
-const SingleProduct = ({image, description}) => {
-  
+const SingleProduct = ({product}) => {
+  const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
+
   return (
     <div className='single-product'>
         <div className='sticker'>
