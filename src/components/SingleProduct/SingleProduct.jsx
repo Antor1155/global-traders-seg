@@ -15,7 +15,8 @@ const SingleProduct = ({product}) => {
 
         <img src="/logos/apple.png" alt='product company ' />
 
-        <p>{description}</p>
+        <p>{productName}</p>
+        {/* <span>{price}$</span> */}
 
         <div>
             <button> ADD TO CART</button>
