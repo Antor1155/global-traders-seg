@@ -15,7 +15,6 @@ const AllCatagories = () => {
     axiosInstance.get("catagory").then(result => setAllCatagories(result.data))
   }, [, update])
 
-  console.log(allCatagories)
   return (
     <div>
 

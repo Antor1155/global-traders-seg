@@ -71,7 +71,6 @@ const SingleCatagory = ({ catagory, setUpdate }) => {
 
     input.onchange = e => {
       let file = e.target.files[0];
-      console.log(file)
       if (!file) return;
 
       const filename = `files/${file.name}`
