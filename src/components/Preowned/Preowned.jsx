@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import axiosInstance from "../../utilities/axiosInstance";
 import SingleProduct from "../SingleProduct/SingleProduct";
+import ScrollToTop from "../../utilities/ScrollToTop";
 
 
 const Preowned = () => {
@@ -31,6 +32,7 @@ const Preowned = () => {
     }
     return (
         <main>
+            <ScrollToTop></ScrollToTop>
             <div className='products'>
                 {nProducts && nProducts.map(product =>{
                     return <SingleProduct key={product._id} product={product}></SingleProduct>

@@ -6,6 +6,7 @@ import SingleProduct from "../SingleProduct/SingleProduct";
 import Comments from "../Comments/Comments";
 import { useEffect, useRef, useState } from "react";
 import axiosInstance from "../../utilities/axiosInstance";
+import ScrollToTop from "../../utilities/ScrollToTop";
 
 const Home = () => {
     const [nProducts, setNproducts] = useState([])
@@ -31,6 +32,7 @@ const Home = () => {
 
     return (
         <main>
+            <ScrollToTop></ScrollToTop>
             <BootstrapCarousel></BootstrapCarousel>
 
             <div className='logos'>
