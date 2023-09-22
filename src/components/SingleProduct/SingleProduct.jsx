@@ -1,8 +1,16 @@
+import { useContext } from "react"
 import "./singleproduct.css"
+import { CartContext } from "../../App"
 
 
 const SingleProduct = ({product}) => {
   const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
+
+  const {cart, setCart} = useContext(CartContext)
+  
+  const handleAddCart = () => {
+    setCart(prev => [...prev, _id])
+  }
 
   return (
     <div className='single-product'>
@@ -19,7 +27,7 @@ const SingleProduct = ({product}) => {
         {/* <span>{price}$</span> */}
 
         <div>
-            <button> ADD TO CART</button>
+            <button onClick={handleAddCart}> ADD TO CART</button>
             <button> BUY NOW </button>
         </div>
     </div>

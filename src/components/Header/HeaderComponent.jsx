@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import "./HeaderComponent.css"
+import { CartContext } from '../../App'
 
 
 
@@ -9,6 +10,9 @@ const HeaderComponent = () => {
   const [navOn, setNavOn] = useState(false)
   const navEle = useRef()
 
+  const {cart} = useContext(CartContext)
+
+  console.log("cart form header", cart)
 
   function handleSearch(e) {
     e.preventDefault()
@@ -22,6 +26,8 @@ const HeaderComponent = () => {
     navEle.current.classList.toggle("visible")
     setNavOn(prev => !prev)
   }
+
+
 
   return (
     <header>
@@ -39,7 +45,9 @@ const HeaderComponent = () => {
           </form>
         </div>
 
-        <div >
+        <div className='cart-and-account'>
+          <span className='cart-amount'>{cart?.length}</span>
+
           <Link to="/cart"> Cart</Link>
           <Link to="/myaccount"> My Account</Link>
 

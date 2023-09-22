@@ -1,5 +1,8 @@
 header{
     background: #E5E4E2;
+    position: sticky;
+    top: 0;
+    z-index: 9;
 }
 
 .headerDiv{
@@ -98,6 +101,20 @@ nav a:hover{
 
 nav a:last-child{
     color: rgba(242, 110, 33, 1);
+}
+
+.cart-and-account{
+    position: relative;
+}
+
+.cart-amount{
+    background-color: rgba(255, 0, 0, 0.759);
+    padding: 0 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    font-weight: bolder;
 }
 
 @media screen and (max-width:550px) {
