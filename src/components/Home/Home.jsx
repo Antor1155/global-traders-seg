@@ -28,11 +28,6 @@ const Home = () => {
 
     useEffect(requestProduct,[])
 
-    const handleSeeMore = () => {
-        productSkip.current += prodcutsReq
-        requestProduct()
-    }
-
 
     return (
         <main>
@@ -83,7 +78,7 @@ const Home = () => {
                 
             </div>
 
-            <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false: true}> See More</button>
+            <Link to="/preowned" className='see-more'> See More</Link>
 
             <div className='adds'>
                 <img src='/adds/add1.png' alt='product add' />
@@ -92,7 +87,7 @@ const Home = () => {
                 <img src='/adds/add4.png' alt='product add' />
             </div>
 
-            <Link to="preowned">
+            <Link to="/preowned">
                 <img className='sub-banner' src="/staticImages/third-banner.png" alt="second banner" />
             </Link>
 
