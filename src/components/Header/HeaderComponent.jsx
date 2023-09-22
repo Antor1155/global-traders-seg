@@ -12,8 +12,6 @@ const HeaderComponent = () => {
 
   const {cart} = useContext(CartContext)
 
-  console.log("cart form header", cart)
-
   function handleSearch(e) {
     e.preventDefault()
     const searchValue = e.target.search.value
