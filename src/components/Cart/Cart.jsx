@@ -8,19 +8,22 @@ import CartProduct from "./CartProduct";
 
 const Cart = () => {
     const [products, setProducts] = useState([])
-    const {cart, setCart} = useContext(CartContext)
+    const { cart, setCart } = useContext(CartContext)
 
-    useEffect(()=>{
-        if(cart && cart.length){
-            axiosInstance.post("cart", {ids: cart})
-            .then(res => setProducts(res.data))
-            .catch(err => console.log(err))
-        } else{
+    useEffect(() => {
+        if (cart && cart.length) {
+            axiosInstance.post("cart", { ids: cart })
+                .then(res => setProducts(res.data))
+                .catch(err => console.log(err))
+        } else {
             setProducts([])
         }
-    },[cart])
+    }, [cart])
 
-    console.log("products *** : ", products)
+    let total = 0
+    for(const id of cart){
+        total += products.find(item => item._id === id)?.price || 0 
+    }
 
     return (
         <main className="cart">
@@ -40,7 +43,18 @@ const Cart = () => {
                 </div>
 
                 {products.length ? products.map((product, ind) =>
-                    <CartProduct key={product._id} product={product} cart={cart} setCart={setCart}></CartProduct> ) : ""} 
+                    <CartProduct key={product._id} product={product} cart={cart} setCart={setCart}></CartProduct>) : ""}
+            </div>
+
+            <div className="total-section">
+                <p>Total</p>
+                <p></p>
+                <p></p>
+                <p>$ {total}</p>
+            </div>
+
+            <div className="ckeckout">
+                <Link to="/cartCheckout"> PROCEED TO CHECKOUT</Link>
             </div>
         </main>
     );

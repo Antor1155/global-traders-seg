@@ -4,6 +4,8 @@ import "./CartProduct.css"
 const CartProduct = ({ product, setCart, cart }) => {
     const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
 
+    const unit = cart.filter(id => _id === id).length
+
     const removeItemFromCart = () => {
         const itemIndex = cart.indexOf(_id)
         if(itemIndex !== -1){
@@ -29,9 +31,17 @@ const CartProduct = ({ product, setCart, cart }) => {
             <div className='quantity'>
                 <div>
                     <button onClick={removeItemFromCart}>-</button>
-                    <p>{cart.filter(id => _id === id).length}</p>
+                    <p>{unit}</p>
                     <button onClick={addItemToCart}>+</button>
                 </div>
+            </div>
+
+            <div className="item-center">
+                <p className='price'>$ {price}</p>
+            </div>
+
+            <div className="item-center">
+                <p className="price"> $ {price * unit}</p>
             </div>
 
         </div>

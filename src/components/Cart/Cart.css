@@ -41,3 +41,28 @@
         margin:0 ;
     }
 }
+
+.total-section{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #259EF6;
+}
+
+.ckeckout{
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+
+    & a{
+        background-color: #106CDB;
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+        transition: all .5s;
+
+        &:hover{
+            box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.363);
+        }
+    }
+}
