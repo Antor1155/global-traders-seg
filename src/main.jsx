@@ -28,6 +28,7 @@ import AdminHome from './components/AdminHome/AdminHome';
 import AllProduct from './components/AllProduct/AllProduct';
 import AddProduct from './components/AddProduct/AddProduct';
 import EditProduct from './components/EditProduct/EditProduct';
+import Checkout from './components/Checkout/Checkout';
 
 
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart></Cart>
+      },
+      {
+        path: "checkout/:from",
+        element: <Checkout></Checkout>
       },
       {
         path: "myaccount",
