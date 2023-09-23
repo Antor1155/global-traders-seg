@@ -54,7 +54,7 @@ const Cart = () => {
             </div>
 
             <div className="ckeckout">
-                <Link to="/cartCheckout"> PROCEED TO CHECKOUT</Link>
+                <Link to="/checkout/cart"> PROCEED TO CHECKOUT</Link>
             </div>
         </main>
     );

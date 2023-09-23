@@ -37,10 +37,12 @@ const CartProduct = ({ product, setCart, cart }) => {
             </div>
 
             <div className="item-center">
+                <p className='big-hide'>Unit Price</p>
                 <p className='price'>$ {price}</p>
             </div>
 
             <div className="item-center">
+                <p className='big-hide'>Subtotal</p>
                 <p className="price"> $ {price * unit}</p>
             </div>
 

@@ -48,3 +48,37 @@
 .price{
     font-weight: bold;
 }
+
+
+.big-hide{
+    display: none;
+}
+
+@media screen and (max-width:550px) {
+    .single-cart-product{
+        grid-template-columns: 1fr;
+    }
+
+    .product-details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin-bottom: 10px;
+
+        & img{
+            max-width: 70%;
+            display: block;
+            margin: auto;
+        }
+    }
+
+    .item-center{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .big-hide{
+        display: block;
+    }
+}
