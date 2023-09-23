@@ -3,8 +3,12 @@ import "./CheckoutSingleProduct.css"
 
 const CheckoutSingleProduct = ({cart, product}) => {
     const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
+
+    const unit = cart.filter(id => _id === id).length
+
+
     return (
-        <div>
+        <div className='singleCheckout'>
             <div className='product-details'>
                 <img src={image} alt='product image'></img>
                 <div>
@@ -14,6 +18,10 @@ const CheckoutSingleProduct = ({cart, product}) => {
                     <small>Condition: {condition}</small>
                 </div>
             </div>
+
+            <p className='unit'>x{unit}</p>
+
+            <p className='price'>$ {unit * price}</p>
         </div>
     );
 };
