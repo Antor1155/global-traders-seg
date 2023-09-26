@@ -4,13 +4,13 @@ import { CartContext } from '../../App';
 import axiosInstance from '../../utilities/axiosInstance';
 import CheckoutSingleProduct from './CheckoutSingleProduct';
 import "./Checkout.css"
+import ScrollToTop from '../../utilities/ScrollToTop';
 
 const Checkout = () => {
     const params = useParams()
     const { cart } = useContext(CartContext)
     const [products, setProducts] = useState([])
     const [shipping, setShipping] = useState("first-class")
-    console.log(shipping)
     const [totla, setTotal] = useState(0)
 
     useEffect(() => {
@@ -42,12 +42,30 @@ const Checkout = () => {
         totalWithShipping = total + 30.00
     }
 
+    const handlePayment = (e) =>{
+        e.preventDefault()
+        const data ={name: e.target.name.value,
+                    email: e.target.email.value,
+                    phone: e.target.phone.value,
+                    city: e.target.city.value,
+                    postal: e.target.postalCode.value,
+                    street: e.target.street.value,
+                    country: e.target.country.value,
+                    orders: params.id === "cart" ? cart : [params.id],
+                    shipping: shipping,
+                    }
+
+        axiosInstance.post("checkout-customer", data)
+        .then(res => {
+            window.location = res.data
+            console.log(res.data)
+        })
+        .catch(error => console.log(error))
+    }
+
     return (
         <main className='checkout'>
-            <div className='customer-info'>
-                <p>all contact into</p>
-            </div>
-
+            <ScrollToTop></ScrollToTop>
             <div className='order-info'>
                 <h4>YOUR ORDER</h4>
 
@@ -82,6 +100,20 @@ const Checkout = () => {
 
                     <p className='all-total'><span>Total</span> <span>{totalWithShipping}</span></p>
                 </div>
+            </div>
+
+            <div className='customer-info'>
+                <h4>YOUR INFORMATION</h4>
+                <form onSubmit={handlePayment}>
+                    <input type="text" name="name" id="" placeholder='Name' required/>
+                    <input type="text" name="email" id="" placeholder='Email' required/>
+                    <input type="text" name="phone" id="" placeholder='Phone Number' required/>
+                    <input type="text" className='inline' name="city" id="" placeholder='City' required/>
+                    <input type="text" className='inline' name="postalCode" id="" placeholder='Postal Code' required/>
+                    <input type="text" name="street" id="" placeholder='Street Address' required/>
+                    <input type="text" name="country" id="" placeholder='Country' required/>
+                    <button type="submit">Continue to Payment</button>
+                </form>
             </div>
         </main>
     );

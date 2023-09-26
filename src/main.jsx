@@ -29,6 +29,7 @@ import AllProduct from './components/AllProduct/AllProduct';
 import AddProduct from './components/AddProduct/AddProduct';
 import EditProduct from './components/EditProduct/EditProduct';
 import Checkout from './components/Checkout/Checkout';
+import AdminOrder from './components/AdminOrder/AdminOrder';
 
 
 
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
           {
             path:"",
             element:<AdminHome></AdminHome>
+          },
+          {
+            path:"orders",
+            element:<AdminOrder></AdminOrder>
           },
           {
             path: "catagory",
