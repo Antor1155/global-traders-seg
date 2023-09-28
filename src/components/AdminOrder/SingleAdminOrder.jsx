@@ -1,9 +1,10 @@
 import "./SingleAdminOrder.css"
-import React from 'react';
+import React, { useState } from 'react';
 
 const SingleAdminOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt } = order
 
+    const [showDetails, setShowDetails] = useState(false)
 
     let total = 0;
     for (const item of line_items) {
@@ -24,7 +25,7 @@ const SingleAdminOrder = ({ order }) => {
 
                 <div>
                     <p>Customer email: <span className="bold">{email}</span></p>
-                    <p>Payment date: <span className="bold">{createdAt.substring(0, 10)}</span></p>
+                    <p>Payment date: <span className="bold">{(new Date(createdAt)).toLocaleString()}</span></p>
                 </div>
 
                 <div>
@@ -32,10 +33,10 @@ const SingleAdminOrder = ({ order }) => {
                     <p>Shipping status : <span className="bold">{status}</span></p>
                 </div>
 
-                <button> Show details</button>
+                <button onClick={()=>setShowDetails(prev => !prev)}>{showDetails ? "Hide details" : "Show details"} </button>
             </div>
 
-            <div className="order-details">
+            <div className="order-details" style={showDetails ?  {} : {gridTemplateRows:"0fr", marginTop: "0", padding: "0"}}>
                 <div>
                     <h5 className="title">Product Details</h5>
 

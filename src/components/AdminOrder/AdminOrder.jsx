@@ -14,8 +14,7 @@ const AdminOrder = () => {
 
 
     return (
-        <main>
-            <h3>This is all admin order page</h3>
+        <main className="admin-order">
             {orders.map(order => <SingleAdminOrder key={order._id} order={order}></SingleAdminOrder>)}
         </main>
     );
