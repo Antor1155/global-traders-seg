@@ -1,10 +1,23 @@
 import "./SingleAdminOrder.css"
 import React, { useState } from 'react';
+import axiosInstance from "../../utilities/axiosInstance"
 
 const SingleAdminOrder = ({ order }) => {
-    const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt } = order
+    const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
 
+    const [shippingStatus, setShippingStatus] = useState(status)
+    console.log(shippingStatus, "****")
     const [showDetails, setShowDetails] = useState(false)
+
+    const changeShippingStatus = (e) =>{
+        const confirm = window.confirm("Are you sure about the new changed Status ?!")
+        if(confirm){
+            setShippingStatus(e.target.value)
+
+            axiosInstance.post("update-order-status",{orderId: order._id, status: e.target.value})
+        }
+    }
+
 
     let total = 0;
     for (const item of line_items) {
@@ -21,28 +34,46 @@ const SingleAdminOrder = ({ order }) => {
                     <p>Payment : {paid ? <span className="bold" style={{ color: "green" }}>Completed </span> :
                         <span className="bold" style={{ color: "red" }}>Failed </span>}
                     </p>
+
+                    <p>Order Id : <span className="bold">{order._id}</span> </p>
                 </div>
 
                 <div>
                     <p>Customer email: <span className="bold">{email}</span></p>
                     <p>Payment date: <span className="bold">{(new Date(createdAt)).toLocaleString()}</span></p>
+                    <p>Last updated: <span className="bold">{(new Date(updatedAt)).toLocaleString()}</span></p>
                 </div>
 
                 <div>
                     <p>Shipping method : <span className="bold" style={{ textTransform: "uppercase" }}>{shipping}</span></p>
-                    <p>Shipping status : <span className="bold">{status}</span></p>
+                    <p>Shipping status : {paid ?
+
+                        <select className="shippingStatus" name="s_status" value={shippingStatus} onChange={changeShippingStatus}>
+                            <option value="Processing">Processing</option>
+                            <option value="Shipped">Shipped</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Returned">Returned</option>
+                            <option value="Refunded">Refunded</option>
+                        </select>
+
+                        : <span className="bold" style={{ color: "red" }}>{status}</span>}
+
+                    </p>
+
                 </div>
 
-                <button onClick={()=>setShowDetails(prev => !prev)}>{showDetails ? "Hide details" : "Show details"} </button>
+
+                <button onClick={() => setShowDetails(prev => !prev)}>{showDetails ? "Hide details" : "Show details"} </button>
             </div>
 
-            <div className="order-details" style={showDetails ?  {} : {gridTemplateRows:"0fr", marginTop: "0", padding: "0"}}>
+            <div className="order-details" style={showDetails ? {} : { gridTemplateRows: "0fr", marginTop: "0", padding: "0" }}>
                 <div>
                     <h5 className="title">Product Details</h5>
 
+                    <p>Order Id : <span className="bold">{order._id}</span> </p>
+
                     {line_items.map((item, ind) => {
                         const product_data = item.price_data.product_data
-                        console.log(product_data)
 
 
                         return (
@@ -63,6 +94,8 @@ const SingleAdminOrder = ({ order }) => {
                             </div>
                         )
                     })}
+
+
 
                 </div>
 

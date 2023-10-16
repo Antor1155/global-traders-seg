@@ -27,6 +27,15 @@
     }
 }
 
+.shippingStatus{
+    font-weight: bold;
+    background-color: transparent;
+    border-radius:5px ;
+    border: 1px solid #259EF6;
+    padding: 0 5px 5px 5px;
+    display: inline-block;
+}
+
 .bold{
     font-weight: bold;
 }
