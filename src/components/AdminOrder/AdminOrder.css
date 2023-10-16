@@ -1,0 +1,16 @@
+.statusButtons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+
+    border: 1px solid #BFD1E1;
+    border-radius: 5px;
+}
+
+/* styling for active button  */
+.active{ 
+    font-weight: bold;
+    background-color: #CEE2F2;
+}

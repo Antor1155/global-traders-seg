@@ -6,6 +6,7 @@ const SingleAdminOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
 
     const [shippingStatus, setShippingStatus] = useState(status)
+
     console.log(shippingStatus, "****")
     const [showDetails, setShowDetails] = useState(false)
 
@@ -13,7 +14,6 @@ const SingleAdminOrder = ({ order }) => {
         const confirm = window.confirm("Are you sure about the new changed Status ?!")
         if(confirm){
             setShippingStatus(e.target.value)
-
             axiosInstance.post("update-order-status",{orderId: order._id, status: e.target.value})
         }
     }
