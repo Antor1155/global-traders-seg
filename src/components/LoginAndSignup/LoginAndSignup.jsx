@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import { app } from '../../utilities/firebaseConfig';
 import "./LoginAndSignup.css"
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginAndSignup = () => {
     const provider = new GoogleAuthProvider()
     const auth = getAuth(app)
 
-    const [user, setUser] = useState(null)
+    const navigate = useNavigate()
+
     const [signin, setSignin] = useState(true)
     const [errorMessage, setErrorMessage] = useState("")
 
@@ -24,22 +26,12 @@ const LoginAndSignup = () => {
     const handleGoogleSignin = () => {
         signInWithPopup(auth, provider)
             .then(result => {
-                const loggedinUser = result.user
-                setUser(loggedinUser)
-                console.log(loggedinUser)
+                navigate("/myaccount")
+                
             })
             .catch(error => {
                 console.log(error)
                 setErrorMessage(error)
-            })
-    }
-
-    const handleSignOut = () => {
-        signOut(auth).then(result => {
-            setUser(null)
-        })
-            .catch(error => {
-                console.log(error)
             })
     }
 
@@ -54,11 +46,9 @@ const LoginAndSignup = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
 
-                const user = userCredential.user;
-                setUser(user)
                 console.log("siggned in properly")
-                e.target.email.value = ""
-                e.target.password.value = ""
+                e.target.reset()
+                navigate("/myaccount")
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -79,14 +69,10 @@ const LoginAndSignup = () => {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
-                const user = userCredential.user;
-                console.log("siggned up properly")
                 settingSingin()
 
-                e.target.email.value = ""
-                e.target.password.value = ""
-                e.target.rePassword.value = ""
+                e.target.reset()
+                navigate("/myaccount")
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -142,13 +128,6 @@ const LoginAndSignup = () => {
 
             <button onClick={handleGoogleSignin} className='googleSignin'>Continue with Google</button>
 
-
-            {user &&
-                <div>
-                    <button onClick={handleSignOut}>Sign Out</button>
-                    <h3>user : {user?.displayName}</h3>
-                    <h4>Email : {user?.email}</h4>
-                </div>}
         </div>
     );
 };

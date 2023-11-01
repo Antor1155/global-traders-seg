@@ -25,12 +25,7 @@ const UserContextProvider = ({ children }) => {
     }, [])
 
     const logOut = () => {
-
-        signOut(auth).then(
-            setUser(null)
-        ).catch(error => {
-            console.log("error in sign out : ", error)
-        })
+        return signOut(auth)
     }
 
     const credencials = {
