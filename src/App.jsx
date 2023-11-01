@@ -1,5 +1,5 @@
 import './App.css'
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 import HeaderComponent from './components/Header/HeaderComponent'
 import MyFooter from './components/Footer/MyFooter'
 
@@ -12,14 +12,15 @@ function App() {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart))
-  },[cart])
+  }, [cart])
 
 
   return (
     <>
-      <CartContext.Provider value={{cart, setCart}}>
+      <CartContext.Provider value={{ cart, setCart }}>
+        <ScrollRestoration></ScrollRestoration>
         <HeaderComponent></HeaderComponent>
 
         <Outlet></Outlet>

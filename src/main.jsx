@@ -8,7 +8,7 @@ import './index.css'
 
 import App from './App.jsx'
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import Cart from './components/Cart/Cart.jsx'
 import MyAccount from './components/MyAccount/MyAccount.jsx'
 
@@ -137,6 +137,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <UserContextProvider>
       <RouterProvider router={router} />
     </UserContextProvider>
-    
+
   </React.StrictMode>,
 )
