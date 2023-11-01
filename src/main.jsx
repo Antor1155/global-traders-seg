@@ -30,6 +30,8 @@ import AddProduct from './components/AddProduct/AddProduct';
 import EditProduct from './components/EditProduct/EditProduct';
 import Checkout from './components/Checkout/Checkout';
 import AdminOrder from './components/AdminOrder/AdminOrder';
+import LoginAndSignup from './components/LoginAndSignup/LoginAndSignup.jsx';
+import PrivateRoute from './utilities/PrivateRoute.jsx';
 
 
 
@@ -51,8 +53,12 @@ const router = createBrowserRouter([
         element: <Checkout></Checkout>
       },
       {
+        path:"login",
+        element:<LoginAndSignup></LoginAndSignup>
+      },
+      {
         path: "myaccount",
-        element: <MyAccount></MyAccount>
+        element: <PrivateRoute><MyAccount></MyAccount></PrivateRoute>
       },
       {
         path: "preowned",
