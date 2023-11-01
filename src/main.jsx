@@ -32,6 +32,7 @@ import Checkout from './components/Checkout/Checkout';
 import AdminOrder from './components/AdminOrder/AdminOrder';
 import LoginAndSignup from './components/LoginAndSignup/LoginAndSignup.jsx';
 import PrivateRoute from './utilities/PrivateRoute.jsx';
+import UserContextProvider from './utilities/UserContextProvider.jsx';
 
 
 
@@ -53,8 +54,8 @@ const router = createBrowserRouter([
         element: <Checkout></Checkout>
       },
       {
-        path:"login",
-        element:<LoginAndSignup></LoginAndSignup>
+        path: "login",
+        element: <LoginAndSignup></LoginAndSignup>
       },
       {
         path: "myaccount",
@@ -89,12 +90,12 @@ const router = createBrowserRouter([
         element: <AdminSecret></AdminSecret>,
         children: [
           {
-            path:"",
-            element:<AdminHome></AdminHome>
+            path: "",
+            element: <AdminHome></AdminHome>
           },
           {
-            path:"orders",
-            element:<AdminOrder></AdminOrder>
+            path: "orders",
+            element: <AdminOrder></AdminOrder>
           },
           {
             path: "catagory",
@@ -111,16 +112,16 @@ const router = createBrowserRouter([
             ]
           },
           {
-            path:"products",
-            element:<AllProduct></AllProduct>,
+            path: "products",
+            element: <AllProduct></AllProduct>,
           },
           {
-            path:"addproduct",
-            element:<AddProduct></AddProduct>
+            path: "addproduct",
+            element: <AddProduct></AddProduct>
           },
           {
-            path:"editProduct/:id",
-            element:<EditProduct></EditProduct>
+            path: "editProduct/:id",
+            element: <EditProduct></EditProduct>
           }
         ]
       },
@@ -132,6 +133,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+
+    <UserContextProvider>
+      <RouterProvider router={router} />
+    </UserContextProvider>
+    
   </React.StrictMode>,
 )
