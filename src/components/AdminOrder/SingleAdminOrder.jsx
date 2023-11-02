@@ -1,13 +1,12 @@
 import "./SingleAdminOrder.css"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axiosInstance from "../../utilities/axiosInstance"
+import JsBarcode from "jsbarcode";
 
 const SingleAdminOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
 
     const [shippingStatus, setShippingStatus] = useState(status)
-
-    console.log(shippingStatus, "****")
     const [showDetails, setShowDetails] = useState(false)
 
     const changeShippingStatus = (e) =>{
@@ -17,6 +16,11 @@ const SingleAdminOrder = ({ order }) => {
             axiosInstance.post("update-order-status",{orderId: order._id, status: e.target.value})
         }
     }
+
+    useEffect(() => {
+        // showing barcode in products details 
+        JsBarcode("#OrderIdBarcode", order?._id.toString(),)
+    }, [])
 
 
     let total = 0;
@@ -70,8 +74,6 @@ const SingleAdminOrder = ({ order }) => {
                 <div>
                     <h5 className="title">Product Details</h5>
 
-                    <p>Order Id : <span className="bold">{order._id}</span> </p>
-
                     {line_items.map((item, ind) => {
                         const product_data = item.price_data.product_data
 
@@ -95,7 +97,12 @@ const SingleAdminOrder = ({ order }) => {
                         )
                     })}
 
+                    <div className="totalAmount">
+                        <p>Total: </p>
+                        <p>$ {total}</p>
+                    </div>
 
+                    <img id="OrderIdBarcode"/>
 
                 </div>
 

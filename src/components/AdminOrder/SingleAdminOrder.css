@@ -108,3 +108,9 @@
 .price{
     font-weight: bold;
 }
+
+.totalAmount{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
