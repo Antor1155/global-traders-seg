@@ -10,6 +10,8 @@ const SingleCustomerOrder = ({ order }) => {
 
     useEffect(() => {
         // showing barcode in products details 
+
+        // here one line to check with pull 
         JsBarcode("#barcodeOfOrderId", order?._id.toString(),)
     }, [])
 
