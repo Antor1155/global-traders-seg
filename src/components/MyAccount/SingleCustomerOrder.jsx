@@ -6,17 +6,7 @@ import JsBarcode from "jsbarcode";
 const SingleCustomerOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
 
-    const [shippingStatus, setShippingStatus] = useState(status)
-
     const [showDetails, setShowDetails] = useState(false)
-
-    const changeShippingStatus = (e) => {
-        const confirm = window.confirm("Are you sure about the new changed Status ?!")
-        if (confirm) {
-            setShippingStatus(e.target.value)
-            axiosInstance.post("update-order-status", { orderId: order._id, status: e.target.value })
-        }
-    }
 
     useEffect(() => {
         // showing barcode in products details 
@@ -48,7 +38,7 @@ const SingleCustomerOrder = ({ order }) => {
                     <p>Shipping method : <span className="bold" style={{ textTransform: "uppercase" }}>{shipping}</span></p>
                     <p>Shipping status : {paid ?
 
-                        <span className="bold" style={{ color: "green" }}>{shippingStatus}</span>
+                        <span className="bold" style={{ color: "green" }}>{status}</span>
 
                         : <span className="bold" style={{ color: "red" }}>{status}</span>}
 
