@@ -1,21 +1,13 @@
 import "./SingleCustomerOrder.css"
 import React, { useState } from 'react';
 import axiosInstance from "../../utilities/axiosInstance"
+import Barcode from "react-barcode";
 
 const SingleCustomerOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
 
-    const [shippingStatus, setShippingStatus] = useState(status)
-
     const [showDetails, setShowDetails] = useState(false)
 
-    const changeShippingStatus = (e) => {
-        const confirm = window.confirm("Are you sure about the new changed Status ?!")
-        if (confirm) {
-            setShippingStatus(e.target.value)
-            axiosInstance.post("update-order-status", { orderId: order._id, status: e.target.value })
-        }
-    }
 
 
     let total = 0;
@@ -42,7 +34,7 @@ const SingleCustomerOrder = ({ order }) => {
                     <p>Shipping method : <span className="bold" style={{ textTransform: "uppercase" }}>{shipping}</span></p>
                     <p>Shipping status : {paid ?
 
-                        <span className="bold" style={{color: "green"}}>{shippingStatus}</span>
+                        <span className="bold" style={{color: "green"}}>{status}</span>
 
                         : <span className="bold" style={{ color: "red" }}>{status}</span>}
 
@@ -58,7 +50,7 @@ const SingleCustomerOrder = ({ order }) => {
                 <div>
                     <h5 className="title">Product Details</h5>
 
-                    <p>Order Id : <span className="bold">{order._id}</span> </p>
+                    <Barcode value={order?._id}></Barcode>
 
                     {line_items.map((item, ind) => {
                         const product_data = item.price_data.product_data
