@@ -7,14 +7,13 @@ const SingleCustomerOrder = ({ order }) => {
 
     const [shippingStatus, setShippingStatus] = useState(status)
 
-    console.log(shippingStatus, "****")
     const [showDetails, setShowDetails] = useState(false)
 
-    const changeShippingStatus = (e) =>{
+    const changeShippingStatus = (e) => {
         const confirm = window.confirm("Are you sure about the new changed Status ?!")
-        if(confirm){
+        if (confirm) {
             setShippingStatus(e.target.value)
-            axiosInstance.post("update-order-status",{orderId: order._id, status: e.target.value})
+            axiosInstance.post("update-order-status", { orderId: order._id, status: e.target.value })
         }
     }
 
@@ -31,15 +30,10 @@ const SingleCustomerOrder = ({ order }) => {
             <div className="order-summary">
                 <div>
                     <p>Total amount : <span className="bold">${total}</span></p>
-                    <p>Payment : {paid ? <span className="bold" style={{ color: "green" }}>Completed </span> :
-                        <span className="bold" style={{ color: "red" }}>Failed </span>}
-                    </p>
-
                     <p>Order Id : <span className="bold">{order._id}</span> </p>
                 </div>
 
                 <div>
-                    <p>Customer email: <span className="bold">{email}</span></p>
                     <p>Payment date: <span className="bold">{(new Date(createdAt)).toLocaleString()}</span></p>
                     <p>Last updated: <span className="bold">{(new Date(updatedAt)).toLocaleString()}</span></p>
                 </div>
@@ -48,13 +42,7 @@ const SingleCustomerOrder = ({ order }) => {
                     <p>Shipping method : <span className="bold" style={{ textTransform: "uppercase" }}>{shipping}</span></p>
                     <p>Shipping status : {paid ?
 
-                        <select className="shippingStatus" name="s_status" value={shippingStatus} onChange={changeShippingStatus}>
-                            <option value="Processing">Processing</option>
-                            <option value="Shipped">Shipped</option>
-                            <option value="Delivered">Delivered</option>
-                            <option value="Returned">Returned</option>
-                            <option value="Refunded">Refunded</option>
-                        </select>
+                        <span className="bold" style={{color: "green"}}>{shippingStatus}</span>
 
                         : <span className="bold" style={{ color: "red" }}>{status}</span>}
 
