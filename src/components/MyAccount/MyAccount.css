@@ -1,0 +1,21 @@
+.myAccount{
+    /* background-color: red; */
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 5% 100px 5%;
+}
+
+#accountDetails{
+    display: flex;
+    justify-content: space-between;
+
+    & button{
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: transparent;
+        color: rgb(194, 51, 51);
+
+    }
+}
