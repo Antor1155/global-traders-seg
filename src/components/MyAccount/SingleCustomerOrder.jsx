@@ -1,6 +1,7 @@
 import "./SingleCustomerOrder.css"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axiosInstance from "../../utilities/axiosInstance"
+import JsBarcode from "jsbarcode";
 
 const SingleCustomerOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
@@ -16,6 +17,11 @@ const SingleCustomerOrder = ({ order }) => {
             axiosInstance.post("update-order-status", { orderId: order._id, status: e.target.value })
         }
     }
+
+    useEffect(() => {
+        // showing barcode in products details 
+        JsBarcode("#barcodeOfOrderId", order?._id.toString(),)
+    }, [])
 
 
     let total = 0;
@@ -42,7 +48,7 @@ const SingleCustomerOrder = ({ order }) => {
                     <p>Shipping method : <span className="bold" style={{ textTransform: "uppercase" }}>{shipping}</span></p>
                     <p>Shipping status : {paid ?
 
-                        <span className="bold" style={{color: "green"}}>{shippingStatus}</span>
+                        <span className="bold" style={{ color: "green" }}>{shippingStatus}</span>
 
                         : <span className="bold" style={{ color: "red" }}>{status}</span>}
 
@@ -57,9 +63,6 @@ const SingleCustomerOrder = ({ order }) => {
             <div className="order-details" style={showDetails ? {} : { gridTemplateRows: "0fr", marginTop: "0", padding: "0" }}>
                 <div>
                     <h5 className="title">Product Details</h5>
-
-                    <p>Order Id : <span className="bold">{order._id}</span> </p>
-
                     {line_items.map((item, ind) => {
                         const product_data = item.price_data.product_data
 
@@ -83,6 +86,7 @@ const SingleCustomerOrder = ({ order }) => {
                         )
                     })}
 
+                    <img id="barcodeOfOrderId" />
 
 
                 </div>
