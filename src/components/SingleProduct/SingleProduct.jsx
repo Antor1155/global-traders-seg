@@ -26,6 +26,7 @@ const SingleProduct = ({ product }) => {
       <div className="productDesc">
         <p>{productName}</p>
         <p> <span>{storage}</span><span>{color.name}</span></p>
+        <span>{condition}</span>
         <p>${price}</p>
       </div>
       {/* <span>{price}$</span> */}

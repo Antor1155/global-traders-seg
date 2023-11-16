@@ -1,0 +1,19 @@
+.preowned-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 50px;
+}
+
+.product-filter{
+    & label{
+        display: block;
+    }
+}
+
+.preowned {
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 15px;
+    margin: auto;
+}
