@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import "./MyAccount.css"
 import axiosInstance from "../../utilities/axiosInstance";
 import SingleCustomerOrder from "./SingleCustomerOrder";
+import SingleProductOrdered from "./SingleProductOrdered";
 
 const MyAccount = () => {
     const { user, loading, logOut } = useContext(userContext)
     const navigate = useNavigate()
+
+    const [showRecipt, setShowRecipt] = useState(false)
 
     const handleSingOut = () => {
         logOut().then(() => {
@@ -17,10 +20,24 @@ const MyAccount = () => {
     }
 
     const [orders, setOrders] = useState([])
+    const [lineItems, setLineItems] = useState([])
 
     useEffect(() => {
         axiosInstance.get(`client-orders/${user?.email}`)
-            .then(res => setOrders(res.data))
+            .then(res => {
+                const data = res.data
+                setOrders(data)
+
+                let singleOrders = [];
+
+                for(const ord of data){
+                    for(const item in ord.line_items){
+                        singleOrders.push(item)
+                    }
+                }
+                setLineItems(singleOrders)
+
+            })
             .catch(error => console.log(error))
     }, [])
 
@@ -33,8 +50,18 @@ const MyAccount = () => {
                 <button onClick={handleSingOut}>Sign Out</button>
             </div>
 
-            {orders.map(order => <SingleCustomerOrder key={order._id} order={order}>
-            </SingleCustomerOrder>)}
+            <div className="orderButtons">
+                <button onClick={() => setShowRecipt(false)}>Orders</button>
+                <button onClick={() => setShowRecipt(true)}>Order recipts</button>
+            </div>
+
+            {showRecipt && orders ? 
+                orders.map(order => <SingleCustomerOrder key={order._id} order={order}>
+                </SingleCustomerOrder>)
+                :
+                lineItems.map((item, ind) => <SingleProductOrdered key={ind} line_items={lineItems}>
+                </SingleProductOrdered>)
+            }
 
         </div>
     );
