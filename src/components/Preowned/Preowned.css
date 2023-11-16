@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding-top: 50px;
+
+
 }
 
 .product-filter{
@@ -11,9 +13,40 @@
 }
 
 .preowned {
-    grid-column: 2/5;
+    grid-column: 2/ 5;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 15px;
-    margin: auto;
+    /* margin: auto; */
+   justify-items: end;
+   z-index: -1;
+}
+
+.price-range{
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+
+    & p:last-of-type{
+        display: flex;
+        justify-content: space-between;
+        font-weight: normal;
+        margin: 0;
+        font-size: 1rem;
+    }
+}
+
+.filter-div{
+    margin-bottom: 3rem;
+}
+
+.filter-name{
+    font-weight: 500;
+    font-size: large;
+    margin: 2rem 0 1rem 0
+}
+
+.filter-options{
+    height: 250px;
+    overflow-y: scroll;
 }

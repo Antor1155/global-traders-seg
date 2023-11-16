@@ -3,6 +3,7 @@ import axiosInstance from "../../utilities/axiosInstance";
 import SingleProduct from "../SingleProduct/SingleProduct";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import "./Preowned.css"
+import { Slider } from "@mui/material";
 
 
 const Preowned = () => {
@@ -14,7 +15,22 @@ const Preowned = () => {
 
     const [productsName, setProductsName] = useState([])
 
-    const [query, setQuery] = useState({ model: [], condition: [], storage: [], color: [] })
+    const [query, setQuery] = useState({ model: [], condition: [], storage: [], color: [], value: [0, 1500] })
+
+    // slider price range with material ui
+    const [value, setValue] = useState([0, 1500]);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+
+        setQuery(prev => {
+            prev.value = value
+            return prev
+        })
+        
+    };
+
+
 
     const availableColors = [{ name: "BLACK", value: "#000000" },
     { name: "SIERRA BLUE", value: "#9BB5CE" },
@@ -73,8 +89,6 @@ const Preowned = () => {
         }
 
         setQuery(preQuery)
-
-        console.log(query)
     }
     return (
         <main>
@@ -84,26 +98,41 @@ const Preowned = () => {
 
                 <div className="product-filter">
                     <div className="price-range">
-                        <label>
-                            <input type="range" name="priceRange" min={0} max={1500} />
-                        </label>
-                    </div>
-                    <div className="model">
-                        <p>Model : </p>
+                        <p >Price range:</p>
+                        <Slider
+                            min={0}
+                            max={1500}
+                            getAriaLabel={() => 'Temperature range'}
+                            value={value}
+                            onChange={handleChange}
+                            valueLabelDisplay="on"
+                            getAriaValueText={(val) => `${val} ++`}
 
-                        {productsName.map(SingleproductsName => (
-                            <label key={SingleproductsName}>
+                        />
 
-                                <input type="checkbox" className="model" name="model" value={SingleproductsName}
-                                    onChange={uncheckOthers}
-                                /> {SingleproductsName}
-                            </label>
-                        ))}
+                        <p><span>Min</span> <span>Max</span></p>
 
                     </div>
 
-                    <div className="Storage">
-                        <p>Storage : </p>
+                    <div className="filter-div">
+                        <p className="filter-name">Model : </p>
+
+                        <div className="filter-options">
+                            {productsName.map(SingleproductsName => (
+                                <label key={SingleproductsName}>
+
+                                    <input type="checkbox" className="model" name="model" value={SingleproductsName}
+                                        onChange={uncheckOthers}
+                                    /> {SingleproductsName}
+                                </label>
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                    <div className="filter-div">
+                        <p className="filter-name">Storage : </p>
 
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="64 GB"
@@ -134,8 +163,8 @@ const Preowned = () => {
                     </div>
 
 
-                    <div className="condition">
-                        <p>Condition : </p>
+                    <div className="filter-div">
+                        <p className="filter-name">Condition : </p>
 
                         <label >
                             <input type="checkbox" className="condition" name="condition" value="Fair"
@@ -155,8 +184,8 @@ const Preowned = () => {
 
                     </div>
 
-                    <div className="color">
-                        <p>Colors : </p>
+                    <div className="filter-div">
+                        <p className="filter-name">Colors : </p>
 
                         {availableColors.map(color => (
                             <label key={color.value}>
@@ -177,6 +206,7 @@ const Preowned = () => {
                     })}
 
                 </div>
+
             </section>
 
             <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false : true}> See More</button>
