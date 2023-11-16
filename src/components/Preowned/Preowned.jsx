@@ -14,6 +14,22 @@ const Preowned = () => {
 
     const [productsName, setProductsName] = useState([])
 
+    const [query, setQuery] = useState({ model: [], condition: [], storage: [], color: [] })
+
+    const availableColors = [{ name: "BLACK", value: "#000000" },
+    { name: "SIERRA BLUE", value: "#9BB5CE" },
+    { name: "GRAPHITE", value: "#5C5B57" },
+    { name: "GOLD", value: "#F9E5C9" },
+    { name: "ALPINE GREEN", value: "#505F4E" },
+    { name: "SILVER", value: "#F5F5F0" },
+    { name: "RED", value: "#A50011" },
+    { name: "STARLIGHT", value: "#F9F3EE" },
+    { name: "MIDNIGHT", value: "#171E27" },
+    { name: "BLUE", value: "#215E7C" },
+    { name: "PINK", value: "#FAE0D8" },
+    { name: "GREEN", value: "#364935" },
+    ]
+
     const requestProduct = () => {
         axiosInstance.get(`products/${prodcutsReq}/${productSkip.current}`)
             .then(res => {
@@ -46,15 +62,19 @@ const Preowned = () => {
 
     const uncheckOthers = (event) => {
         const name = event.target.name
-        const allCheckboxWithSameName = document.getElementsByName(name)
+        const preQuery = query
+        const val = event.target.value
 
-        allCheckboxWithSameName.forEach(box => {
-            if (box !== event.target) {
-                box.checked = false
-            }
-        })
+        if (event.target.checked === true) {
+            preQuery[name].push(val)
+        }
+        else {
+            preQuery[name] = preQuery[name].filter(value => value !== val)
+        }
 
+        setQuery(preQuery)
 
+        console.log(query)
     }
     return (
         <main>
@@ -63,18 +83,18 @@ const Preowned = () => {
             <section className='preowned-container'>
 
                 <div className="product-filter">
+                    <div className="price-range">
+                        <label>
+                            <input type="range" name="priceRange" min={0} max={1500} />
+                        </label>
+                    </div>
                     <div className="model">
                         <p>Model : </p>
 
-                        <label>
-                            <input type="checkbox" className="model" name="model" value=""
-                                onChange={uncheckOthers}
-                            /> All
-                        </label>
                         {productsName.map(SingleproductsName => (
                             <label key={SingleproductsName}>
 
-                                <input type="checkbox" className="model" name="model" value="iphone 8"
+                                <input type="checkbox" className="model" name="model" value={SingleproductsName}
                                     onChange={uncheckOthers}
                                 /> {SingleproductsName}
                             </label>
@@ -84,12 +104,6 @@ const Preowned = () => {
 
                     <div className="Storage">
                         <p>Storage : </p>
-
-                        <label>
-                            <input type="checkbox" className="storage" name="storage" value=""
-                                onChange={uncheckOthers}
-                            /> All
-                        </label>
 
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="64 GB"
@@ -116,6 +130,42 @@ const Preowned = () => {
                                 onChange={uncheckOthers}
                             /> 1 TB
                         </label>
+
+                    </div>
+
+
+                    <div className="condition">
+                        <p>Condition : </p>
+
+                        <label >
+                            <input type="checkbox" className="condition" name="condition" value="Fair"
+                                onChange={uncheckOthers}
+                            /> Fair
+                        </label>
+                        <label >
+                            <input type="checkbox" className="condition" name="condition" value="Good"
+                                onChange={uncheckOthers}
+                            /> Good
+                        </label>
+                        <label >
+                            <input type="checkbox" className="condition" name="condition" value="Excellent"
+                                onChange={uncheckOthers}
+                            /> Excellent
+                        </label>
+
+                    </div>
+
+                    <div className="color">
+                        <p>Colors : </p>
+
+                        {availableColors.map(color => (
+                            <label key={color.value}>
+
+                                <input type="checkbox" className="color" name="color" value={color.name}
+                                    onChange={uncheckOthers}
+                                /> {color.name}
+                            </label>
+                        ))}
 
                     </div>
 
