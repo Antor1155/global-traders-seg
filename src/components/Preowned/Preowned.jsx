@@ -15,10 +15,10 @@ const Preowned = () => {
 
     const [productsName, setProductsName] = useState([])
 
-    const [query, setQuery] = useState({ model: [], condition: [], storage: [], color: [], value: [0, 1500] })
+    const [query, setQuery] = useState({ productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
 
     // slider price range with material ui
-    const [value, setValue] = useState([0, 1500]);
+    const [price, setPrice] = useState([0, 1500]);
     const [sliderMoving, setSliderMoving] = useState(false)
 
     const availableColors = [{ name: "BLACK", value: "#000000" },
@@ -36,10 +36,11 @@ const Preowned = () => {
     ]
 
     const requestProduct = () => {
-        axiosInstance.get(`products/${prodcutsReq}/${productSkip.current}`)
+        axiosInstance.post(`products/${prodcutsReq}/${productSkip.current}`, query)
             .then(res => {
                 if (res.data.length) {
                     setNproducts(prev => [...prev, ...res.data])
+                    setMoreProductsInDb(true)
                 } else {
                     setMoreProductsInDb(false)
                 }
@@ -63,10 +64,10 @@ const Preowned = () => {
 
 
     const handleRangeChange = (event, newValue) => {
-        setValue(newValue);
+        setPrice(newValue);
 
         setQuery(prev => {
-            prev.value = value
+            prev.price = price
             return prev
         })
     };
@@ -74,7 +75,7 @@ const Preowned = () => {
     // when slider stops , request the data based on query 
     const handleSliderRelease = () =>{
         setSliderMoving(false)
-
+        setNproducts([])
         requestProduct()
     }
 
@@ -92,13 +93,16 @@ const Preowned = () => {
         }
 
         setQuery(preQuery)
+        setNproducts([])
+
+        requestProduct()
     }
 
     const handleSeeMore = () => {
         productSkip.current += prodcutsReq
         requestProduct()
     }
-    
+
     return (
         <main>
             <ScrollToTop></ScrollToTop>
@@ -112,7 +116,7 @@ const Preowned = () => {
                             min={0}
                             max={1500}
                             getAriaLabel={() => 'Temperature range'}
-                            value={value}
+                            value={price}
                             onChange={handleRangeChange}
                             valueLabelDisplay="on"
                             getAriaValueText={(val) => `${val} ++`}
@@ -130,13 +134,13 @@ const Preowned = () => {
                     </div>
 
                     <div className="filter-div">
-                        <p className="filter-name">Model : </p>
+                        <p className="filter-name">Product model : </p>
 
                         <div className="filter-options">
                             {productsName.map(SingleproductsName => (
                                 <label key={SingleproductsName}>
 
-                                    <input type="checkbox" className="model" name="model" value={SingleproductsName}
+                                    <input type="checkbox" className="productName" name="productName" value={SingleproductsName}
                                         onChange={optionIntarected}
                                     /> {SingleproductsName}
                                 </label>
