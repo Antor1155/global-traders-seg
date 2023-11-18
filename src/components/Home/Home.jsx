@@ -16,7 +16,8 @@ const Home = () => {
 
 
     const requestProduct = ()=>{
-        axiosInstance.get(`products/${prodcutsReq}/${productSkip.current}`)
+        axiosInstance.post(`products/${prodcutsReq}/${productSkip.current}`,
+        { productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
         .then(res =>{
            if(res.data.length){
             setNproducts(prev => [...prev, ...res.data])
