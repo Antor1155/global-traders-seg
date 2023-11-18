@@ -75,7 +75,10 @@ const Preowned = () => {
     // when slider stops , request the data based on query 
     const handleSliderRelease = () =>{
         setSliderMoving(false)
+
         setNproducts([])
+        productSkip.current = 0
+
         requestProduct()
     }
 
@@ -94,6 +97,7 @@ const Preowned = () => {
 
         setQuery(preQuery)
         setNproducts([])
+        productSkip.current = 0
 
         requestProduct()
     }
