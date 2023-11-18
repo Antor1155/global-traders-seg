@@ -19,6 +19,21 @@ const Preowned = () => {
 
     // slider price range with material ui
     const [value, setValue] = useState([0, 1500]);
+    const [sliderMoving, setSliderMoving] = useState(false)
+
+    const availableColors = [{ name: "BLACK", value: "#000000" },
+    { name: "SIERRA BLUE", value: "#9BB5CE" },
+    { name: "GRAPHITE", value: "#5C5B57" },
+    { name: "GOLD", value: "#F9E5C9" },
+    { name: "ALPINE GREEN", value: "#505F4E" },
+    { name: "SILVER", value: "#F5F5F0" },
+    { name: "RED", value: "#A50011" },
+    { name: "STARLIGHT", value: "#F9F3EE" },
+    { name: "MIDNIGHT", value: "#171E27" },
+    { name: "BLUE", value: "#215E7C" },
+    { name: "PINK", value: "#FAE0D8" },
+    { name: "GREEN", value: "#364935" },
+    ]
 
     const requestProduct = () => {
         axiosInstance.get(`products/${prodcutsReq}/${productSkip.current}`)
@@ -30,7 +45,7 @@ const Preowned = () => {
                 }
             })
             .catch(error => console.log(error))
-        
+
         console.log("requestPoruct called")
     }
 
@@ -54,30 +69,15 @@ const Preowned = () => {
             prev.value = value
             return prev
         })
-
     };
 
+    // when slider stops , request the data based on query 
+    const handleSliderRelease = () =>{
+        setSliderMoving(false)
 
-
-
-    const availableColors = [{ name: "BLACK", value: "#000000" },
-    { name: "SIERRA BLUE", value: "#9BB5CE" },
-    { name: "GRAPHITE", value: "#5C5B57" },
-    { name: "GOLD", value: "#F9E5C9" },
-    { name: "ALPINE GREEN", value: "#505F4E" },
-    { name: "SILVER", value: "#F5F5F0" },
-    { name: "RED", value: "#A50011" },
-    { name: "STARLIGHT", value: "#F9F3EE" },
-    { name: "MIDNIGHT", value: "#171E27" },
-    { name: "BLUE", value: "#215E7C" },
-    { name: "PINK", value: "#FAE0D8" },
-    { name: "GREEN", value: "#364935" },
-    ]
-
-    const handleSeeMore = () => {
-        productSkip.current += prodcutsReq
         requestProduct()
     }
+
 
     const optionIntarected = (event) => {
         const name = event.target.name
@@ -93,6 +93,12 @@ const Preowned = () => {
 
         setQuery(preQuery)
     }
+
+    const handleSeeMore = () => {
+        productSkip.current += prodcutsReq
+        requestProduct()
+    }
+    
     return (
         <main>
             <ScrollToTop></ScrollToTop>
@@ -110,6 +116,12 @@ const Preowned = () => {
                             onChange={handleRangeChange}
                             valueLabelDisplay="on"
                             getAriaValueText={(val) => `${val} ++`}
+
+                            onTouchStart={() => setSliderMoving(true)}
+                            onMouseDown={() => setSliderMoving(true)}
+
+                            onTouchEnd={handleSliderRelease}
+                            onMouseUp={handleSliderRelease}
 
                         />
 
