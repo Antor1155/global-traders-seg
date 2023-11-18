@@ -4,6 +4,7 @@ import SingleProduct from "../SingleProduct/SingleProduct";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import "./Preowned.css"
 import { Slider } from "@mui/material";
+import _debounce from 'lodash/debounce';
 
 
 const Preowned = () => {
@@ -19,32 +20,6 @@ const Preowned = () => {
 
     // slider price range with material ui
     const [value, setValue] = useState([0, 1500]);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-
-        setQuery(prev => {
-            prev.value = value
-            return prev
-        })
-        
-    };
-
-
-
-    const availableColors = [{ name: "BLACK", value: "#000000" },
-    { name: "SIERRA BLUE", value: "#9BB5CE" },
-    { name: "GRAPHITE", value: "#5C5B57" },
-    { name: "GOLD", value: "#F9E5C9" },
-    { name: "ALPINE GREEN", value: "#505F4E" },
-    { name: "SILVER", value: "#F5F5F0" },
-    { name: "RED", value: "#A50011" },
-    { name: "STARLIGHT", value: "#F9F3EE" },
-    { name: "MIDNIGHT", value: "#171E27" },
-    { name: "BLUE", value: "#215E7C" },
-    { name: "PINK", value: "#FAE0D8" },
-    { name: "GREEN", value: "#364935" },
-    ]
 
     const requestProduct = () => {
         axiosInstance.get(`products/${prodcutsReq}/${productSkip.current}`)
@@ -70,13 +45,40 @@ const Preowned = () => {
             .catch(error => console.log(error))
     }, [])
 
+    // debouncing the function call for certain amout to make the slider useful 
+    const debounchRequestProduct = _debounce(requestProduct, 800)
+
+    const handleRangeChange = (event, newValue) => {
+        setValue(newValue);
+
+        setQuery(prev => {
+            prev.value = value
+            return prev
+        })
+
+        debounchRequestProduct()
+    };
+
+    const availableColors = [{ name: "BLACK", value: "#000000" },
+    { name: "SIERRA BLUE", value: "#9BB5CE" },
+    { name: "GRAPHITE", value: "#5C5B57" },
+    { name: "GOLD", value: "#F9E5C9" },
+    { name: "ALPINE GREEN", value: "#505F4E" },
+    { name: "SILVER", value: "#F5F5F0" },
+    { name: "RED", value: "#A50011" },
+    { name: "STARLIGHT", value: "#F9F3EE" },
+    { name: "MIDNIGHT", value: "#171E27" },
+    { name: "BLUE", value: "#215E7C" },
+    { name: "PINK", value: "#FAE0D8" },
+    { name: "GREEN", value: "#364935" },
+    ]
 
     const handleSeeMore = () => {
         productSkip.current += prodcutsReq
         requestProduct()
     }
 
-    const uncheckOthers = (event) => {
+    const optionIntarected = (event) => {
         const name = event.target.name
         const preQuery = query
         const val = event.target.value
@@ -104,7 +106,7 @@ const Preowned = () => {
                             max={1500}
                             getAriaLabel={() => 'Temperature range'}
                             value={value}
-                            onChange={handleChange}
+                            onChange={handleRangeChange}
                             valueLabelDisplay="on"
                             getAriaValueText={(val) => `${val} ++`}
 
@@ -122,7 +124,7 @@ const Preowned = () => {
                                 <label key={SingleproductsName}>
 
                                     <input type="checkbox" className="model" name="model" value={SingleproductsName}
-                                        onChange={uncheckOthers}
+                                        onChange={optionIntarected}
                                     /> {SingleproductsName}
                                 </label>
                             ))}
@@ -136,27 +138,27 @@ const Preowned = () => {
 
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="64 GB"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> 64 GB
                         </label>
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="128 GB"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> 128 GB
                         </label>
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="256 GB"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> 256 GB
                         </label>
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="512 GB"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> 512 GB
                         </label>
                         <label >
                             <input type="checkbox" className="storage" name="storage" value="1 TB"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> 1 TB
                         </label>
 
@@ -168,17 +170,17 @@ const Preowned = () => {
 
                         <label >
                             <input type="checkbox" className="condition" name="condition" value="Fair"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> Fair
                         </label>
                         <label >
                             <input type="checkbox" className="condition" name="condition" value="Good"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> Good
                         </label>
                         <label >
                             <input type="checkbox" className="condition" name="condition" value="Excellent"
-                                onChange={uncheckOthers}
+                                onChange={optionIntarected}
                             /> Excellent
                         </label>
 
@@ -191,7 +193,7 @@ const Preowned = () => {
                             <label key={color.value}>
 
                                 <input type="checkbox" className="color" name="color" value={color.name}
-                                    onChange={uncheckOthers}
+                                    onChange={optionIntarected}
                                 /> {color.name}
                             </label>
                         ))}
