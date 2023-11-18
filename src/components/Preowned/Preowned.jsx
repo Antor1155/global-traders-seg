@@ -4,7 +4,6 @@ import SingleProduct from "../SingleProduct/SingleProduct";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import "./Preowned.css"
 import { Slider } from "@mui/material";
-import _debounce from 'lodash/debounce';
 
 
 const Preowned = () => {
@@ -31,6 +30,8 @@ const Preowned = () => {
                 }
             })
             .catch(error => console.log(error))
+        
+        console.log("requestPoruct called")
     }
 
     useEffect(() => {
@@ -45,8 +46,6 @@ const Preowned = () => {
             .catch(error => console.log(error))
     }, [])
 
-    // debouncing the function call for certain amout to make the slider useful 
-    const debounchRequestProduct = _debounce(requestProduct, 800)
 
     const handleRangeChange = (event, newValue) => {
         setValue(newValue);
@@ -56,8 +55,10 @@ const Preowned = () => {
             return prev
         })
 
-        debounchRequestProduct()
     };
+
+
+
 
     const availableColors = [{ name: "BLACK", value: "#000000" },
     { name: "SIERRA BLUE", value: "#9BB5CE" },
