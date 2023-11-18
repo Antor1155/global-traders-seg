@@ -33,6 +33,7 @@ import AdminOrder from './components/AdminOrder/AdminOrder';
 import LoginAndSignup from './components/LoginAndSignup/LoginAndSignup.jsx';
 import PrivateRoute from './utilities/PrivateRoute.jsx';
 import UserContextProvider from './utilities/UserContextProvider.jsx';
+import ProductDetailPage from './components/ProductDetailPage/ProductDetailPage.jsx';
 
 
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart></Cart>
+      },
+      {
+        path: "iphone/:parentId/:productId",
+        element: <ProductDetailPage></ProductDetailPage>
       },
       {
         path: "checkout/:id",

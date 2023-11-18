@@ -1,19 +1,26 @@
 import { useContext } from "react"
 import "./singleproduct.css"
 import { CartContext } from "../../App"
-
+import { useNavigate } from "react-router"
 
 const SingleProduct = ({ product }) => {
   const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
-
+  
   const { cart, setCart } = useContext(CartContext)
 
-  const handleAddCart = () => {
+  const navigate  = useNavigate()
+
+  const handleAddCart = (event) => {
+    event.stopPropagation()
     setCart(prev => [...prev, _id])
   }
 
+  const handleShowProduct = () =>{
+    navigate(`/iphone/${parentCatagory}/${_id}`)
+  }
+
   return (
-    <div className='single-product'>
+    <div className='single-product' onClick={handleShowProduct}>
       <div className='sticker'>
         <img src="/logos/product-label.png" alt='product sticker' />
         <small>UP TO <br></br> 3.23% <br></br> OFF</small>
