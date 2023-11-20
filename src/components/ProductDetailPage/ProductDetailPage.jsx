@@ -71,37 +71,50 @@ const ProductDetailPage = () => {
                     <img src={product?.image} />
                 </div>
                 <div className='options'>
-                    <div>
-                        <h1>{product?.productName} {product?.storage}
-                            <br></br> {product?.color?.name} {product?.description}
+                    <div className='name-price'>
+                        <h1>{product?.productName} - {product?.storage} -
+                            {product?.color?.name} - {product?.description}
                         </h1>
+                        <p>
+                            <span>special price: </span>${product?.price}
+                        </p>
                     </div>
 
-                    <div>
-                        {availableConditions.map(condition => (
-                            <button>
-                                {condition}
-                            </button>
-                        ))}
+                    <div className='filter-button-container'>
+                        <p>Condition</p>
+                        <div className='filter-buttons'>
+                            {availableConditions.map(condition => (
+                                <button>
+                                    {condition}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
-                    <div>
-                        {availableStorages.map(storage =>(
-                            <button>
-                                {storage}
-                            </button>
-                        ))}
+                    <div className='filter-button-container'>
+                        <p>Storage (GB)</p>
+                        <div className='filter-buttons'>
+                            {availableStorages.map(storage => (
+                                <button>
+                                    {storage}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
-                    <div>
-                        {availableColors.map(color => (
-                            <button>
-                                {color.name}
-                            </button>
-                        ))}
+                    <div className='filter-button-container'>
+                        <p>Color</p>
+                        <div className='filter-buttons'>
+                            {availableColors.map(color => (
+                                <button className='color'>
+                                    <div style={{backgroundColor: color?.value}}></div>
+                                    {color.name}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
-                    
+
                 </div>
             </div>
 
