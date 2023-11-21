@@ -13,6 +13,7 @@ import unlocked from "../../assets/unlocked.svg";
 import delivery from "../../assets/delivery.svg";
 import shield from "../../assets/shield.svg";
 import rRate from "../../assets/r-rate.svg";
+import { Link } from 'react-router-dom';
 
 
 
@@ -131,13 +132,13 @@ const ProductDetailPage = () => {
         setSelectedCondition(mostPopular?.condition)
     }
 
-    function getFutureDate(daysToAdd){
+    function getFutureDate(daysToAdd) {
         const today = new Date()
         const futureDate = new Date(today)
 
         futureDate.setDate(today.getDate() + daysToAdd)
 
-        const options = {month: "short", day: "numeric"}
+        const options = { month: "short", day: "numeric" }
         const formattedDate = futureDate.toLocaleDateString('en-US', options);
 
         console.log(today, "/n", futureDate, formattedDate)
@@ -146,7 +147,31 @@ const ProductDetailPage = () => {
     }
 
     return (
-        <section>
+        <section className='singleProductPage'>
+            <nav className='breadcrumb'>
+                    <span>
+                        <Link to="/">Home</Link>
+                    </span>
+
+                    <span> {">"} </span>
+
+                    <span>
+                        <Link to="/preowned">Pre owned</Link>
+                    </span>
+
+                    <span> {">"} </span>
+
+                    <span>
+                        <Link to="/preowned">Iphone</Link>
+                    </span>
+                    
+                    <span> {">"} </span>
+
+                    <span>
+                        <Link to="" className='currentPage'>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}</Link>
+                    </span>
+
+            </nav>
             <div className='productSection'>
                 <div className='productImg'>
                     <img src={product?.image} />
@@ -154,8 +179,7 @@ const ProductDetailPage = () => {
 
                 <div className='options'>
                     <div className='name-price'>
-                        <h1>{product?.productName} - {product?.storage} -
-                            {product?.color?.name} - {product?.description}
+                        <h1>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}
                         </h1>
                         <p>
                             <span>special price: </span>${product?.price}
@@ -199,8 +223,8 @@ const ProductDetailPage = () => {
                         <div>
                             <img src={delivery} alt="delivery" />
                             <div>
-                               <p className='semi-bold'>Free delivery by {getFutureDate(5)} - {getFutureDate(7)}</p> 
-                               <p className='small'>Express delivery by {getFutureDate(1)} - {getFutureDate(2)} from $30</p>
+                                <p className='semi-bold'>Free delivery by {getFutureDate(5)} - {getFutureDate(7)}</p>
+                                <p className='small'>Express delivery by {getFutureDate(1)} - {getFutureDate(2)} from $30</p>
                             </div>
                         </div>
 
@@ -297,6 +321,9 @@ const ProductDetailPage = () => {
                         </div>
                     </div>
 
+                    <div className='' style={{ height: "200vh" }}>
+
+                    </div>
 
                 </div>
             </div>

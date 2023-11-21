@@ -1,7 +1,36 @@
+.singleProductPage{
+
+}
+
+.breadcrumb{
+    display: block;
+    padding: 1rem;
+    padding-left: 10%;
+    margin-bottom: 1rem;
+
+    & span{
+        color: rgb(108, 104, 104);
+        font-weight: 400;
+        font-size: .8rem;
+
+        margin-right: 1rem;
+    }
+    & span a{
+        color: rgb(108, 104, 104);
+        font-weight: 400;
+        font-size: .8rem;
+
+        &.currentPage{
+            font-weight: bold;
+        }
+    }
+}
+
 .productSection {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 2rem;
+    padding-top: 0;
     position: relative;
 
     & h1 {
@@ -9,35 +38,58 @@
     }
 }
 
-.options{
+.productImg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    & img {
+        position: sticky;
+        top: 5rem;
+
+        object-fit: contain;
+        border-radius: 3rem;
+        width: 400px;
+        height: auto;
+    }
+}
+
+.options {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    padding-top: 0;
 }
 
-.name-price{
+.name-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
-    & h1{
+
+    font-family: serif;
+
+    & h1 {
+        font-weight: bolder;
         width: 65%;
         margin: 0;
     }
-    & p{
+
+    & p {
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: bold;
         margin: 0;
 
-        & span{
+        & span {
             font-size: 1rem;
             font-weight: normal;
         }
     }
 }
 
-.add-to-cart{
+.add-to-cart {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -45,26 +97,26 @@
     border-bottom: .5px solid rgb(38, 36, 36);
 
 
-    & p{
+    & p {
         margin: 0;
         padding: 0;
     }
 }
 
-.sub-text > div{
+.sub-text>div {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size:.8rem;
+    font-size: .8rem;
 
     margin-bottom: 2px;
 }
 
-.star{
+.star {
     width: .9rem;
 }
 
-.underline{
+.underline {
     font-weight: bold;
     text-decoration: underline;
 }
@@ -75,19 +127,19 @@
     justify-content: center;
     gap: 5px;
 
-    & button{
+    & button {
         width: 100%;
         height: 100%;
         background-color: black;
         color: white;
         border-radius: 5px;
 
-        &:hover{
-            background-color:rgb(63, 62, 62) ;
+        &:hover {
+            background-color: rgb(63, 62, 62);
         }
     }
 
-    & img{
+    & img {
         height: 100%;
         padding: .5rem;
         border: 1px solid;
@@ -95,7 +147,7 @@
     }
 }
 
-.devlivery-and-data{
+.devlivery-and-data {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: .7rem;
@@ -106,45 +158,45 @@
     margin-bottom: .5rem;
 }
 
-.devlivery-and-data>div{
+.devlivery-and-data>div {
     display: flex;
     align-items: center;
     gap: 8px;
 
 
-    & p{
+    & p {
         margin: 0;
 
-        &.semi-bold{
+        &.semi-bold {
             font-weight: bolder;
         }
     }
 
-    & img{
+    & img {
         width: 2.5rem;
         background-color: #E2EEF7;
         padding: .5rem;
         border-radius: 5px;
 
-        &.r-rate{
+        &.r-rate {
             padding: 0;
         }
     }
 
 }
 
-.filter-button-container{
-    
-    & p{
+.filter-button-container {
+
+    & p {
         margin-bottom: .3rem;
     }
-    
-    & .filter-buttons{
+
+    & .filter-buttons {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
 
-        & button{
+        & button {
             font-size: .9rem;
             background-color: transparent;
             border: 1px solid #259EF6;
@@ -152,19 +204,20 @@
             padding: .5rem 0;
             text-align: center;
             font-weight: 200;
-    
-    
-            &:hover{
+
+
+            &:hover {
                 background-color: #259ff620;
             }
         }
 
-        & .color{
+        & .color {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
-            & div{
+
+            & div {
                 width: 1rem;
                 height: 1rem;
                 border-radius: 50%;
@@ -173,7 +226,6 @@
     }
 }
 
-.filter-buttons.best-picks{
+.filter-buttons.best-picks {
     grid-template-columns: 1fr 1fr;
 }
-
