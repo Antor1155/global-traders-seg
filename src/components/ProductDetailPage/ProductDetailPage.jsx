@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import axiosInstance from '../../utilities/axiosInstance';
 import "./ProductDetailPage.css";
 import { CartContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 import eyes from "../../assets/eyes.svg";
 import stars from "../../assets/stars.svg";
@@ -13,7 +14,7 @@ import unlocked from "../../assets/unlocked.svg";
 import delivery from "../../assets/delivery.svg";
 import shield from "../../assets/shield.svg";
 import rRate from "../../assets/r-rate.svg";
-import { Link } from 'react-router-dom';
+import animatedButterfly from "../../assets/animated-butterfly.svg";
 
 
 
@@ -149,27 +150,27 @@ const ProductDetailPage = () => {
     return (
         <section className='singleProductPage'>
             <nav className='breadcrumb'>
-                    <span>
-                        <Link to="/">Home</Link>
-                    </span>
+                <span>
+                    <Link to="/">Home</Link>
+                </span>
 
-                    <span> {">"} </span>
+                <span> {">"} </span>
 
-                    <span>
-                        <Link to="/preowned">Pre owned</Link>
-                    </span>
+                <span>
+                    <Link to="/preowned">Pre owned</Link>
+                </span>
 
-                    <span> {">"} </span>
+                <span> {">"} </span>
 
-                    <span>
-                        <Link to="/preowned">Iphone</Link>
-                    </span>
-                    
-                    <span> {">"} </span>
+                <span>
+                    <Link to="/preowned">Iphone</Link>
+                </span>
 
-                    <span>
-                        <Link to="" className='currentPage'>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}</Link>
-                    </span>
+                <span> {">"} </span>
+
+                <span>
+                    <Link to="" className='currentPage'>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}</Link>
+                </span>
 
             </nav>
             <div className='productSection'>
@@ -178,6 +179,15 @@ const ProductDetailPage = () => {
                 </div>
 
                 <div className='options'>
+
+                    <div className='butterfly-suggestion'>
+                        <div>
+                            <Link to="#why-better">
+                                <img src={animatedButterfly} alt="animated butterfly" />
+                            </Link>
+                            <span>Better than new</span>
+                        </div>
+                    </div>
                     <div className='name-price'>
                         <h1>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}
                         </h1>
@@ -328,7 +338,7 @@ const ProductDetailPage = () => {
                 </div>
             </div>
 
-            <div className='advices'>
+            <div className='advices' id='why-better'>
                 this is the advice part
             </div>
         </section>

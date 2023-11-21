@@ -1,5 +1,6 @@
 .singleProductPage{
-
+    max-width: 1080px;
+    margin: auto;
 }
 
 .breadcrumb{
@@ -11,7 +12,7 @@
     & span{
         color: rgb(108, 104, 104);
         font-weight: 400;
-        font-size: .8rem;
+        font-size: .7rem;
 
         margin-right: 1rem;
     }
@@ -22,6 +23,7 @@
 
         &.currentPage{
             font-weight: bold;
+            color: rgb(57, 55, 55);
         }
     }
 }
@@ -61,6 +63,25 @@
     gap: 1rem;
     padding: 1rem;
     padding-top: 0;
+}
+
+.butterfly-suggestion{
+    margin-bottom: -.8rem;
+}
+
+.butterfly-suggestion > div{
+    color: #317F59;
+    background-color: #d6eaf8;
+    display: inline;
+    padding: 0 1rem .2rem .1rem;
+    border-radius: 5px;
+
+    font-size: .8rem;
+    text-decoration: underline;
+    & img{
+        width: 1.5rem;
+        margin-top: -5px;
+    }
 }
 
 .name-price {

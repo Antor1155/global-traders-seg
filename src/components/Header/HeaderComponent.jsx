@@ -68,7 +68,7 @@ const HeaderComponent = () => {
 
       <nav ref={navEle}>
         <Link to="preowned">PRE-OWNED</Link>
-        <Link to="refubrished">REFUBRISHED</Link>
+        <Link to="refubrished">REFURBISHED</Link>
         <Link to="wholesale">WHOLESALE</Link>
         <Link to="resources">RESOURCES</Link>
         <Link to="contactus">CONTACT US</Link>
