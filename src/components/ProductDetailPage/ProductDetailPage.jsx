@@ -4,7 +4,13 @@ import axiosInstance from '../../utilities/axiosInstance';
 import "./ProductDetailPage.css";
 
 import eyes from "../../assets/eyes.svg";
-import stars from "../../assets/stars.svg"
+import stars from "../../assets/stars.svg";
+import fullStars from "../../assets/fullStar.svg";
+import halfStars from "../../assets/halfStar.svg";
+import klarna from "../../assets/klarna.svg";
+import unlocked from "../../assets/unlocked.svg";
+
+
 
 const ProductDetailPage = () => {
     const { parentId, productId } = useParams()
@@ -27,7 +33,7 @@ const ProductDetailPage = () => {
     const selectedButton = {
         fontWeight: "normal",
         backgroundColor: "#259ff620"
-    } 
+    }
 
     useEffect(() => {
         axiosInstance.get(`/allSameParentProducts/${parentId}`)
@@ -76,20 +82,20 @@ const ProductDetailPage = () => {
     }, [])
 
     // this function to find proudct when select new option 
-    const handleFilterButtonClick = (option, value) =>{
+    const handleFilterButtonClick = (option, value) => {
         let color = selectedColor
         let condition = selectedCondition
         let storage = selectedStorage
 
-        if(option == "condition"){
+        if (option == "condition") {
             setSelectedCondition(value);
             condition = value
         }
-        else if(option == "color"){   
+        else if (option == "color") {
             setSelectedColor(value);
             color = value
         }
-        else if(option == "storage"){
+        else if (option == "storage") {
             setSelectedStorage(value)
             storage = value
         }
@@ -108,7 +114,7 @@ const ProductDetailPage = () => {
         setSelectedCondition(lowestPrice?.condition)
     }
 
-    const handleClickMostPopular = () =>{
+    const handleClickMostPopular = () => {
         setProduct(mostPopular)
         setSelectedColor(mostPopular?.color)
         setSelectedStorage(mostPopular?.storage)
@@ -136,21 +142,54 @@ const ProductDetailPage = () => {
                         </p>
                     </div>
 
+                    <div className='add-to-cart'>
+                        <div className="sub-text">
+                            <div>
+                                <img src={fullStars} alt='full starts'></img>
+                                <img src={fullStars} alt='full starts'></img>
+                                <img src={fullStars} alt='full starts'></img>
+                                <img src={fullStars} alt='full starts'></img>
+                                <img src={halfStars} alt='half starts'></img>
+
+                                <p>4.4/5</p>
+                                <p className='underline'>(122 reviews)</p>
+                            </div>
+
+                            <div>
+                                <img src={klarna} alt='klarna image'></img>
+                                <p>Pay over time</p>
+                                <p>with Klarna</p>
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <button
+                                className='cart'
+                                onClick={() => { }}
+                            >
+                                Add to cart
+                            </button>
+
+                            <img src={unlocked} alt="unlocked image" />
+                        </div>
+                    </div>
+
                     <div className='filter-button-container'>
                         <p>Best picks</p>
                         <div className='filter-buttons best-picks'>
-                            <button 
-                            onClick={handleClickLowestPrice}
-                            style={product == lowestPrice ? selectedButton : {}}
+                            <button
+                                onClick={handleClickLowestPrice}
+                                style={product == lowestPrice ? selectedButton : {}}
                             >
                                 <img src={eyes}></img>
                                 Lowest price <br></br>
                                 ${lowestPrice?.price}
                             </button>
 
-                            <button 
-                            onClick={handleClickMostPopular}
-                            style={product == mostPopular ? selectedButton : {}}
+                            <button
+                                onClick={handleClickMostPopular}
+                                style={product == mostPopular ? selectedButton : {}}
                             >
                                 <img src={stars}></img>
                                 Most popular <br></br>
@@ -165,8 +204,8 @@ const ProductDetailPage = () => {
                             {availableConditions.map(condition => (
                                 <button
                                     key={condition}
-                                    style={selectedCondition === condition ? selectedButton: {}}
-                                    onClick={() => {handleFilterButtonClick("condition", condition) }}
+                                    style={selectedCondition === condition ? selectedButton : {}}
+                                    onClick={() => { handleFilterButtonClick("condition", condition) }}
                                 >
                                     {condition}
                                 </button>
@@ -181,7 +220,7 @@ const ProductDetailPage = () => {
                                 <button
                                     key={storage}
                                     style={selectedStorage === storage ? selectedButton : {}}
-                                    onClick={() => {handleFilterButtonClick("storage", storage)}}
+                                    onClick={() => { handleFilterButtonClick("storage", storage) }}
                                 >
                                     {storage}
                                 </button>
@@ -197,7 +236,7 @@ const ProductDetailPage = () => {
                                     className='color'
                                     key={color}
                                     style={selectedColor?.name === color?.name ? selectedButton : {}}
-                                    onClick={() => {handleFilterButtonClick("color", color)}}
+                                    onClick={() => { handleFilterButtonClick("color", color) }}
                                 >
                                     <div style={{ backgroundColor: color?.value }}></div>
                                     {color.name}
