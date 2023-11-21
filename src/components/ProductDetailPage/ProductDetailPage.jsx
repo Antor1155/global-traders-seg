@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axiosInstance from '../../utilities/axiosInstance';
 import "./ProductDetailPage.css";
@@ -9,6 +9,7 @@ import fullStars from "../../assets/fullStar.svg";
 import halfStars from "../../assets/halfStar.svg";
 import klarna from "../../assets/klarna.svg";
 import unlocked from "../../assets/unlocked.svg";
+import { CartContext } from '../../App';
 
 
 
@@ -29,6 +30,11 @@ const ProductDetailPage = () => {
     const [availableColors, setAvailableColors] = useState([])
     const [availableStorages, setAvailableStorages] = useState([])
 
+    // cart and set to cart 
+    const { cart, setCart } = useContext(CartContext)
+    const handleAddToCart = () => {
+        setCart(prev => [...prev, product?._id])
+    }
     // style selected button 
     const selectedButton = {
         fontWeight: "normal",
@@ -166,7 +172,7 @@ const ProductDetailPage = () => {
 
                         <div className='cart-div'>
                             <button
-                                onClick={() => { }}
+                                onClick={handleAddToCart}
                             >
                                 Add to cart
                             </button>
