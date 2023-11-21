@@ -69,15 +69,16 @@
     margin-bottom: -.8rem;
 }
 
-.butterfly-suggestion > div{
+.butterfly-suggestion > a{
     color: #317F59;
     background-color: #d6eaf8;
-    display: inline;
+    display: inline-block;
     padding: 0 1rem .2rem .1rem;
     border-radius: 5px;
 
     font-size: .8rem;
     text-decoration: underline;
+
     & img{
         width: 1.5rem;
         margin-top: -5px;
@@ -247,6 +248,9 @@
     }
 }
 
-.filter-buttons.best-picks {
+.filter-buttons.lowest-and-best {
     grid-template-columns: 1fr 1fr;
+}
+.filter-buttons .best-pick {
+    color: #0094ff;
 }

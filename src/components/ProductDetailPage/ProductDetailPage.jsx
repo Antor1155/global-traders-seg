@@ -181,13 +181,13 @@ const ProductDetailPage = () => {
                 <div className='options'>
 
                     <div className='butterfly-suggestion'>
-                        <div>
-                            <Link to="#why-better">
+                        <Link to="#why-better">
                                 <img src={animatedButterfly} alt="animated butterfly" />
-                            </Link>
-                            <span>Better than new</span>
-                        </div>
+
+                                <span>Better than new</span>
+                        </Link>
                     </div>
+
                     <div className='name-price'>
                         <h1>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}
                         </h1>
@@ -263,7 +263,7 @@ const ProductDetailPage = () => {
 
                     <div className='filter-button-container'>
                         <p>Best picks</p>
-                        <div className='filter-buttons best-picks'>
+                        <div className='filter-buttons lowest-and-best'>
                             <button
                                 onClick={handleClickLowestPrice}
                                 style={product == lowestPrice ? selectedButton : {}}
@@ -274,6 +274,7 @@ const ProductDetailPage = () => {
                             </button>
 
                             <button
+                                className='best-pick'
                                 onClick={handleClickMostPopular}
                                 style={product == mostPopular ? selectedButton : {}}
                             >
@@ -339,7 +340,7 @@ const ProductDetailPage = () => {
             </div>
 
             <div className='advices' id='why-better'>
-                this is the advice part
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam possimus officiis quaerat assumenda id dolore ut explicabo reiciendis pariatur, nulla libero dolores quis optio expedita, repudiandae commodi illum quae, rerum exercitationem praesentium. Molestiae aliquid deleniti, veniam molestias incidunt commodi eaque libero aliquam ab tempora sed excepturi, illo quibusdam facere quia.
             </div>
         </section>
     );
