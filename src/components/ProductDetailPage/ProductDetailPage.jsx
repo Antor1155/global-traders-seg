@@ -199,7 +199,7 @@ const ProductDetailPage = () => {
                         <div>
                             <img src={delivery} alt="delivery" />
                             <div>
-                               <p>Free delivery by {getFutureDate(5)} - {getFutureDate(7)}</p> 
+                               <p className='semi-bold'>Free delivery by {getFutureDate(5)} - {getFutureDate(7)}</p> 
                                <p className='small'>Express delivery by {getFutureDate(1)} - {getFutureDate(2)} from $30</p>
                             </div>
                         </div>
@@ -207,7 +207,7 @@ const ProductDetailPage = () => {
                         <div>
                             <img src={unlocked} alt="unlocked image" />
                             <div>
-                                <p>Works with all carriers</p>
+                                <p className='semi-bold'>Works with all carriers</p>
                                 <p className='underline small'>Learn about unlocked phones</p>
                             </div>
                         </div>
@@ -220,7 +220,7 @@ const ProductDetailPage = () => {
                         </div>
 
                         <div>
-                            <img src={rRate} alt="verified rating" />
+                            <img src={rRate} className='r-rate' alt="verified rating" />
                             <div>
                                 <p className='underline'>Verified refubrished in the US</p>
                             </div>

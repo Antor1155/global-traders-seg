@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 1rem;
     & h1{
         width: 65%;
         margin: 0;
@@ -94,6 +95,43 @@
     }
 }
 
+.devlivery-and-data{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: .7rem;
+    gap: .5rem;
+
+    padding-bottom: 1rem;
+    border-bottom: .5px solid rgb(38, 36, 36);
+    margin-bottom: .5rem;
+}
+
+.devlivery-and-data>div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+
+    & p{
+        margin: 0;
+
+        &.semi-bold{
+            font-weight: bolder;
+        }
+    }
+
+    & img{
+        width: 2.5rem;
+        background-color: #E2EEF7;
+        padding: .5rem;
+        border-radius: 5px;
+
+        &.r-rate{
+            padding: 0;
+        }
+    }
+
+}
 
 .filter-button-container{
     
