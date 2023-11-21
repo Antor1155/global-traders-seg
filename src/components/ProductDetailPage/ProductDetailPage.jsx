@@ -145,11 +145,13 @@ const ProductDetailPage = () => {
                     <div className='add-to-cart'>
                         <div className="sub-text">
                             <div>
-                                <img src={fullStars} alt='full starts'></img>
-                                <img src={fullStars} alt='full starts'></img>
-                                <img src={fullStars} alt='full starts'></img>
-                                <img src={fullStars} alt='full starts'></img>
-                                <img src={halfStars} alt='half starts'></img>
+                                <div>
+                                    <img className='star' src={fullStars} alt='full starts'></img>
+                                    <img className='star' src={fullStars} alt='full starts'></img>
+                                    <img className='star' src={fullStars} alt='full starts'></img>
+                                    <img className='star' src={fullStars} alt='full starts'></img>
+                                    <img className='star' src={halfStars} alt='half starts'></img>
+                                </div>
 
                                 <p>4.4/5</p>
                                 <p className='underline'>(122 reviews)</p>
@@ -158,14 +160,12 @@ const ProductDetailPage = () => {
                             <div>
                                 <img src={klarna} alt='klarna image'></img>
                                 <p>Pay over time</p>
-                                <p>with Klarna</p>
+                                <p className='underline'>with Klarna</p>
                             </div>
                         </div>
 
-                        <div>
-
+                        <div className='cart-div'>
                             <button
-                                className='cart'
                                 onClick={() => { }}
                             >
                                 Add to cart
