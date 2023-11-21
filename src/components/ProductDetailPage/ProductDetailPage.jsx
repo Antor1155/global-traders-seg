@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axiosInstance from '../../utilities/axiosInstance';
 import "./ProductDetailPage.css";
+import { CartContext } from '../../App';
 
 import eyes from "../../assets/eyes.svg";
 import stars from "../../assets/stars.svg";
@@ -9,7 +10,10 @@ import fullStars from "../../assets/fullStar.svg";
 import halfStars from "../../assets/halfStar.svg";
 import klarna from "../../assets/klarna.svg";
 import unlocked from "../../assets/unlocked.svg";
-import { CartContext } from '../../App';
+import delivery from "../../assets/delivery.svg";
+import shield from "../../assets/shield.svg";
+import rRate from "../../assets/r-rate.svg";
+
 
 
 
@@ -127,9 +131,19 @@ const ProductDetailPage = () => {
         setSelectedCondition(mostPopular?.condition)
     }
 
-    // console.log(availableColors, availableConditions, availableStorages)
-    // console.log(product)
-    // console.log(selectedColor, selectedCondition, selectedStorage)
+    function getFutureDate(daysToAdd){
+        const today = new Date()
+        const futureDate = new Date(today)
+
+        futureDate.setDate(today.getDate() + daysToAdd)
+
+        const options = {month: "short", day: "numeric"}
+        const formattedDate = futureDate.toLocaleDateString('en-US', options);
+
+        console.log(today, "/n", futureDate, formattedDate)
+
+        return formattedDate
+    }
 
     return (
         <section>
@@ -178,6 +192,38 @@ const ProductDetailPage = () => {
                             </button>
 
                             <img src={unlocked} alt="unlocked image" />
+                        </div>
+                    </div>
+
+                    <div className='devlivery-and-data'>
+                        <div>
+                            <img src={delivery} alt="delivery" />
+                            <div>
+                               <p>Free delivery by {getFutureDate(5)} - {getFutureDate(7)}</p> 
+                               <p className='small'>Express delivery by {getFutureDate(1)} - {getFutureDate(2)} from $30</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src={unlocked} alt="unlocked image" />
+                            <div>
+                                <p>Works with all carriers</p>
+                                <p className='underline small'>Learn about unlocked phones</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src={shield} alt="shield image" />
+                            <div>
+                                <p className='underline'>free 30-day returns <br />1-year warranty</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src={rRate} alt="verified rating" />
+                            <div>
+                                <p className='underline'>Verified refubrished in the US</p>
+                            </div>
                         </div>
                     </div>
 
