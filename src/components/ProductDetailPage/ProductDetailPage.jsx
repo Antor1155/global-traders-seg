@@ -23,6 +23,7 @@ import applePay from "../../assets/applePay.svg";
 import paypal from "../../assets/paypal.svg";
 import discover from "../../assets/discover.svg";
 import happyCustomers from "../../assets/happyCustomers.svg";
+import OfferProducts from '../OfferProducts/OfferProducts';
 
 
 
@@ -392,6 +393,10 @@ const ProductDetailPage = () => {
                     </div>
 
                 </div>
+            </div>
+
+            <div className='offer-products'>
+                    <OfferProducts></OfferProducts>
             </div>
 
             <div className='advices' id='why-better'>

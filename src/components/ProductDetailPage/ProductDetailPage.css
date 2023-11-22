@@ -336,3 +336,13 @@ p.small-font{
     justify-content: space-between;
     align-items: center;
 }
+
+.offer-container{
+    margin-top: 3rem;
+}
+
+.offer-products{
+    & h2{
+        margin-left: 5%;
+    }
+}
