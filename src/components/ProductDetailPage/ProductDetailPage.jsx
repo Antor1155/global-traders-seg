@@ -344,7 +344,21 @@ const ProductDetailPage = () => {
                             <img src={delivery} alt="love svg" />
                             Fast delivery
                         </span>
+                    </div>
 
+                    <div className='info-buttons'>
+                        <button>
+                            <span>Technical specification</span>
+                            <span>{">"}</span>
+                        </button>
+                        <button>
+                            <span>Perks & benefits included</span>
+                            <span>{">"}</span>
+                        </button>
+                        <button>
+                            <span>Frequently asked questions</span>
+                            <span>{">"}</span>
+                        </button>
                     </div>
 
                     <div className='' style={{ height: "200vh" }}>
