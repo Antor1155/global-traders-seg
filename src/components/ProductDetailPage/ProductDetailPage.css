@@ -72,7 +72,7 @@
 
 .butterfly-suggestion>a {
     color: #317F59;
-    background-color: #d6eaf8;
+    background-color: #E1F3F3;
     display: inline-block;
     padding: 0 1rem .2rem .1rem;
     border-radius: 5px;
@@ -296,4 +296,43 @@
             background-color: white;
         }
     }
+}
+
+
+.customer-and-payment-info{
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #E2EEF7;
+
+    & p{
+        font-size: .9rem;
+        margin: 0;
+    }
+}
+
+p.small-font{
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.quality-assurance{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    & img{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    & a{
+        text-decoration: underline rgb(110, 110, 110);
+    }
+}
+
+.payment-accepts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

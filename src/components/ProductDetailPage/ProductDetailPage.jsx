@@ -16,6 +16,13 @@ import shield from "../../assets/shield.svg";
 import rRate from "../../assets/r-rate.svg";
 import animatedButterfly from "../../assets/animated-butterfly.svg";
 import love from "../../assets/love.svg";
+import visa from "../../assets/visa.svg";
+import master from "../../assets/master.svg";
+import americanExpress from "../../assets/americanExpress.svg";
+import applePay from "../../assets/applePay.svg";
+import paypal from "../../assets/paypal.svg";
+import discover from "../../assets/discover.svg";
+import happyCustomers from "../../assets/happyCustomers.svg";
 
 
 
@@ -183,9 +190,9 @@ const ProductDetailPage = () => {
 
                     <div className='butterfly-suggestion'>
                         <Link to="#why-better">
-                                <img src={animatedButterfly} alt="animated butterfly" />
+                            <img src={animatedButterfly} alt="animated butterfly" />
 
-                                <span>Better than new</span>
+                            <span>Better than new</span>
                         </Link>
                     </div>
 
@@ -361,8 +368,27 @@ const ProductDetailPage = () => {
                         </button>
                     </div>
 
-                    <div className='' style={{ height: "200vh" }}>
+                    <div className='customer-and-payment-info'>
+                        <div className='quality-assurance'>
+                            <img src={happyCustomers} alt="happyCustomers icon" />
+                            <div>
+                                <p>Quality checked and sold by <Link to={"/"}>Global traders</Link></p>
+                                <p className='small-font'>Trusted seller and optimzie customer satisfaction</p>
+                            </div>
+                        </div>
 
+                        <div className='payment-accepts'>
+                            <p className='small-font'>Accepts</p>
+                            <div>
+                                <img src={visa} alt="visa card" />
+                                <img src={master} alt="master card" />
+                                <img src={discover} alt="discover card" />
+                                <img src={americanExpress} alt="americalExpress card" />
+                                <img src={paypal} alt="paypal card" />
+                                <img src={applePay} alt="applePay card" />
+                                <img src={klarna} alt="klarna card" />
+                            </div>
+                        </div>
                     </div>
 
                 </div>
