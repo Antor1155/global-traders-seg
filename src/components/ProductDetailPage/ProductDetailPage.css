@@ -254,3 +254,23 @@
 .filter-buttons .best-pick {
     color: #0094ff;
 }
+
+.comes-with{
+    & p{
+        margin-bottom: .3rem;
+    }
+    & span{
+        display: inline-block;
+        background-color: #ddddda;
+        padding: 5px 1rem;
+        font-size: .8rem;
+        font-weight: 300;
+        border-radius: 1rem;
+        margin-right: 1rem;
+
+        & img{
+            width: 1.2rem;
+            margin-right: .5rem;
+        }
+    }
+}

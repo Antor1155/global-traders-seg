@@ -15,6 +15,7 @@ import delivery from "../../assets/delivery.svg";
 import shield from "../../assets/shield.svg";
 import rRate from "../../assets/r-rate.svg";
 import animatedButterfly from "../../assets/animated-butterfly.svg";
+import love from "../../assets/love.svg";
 
 
 
@@ -330,6 +331,20 @@ const ProductDetailPage = () => {
                                 </button>
                             ))}
                         </div>
+                    </div>
+
+                    <div className='comes-with'>
+                        <p>Comes with</p>
+
+                        <span>
+                            <img src={love} alt="love svg" />
+                            Good Karma
+                        </span>
+                        <span>
+                            <img src={delivery} alt="love svg" />
+                            Fast delivery
+                        </span>
+
                     </div>
 
                     <div className='' style={{ height: "200vh" }}>
