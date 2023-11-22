@@ -50,7 +50,9 @@ const ProductDetailPage = () => {
     // cart and set to cart 
     const { cart, setCart } = useContext(CartContext)
     const handleAddToCart = () => {
-        setCart(prev => [...prev, product?._id])
+        if(product?.storage){
+            setCart(prev => [...prev, product?._id])
+        }
     }
     // style selected button 
     const selectedButton = {
