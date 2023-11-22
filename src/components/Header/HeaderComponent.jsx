@@ -44,7 +44,7 @@ const HeaderComponent = () => {
         </div>
 
         <div className='cart-and-account'>
-          <span className='cart-amount'>{cart?.length}</span>
+          {cart?.length ? <span className='cart-amount'>{cart?.length}</span>: ""}
 
           <Link to="/cart"> Cart</Link>
           <Link to="/myaccount"> My Account</Link>
