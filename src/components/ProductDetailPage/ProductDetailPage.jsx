@@ -158,6 +158,22 @@ const ProductDetailPage = () => {
 
     return (
         <section className='singleProductPage'>
+
+            <div id='top-add-to-cart'>
+                <h1>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}</h1>
+
+                <div className='top-cart-info'>
+                    <p>
+                        <span>special price: </span>${product?.price}
+                    </p>
+                    <button
+                        onClick={handleAddToCart}
+                    >
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+
             <nav className='breadcrumb'>
                 <span>
                     <Link to="/">Home</Link>
@@ -396,7 +412,7 @@ const ProductDetailPage = () => {
             </div>
 
             <div className='offer-products'>
-                    <OfferProducts></OfferProducts>
+                <OfferProducts></OfferProducts>
             </div>
 
             <div className='advices' id='why-better'>

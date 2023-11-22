@@ -1,6 +1,53 @@
-.singleProductPage {
+section.singleProductPage {
     max-width: 1080px;
     margin: auto;
+    position: static;
+    overflow: hidden;
+}
+
+#top-add-to-cart{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    background-color: white;
+
+    & h1 {
+        font-size: 1.5rem;
+        font-family: serif;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+.top-cart-info{
+    display: flex;
+    align-items: center;
+    
+    & p{
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    & span{
+        font-size: 1rem;
+        margin-right: .5rem;
+    }
+
+    & button{
+        padding: .5rem 2.5rem;
+        margin-left: 1rem;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+    }
 }
 
 .breadcrumb {
