@@ -9,6 +9,8 @@
     border-radius: 1rem;
     position: relative;
     transition: box-shadow .5s;
+
+    width: fit-content;
 }
 
 .single-product:hover{
