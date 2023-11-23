@@ -194,7 +194,7 @@ const ProductDetailPage = () => {
 
                 <div className='top-cart-info'>
                     <p>
-                        <span>special price: </span>${product?.price}
+                        <span>Special price: </span>${product?.price}
                     </p>
                     <button
                         onClick={handleAddToCart}
@@ -247,7 +247,7 @@ const ProductDetailPage = () => {
                         <h1>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}
                         </h1>
                         <p>
-                            <span>special price: </span>${product?.price}
+                            <span>Special price: </span>${product?.price}
                         </p>
                     </div>
 
@@ -263,7 +263,7 @@ const ProductDetailPage = () => {
                                 </div>
 
                                 <p>4.4/5</p>
-                                <p className='underline'>(122 reviews)</p>
+                                <p className='underline'>( {product?.condition} )</p>
                             </div>
 
                             <div>

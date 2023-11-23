@@ -404,6 +404,6 @@ p.small-font{
 
 .offer-products{
     & h2{
-        margin-left: 5%;
+        margin-left: 0;
     }
 }

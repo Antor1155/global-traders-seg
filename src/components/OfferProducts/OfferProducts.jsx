@@ -7,10 +7,10 @@ const OfferProducts = () => {
     const [nProducts, setNproducts] = useState([])
 
     useEffect(() => {
-        axiosInstance.post(`products/${3}/${0}`, { productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
+        axiosInstance.post(`products/${4}/${0}`, { productName: [], condition: ["Excellent"], storage: [], color: [], price: [0, 1500] })
             .then(res => {
                 if (res.data.length) {
-                    setNproducts(prev => [...prev, ...res.data])
+                    setNproducts(prev => [...res.data])
 
                 } else {
 
