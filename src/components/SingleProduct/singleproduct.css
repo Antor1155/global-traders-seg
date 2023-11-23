@@ -8,6 +8,7 @@
     padding-bottom: 1.5rem;
     border-radius: 1rem;
     position: relative;
+    box-shadow: 2px 4px rgba(0,0, 0, 0.05);
     transition: box-shadow .5s;
 
     width: fit-content;
