@@ -31,16 +31,19 @@ const SingleProduct = ({ product }) => {
       <img src="/logos/apple.png" alt='product company ' />
 
       <div className="productDesc">
-        <p>{productName}</p>
-        <p> <span>{storage}</span><span>{color.name}</span></p>
-        <span>{condition}</span>
-        <p>${price}</p>
+        <p>{productName} {description}</p>
+        <p><span>{storage}</span> | <span>{color.name}</span> | <span>{condition}</span></p>
+
+        <p><span>Warrenty : 12 months</span></p>
+
+        <p><span>Special Price : </span></p>
+        <p className="price">${price}</p>
       </div>
       {/* <span>{price}$</span> */}
 
       <div className="buttons">
-        <button onClick={handleAddCart}> ADD TO CART</button>
-        <button> BUY NOW </button>
+        <button className="buy-button"> CHECK IT </button>
+        <button onClick={handleAddCart} className="cart-button"> ADD TO CART</button>
       </div>
     </div>
   )
