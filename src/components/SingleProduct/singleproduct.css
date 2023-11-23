@@ -80,7 +80,7 @@
     border: 1px solid rgba(253, 117, 38, 0.1);
     background-color: rgba(253, 117, 38, 0.1);
     color: rgba(242, 110, 33, 1);
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .single-product button.cart-button{
