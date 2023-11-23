@@ -10,7 +10,7 @@ const Preowned = () => {
 
     const [nProducts, setNproducts] = useState([])
     const [moreProductsInDb, setMoreProductsInDb] = useState(true)
-    const prodcutsReq = 8
+    const prodcutsReq = 12
     const productSkip = useRef(0)
 
     const [productsName, setProductsName] = useState([])
@@ -73,7 +73,7 @@ const Preowned = () => {
     };
 
     // when slider stops , request the data based on query 
-    const handleSliderRelease = () =>{
+    const handleSliderRelease = () => {
         setSliderMoving(false)
 
         setNproducts([])
@@ -228,11 +228,11 @@ const Preowned = () => {
                         return <SingleProduct key={product._id} product={product}></SingleProduct>
                     })}
 
+                    <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false : true}> See More</button>
                 </div>
-
             </section>
 
-            <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false : true}> See More</button>
+
 
         </main>
     );

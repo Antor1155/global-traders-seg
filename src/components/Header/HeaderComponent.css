@@ -1,5 +1,5 @@
 header{
-    background: #E5E4E2;
+    background: #F9F9F7;
     position: sticky;
     top: 0;
     z-index: 9;
@@ -30,27 +30,34 @@ header{
     position: relative;
 }
 
+.product-search input {
+    background: white;
+    width: 450px;
+    height: 2rem;
+    padding: 9px;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding-left: 5px;
+    border: 1px solid #3E3E3B;
+}
 
 .product-search button{
     position: absolute;
-    top: 8px;
-    right: 15px;
+    /* top: 8px; */
+    top: 0;
+    right: 0;
     background-color: transparent;
+    display: inline-block;
+    height: 1rem;
+    width: 3rem;
+
 }
 
-.product-search svg{
+/* .product-search svg{
     color: red;
-}
+    border: 2px solid;
+} */
 
-.product-search input {
-    background: white;
-    width: 350px;
-    padding: 9px;
-    font-size: 17px;
-    border-radius: 4px;
-    padding-left: 5px;
-    border: none;
-}
 
 .mobile-product-search{
     display: none;
