@@ -13,9 +13,11 @@
     }
 }
 
-.preowned {
+.pre-products {
     grid-column: 2/ 5;
+}
 
+.preowned {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -52,8 +54,4 @@
 .filter-options {
     height: 250px;
     overflow-y: scroll;
-}
-
-.see-more{
-    align-self: self-end;
 }

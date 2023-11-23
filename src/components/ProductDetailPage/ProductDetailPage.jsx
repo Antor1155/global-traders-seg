@@ -239,7 +239,7 @@ const ProductDetailPage = () => {
                         <Link to="#why-better">
                             <img src={animatedButterfly} alt="animated butterfly" />
 
-                            <span>Better than new</span>
+                            <span>Our vision</span>
                         </Link>
                     </div>
 

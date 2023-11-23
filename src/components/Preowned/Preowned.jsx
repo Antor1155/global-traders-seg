@@ -223,13 +223,16 @@ const Preowned = () => {
 
                 </div>
 
-                <div className='preowned'>
-                    {nProducts && nProducts.map(product => {
-                        return <SingleProduct key={product._id} product={product}></SingleProduct>
-                    })}
+                <div className="pre-products">
+                    <div className='preowned'>
+                        {nProducts && nProducts.map(product => {
+                            return <SingleProduct key={product._id} product={product}></SingleProduct>
+                        })}
 
+                    </div>
                     <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false : true}> See More</button>
                 </div>
+
             </section>
 
 
