@@ -11,7 +11,7 @@ const LeftSlider = ({handleHideButton}) => {
             onClick={(event)=>{event.stopPropagation()}}
             >
                 <div className='toggle-title'>
-                    <h2>Our best warrenty</h2>
+                    <h2>Technical specifications</h2>
                     <button
                         onClick={handleHideButton}
                     >

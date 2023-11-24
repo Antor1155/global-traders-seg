@@ -68,7 +68,7 @@ section.singleProductPage {
     display: block;
     padding: 1rem;
     padding-left: 10%;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 
     & span {
         color: rgb(108, 104, 104);
@@ -151,7 +151,7 @@ section.singleProductPage {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
 
     font-family: serif;
 
@@ -239,14 +239,12 @@ section.singleProductPage {
 
     padding-bottom: 1rem;
     border-bottom: .5px solid rgb(38, 36, 36);
-    margin-bottom: .5rem;
 }
 
 .devlivery-and-data>div {
     display: flex;
     align-items: center;
     gap: 8px;
-
 
     & p {
         margin: 0;
