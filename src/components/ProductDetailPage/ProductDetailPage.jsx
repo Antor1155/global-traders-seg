@@ -25,6 +25,7 @@ import discover from "../../assets/discover.svg";
 import happyCustomers from "../../assets/happyCustomers.svg";
 import OfferProducts from '../OfferProducts/OfferProducts';
 import { Handshake } from '@mui/icons-material';
+import LeftSlider from './LeftSlider/LeftSlider';
 
 
 
@@ -500,6 +501,8 @@ const ProductDetailPage = () => {
                     </div>
                 </div>
             </div>
+
+            <LeftSlider></LeftSlider>
         </section>
     );
 };
