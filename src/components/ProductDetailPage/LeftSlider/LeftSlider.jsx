@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./LeftSlider.css"
 
 const LeftSlider = () => {
-    return (
-        <div id='left-slider'>
 
-            <div className='hide-show-toggle'>
+    const handleHideButton = (event) => {
+        event.stopPropagation()
+        console.log("button clicked")
+        document.getElementById("hide-show-toggle").classList.toggle("hidden")
+
+        setTimeout(() => {
+            document.getElementById("left-slider").classList.toggle("hidden")
+        }, 500);
+    }
+
+    useEffect(() => {
+
+    }, [])
+
+    return (
+        <div id='left-slider' className='' onClick={handleHideButton}>
+
+            <div id='hide-show-toggle' className=''
+            onClick={(event)=>{event.stopPropagation()}}
+            >
                 <div className='toggle-title'>
                     <h2>Our best warrenty</h2>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <button
+                        onClick={handleHideButton}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
                             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                         </svg>
                     </button>

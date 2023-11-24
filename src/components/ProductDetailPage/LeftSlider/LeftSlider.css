@@ -13,17 +13,30 @@
     display: flex;
     justify-content: flex-end;
 
+    transition: opacity .2s;
+
     & p{
         margin: 0;
     }
+
+    &.hidden{
+        opacity: 0;
+        pointer-events: none;
+    }
 }   
 
-.hide-show-toggle{
+#hide-show-toggle{
     width: 25vw;
     height: fit-content;
     border-top-left-radius: 1rem;
     background-color: whitesmoke;
 
+    transition: transform .5s;
+
+    &.hidden{
+        position: relative;
+        transform: translateX(100%);
+    }
 }
 
 .toggle-title{
