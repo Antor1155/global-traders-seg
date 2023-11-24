@@ -62,7 +62,6 @@ const ProductDetailPage = () => {
         backgroundColor: "#259ff620"
     }
 
-
     // using scroll direction 
     const handleScroll = (event) => {
         const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail || -event.deltaY)));
@@ -183,6 +182,17 @@ const ProductDetailPage = () => {
         console.log(today, "/n", futureDate, formattedDate)
 
         return formattedDate
+    }
+
+
+    // handle notification hide and show button 
+    const handleHideButton = (event) => {
+        event.stopPropagation()
+        console.log("button clicked")
+        document.getElementById("hide-show-toggle").classList.toggle("hidden")
+
+        document.getElementById("left-slider").classList.toggle("hidden")
+
     }
 
     return (
@@ -403,7 +413,7 @@ const ProductDetailPage = () => {
                     </div>
 
                     <div className='info-buttons'>
-                        <button>
+                        <button onClick={handleHideButton}>
                             <span>Technical specification</span>
                             <span>{">"}</span>
                         </button>
@@ -446,7 +456,7 @@ const ProductDetailPage = () => {
             <div className='offer-products'>
                 <OfferProducts></OfferProducts>
             </div>
-            
+
             <div className='advices' id='why-better'>
                 <h3>Our vison</h3>
                 <div>
@@ -502,7 +512,7 @@ const ProductDetailPage = () => {
                 </div>
             </div>
 
-            <LeftSlider></LeftSlider>
+            <LeftSlider handleHideButton={handleHideButton}></LeftSlider>
         </section>
     );
 };

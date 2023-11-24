@@ -1,26 +1,13 @@
 import React, { useEffect } from 'react';
 import "./LeftSlider.css"
 
-const LeftSlider = () => {
+const LeftSlider = ({handleHideButton}) => {
 
-    const handleHideButton = (event) => {
-        event.stopPropagation()
-        console.log("button clicked")
-        document.getElementById("hide-show-toggle").classList.toggle("hidden")
-
-        setTimeout(() => {
-            document.getElementById("left-slider").classList.toggle("hidden")
-        }, 500);
-    }
-
-    useEffect(() => {
-
-    }, [])
 
     return (
-        <div id='left-slider' className='' onClick={handleHideButton}>
+        <div id='left-slider' className='hidden' onClick={handleHideButton}>
 
-            <div id='hide-show-toggle' className=''
+            <div id='hide-show-toggle' className='hidden'
             onClick={(event)=>{event.stopPropagation()}}
             >
                 <div className='toggle-title'>
