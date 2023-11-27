@@ -10,7 +10,7 @@ const UnlockedPhones = () => {
 
             <p>Locked phones are connected to a specific carrier. A software-level lock on the device, often called firmware, prevents the user from using the phone with another carrier.</p>
 
-            <h3>What are unlocked phones?</h3>
+            <h2>What are unlocked phones?</h2>
 
             <p>If you have an unlocked phone, you can connect to any carrier in the US and be able to switch carriers in the future.</p>
         </>

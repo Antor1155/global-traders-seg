@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import "./LeftSlider.css";
 import UnlockedPhones from './InfoPages/UnlockedPhones';
+import Warranty from './InfoPages/Warranty';
 
 
 const LeftSlider = ({handleHideButton, notifyTitle}) => {
@@ -24,7 +25,7 @@ const LeftSlider = ({handleHideButton, notifyTitle}) => {
 
                 <div className='toggle-info'>
                     {notifyTitle === "Unlocked phones" && <UnlockedPhones></UnlockedPhones>}
-                   
+                    {notifyTitle === "Warranty Policy" && <Warranty></Warranty>}
                 </div>
             </div>
 
