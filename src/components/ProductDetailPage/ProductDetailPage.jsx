@@ -49,6 +49,8 @@ const ProductDetailPage = () => {
 
     const [scrollingDown, setScrollignDown] = useState(false)
 
+    const [notifyTitle, setNotifyTitle] = useState("")
+
     // cart and set to cart 
     const { cart, setCart } = useContext(CartContext)
     const handleAddToCart = () => {
@@ -179,8 +181,6 @@ const ProductDetailPage = () => {
         const options = { month: "short", day: "numeric" }
         const formattedDate = futureDate.toLocaleDateString('en-US', options);
 
-        console.log(today, "/n", futureDate, formattedDate)
-
         return formattedDate
     }
 
@@ -275,13 +275,13 @@ const ProductDetailPage = () => {
                                 </div>
 
                                 <p>4.4/5</p>
-                                <p className='underline'>( {product?.condition} )</p>
+                                <p className='underline' style={{textDecoration:"none"}}>( {product?.condition} )</p>
                             </div>
 
                             <div>
                                 <img src={klarna} alt='klarna image'></img>
                                 <p>Pay over time</p>
-                                <p className='underline'>with Klarna</p>
+                                <p className='underline' style={{textDecoration:"none"}}>with Klarna</p>
                             </div>
                         </div>
 
@@ -309,21 +309,21 @@ const ProductDetailPage = () => {
                             <img src={unlocked} alt="unlocked image" />
                             <div>
                                 <p className='semi-bold'>Works with all carriers</p>
-                                <p className='underline small' onClick={handleHideButton}>Learn about unlocked phones</p>
+                                <p className='underline small' onClick={(e)=>{handleHideButton(e); setNotifyTitle("Unlocked phones")}}>Learn about unlocked phones</p>
                             </div>
                         </div>
 
                         <div>
                             <img src={shield} alt="shield image" />
                             <div>
-                                <p className='underline' onClick={handleHideButton}>free 30-day returns <br />1-year warranty</p>
+                                <p className='underline' onClick={(e)=>{handleHideButton(e); setNotifyTitle("Warranty Policy")}}>free 30-days returns <br />30-days warranty</p>
                             </div>
                         </div>
 
                         <div>
                             <img src={rRate} className='r-rate' alt="verified rating" />
                             <div>
-                                <p className='underline'>Verified refubrished in the US</p>
+                                <p className='underline' style={{textDecoration:"none"}}>Verified refubrished in the US</p>
                             </div>
                         </div>
                     </div>
@@ -353,7 +353,7 @@ const ProductDetailPage = () => {
                     </div>
 
                     <div className='filter-button-container'>
-                        <p>Condition</p>
+                        <p className='condition-learn'>Condition  <span onClick={(e)=>{handleHideButton(e); setNotifyTitle("Conditions")}}>Learn more</span></p>
                         <div className='filter-buttons'>
                             {availableConditions.map(condition => (
                                 <button
@@ -413,15 +413,15 @@ const ProductDetailPage = () => {
                     </div>
 
                     <div className='info-buttons'>
-                        <button onClick={handleHideButton}>
+                        <button onClick={(e)=>{handleHideButton(e); setNotifyTitle("Technical specification")}}>
                             <span>Technical specification</span>
                             <span>{">"}</span>
                         </button>
-                        <button onClick={handleHideButton}>
+                        <button onClick={(e)=>{handleHideButton(e); setNotifyTitle("Perks & benefits")}}>
                             <span>Perks & benefits included</span>
                             <span>{">"}</span>
                         </button>
-                        <button onClick={handleHideButton}>
+                        <button onClick={(e)=>{handleHideButton(e); setNotifyTitle("Frequently asked questions")}}>
                             <span>Frequently asked questions</span>
                             <span>{">"}</span>
                         </button>
@@ -512,7 +512,7 @@ const ProductDetailPage = () => {
                 </div>
             </div>
 
-            <LeftSlider handleHideButton={handleHideButton}></LeftSlider>
+            <LeftSlider notifyTitle={notifyTitle} handleHideButton={handleHideButton}></LeftSlider>
         </section>
     );
 };

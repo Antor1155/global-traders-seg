@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import "./LeftSlider.css"
 
-const LeftSlider = ({handleHideButton}) => {
-
+const LeftSlider = ({handleHideButton, notifyTitle}) => {
+    console.log(notifyTitle)
 
     return (
         <div id='left-slider' className='hidden' onClick={handleHideButton}>
@@ -11,7 +11,7 @@ const LeftSlider = ({handleHideButton}) => {
             onClick={(event)=>{event.stopPropagation()}}
             >
                 <div className='toggle-title'>
-                    <h2>Title of the section</h2>
+                    <h2>{notifyTitle}</h2>
                     <button
                         onClick={handleHideButton}
                     >
@@ -34,6 +34,7 @@ const LeftSlider = ({handleHideButton}) => {
                     </p>
                 </div>
             </div>
+
         </div>
     );
 };

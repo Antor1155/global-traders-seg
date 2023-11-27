@@ -203,6 +203,7 @@ section.singleProductPage {
 .underline {
     font-weight: bold;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .cart-div {
@@ -314,6 +315,19 @@ section.singleProductPage {
 
 .filter-buttons .best-pick {
     color: #0094ff;
+}
+
+.condition-learn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & span{
+        text-decoration: underline;
+        font-size: .7rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
 }
 
 .comes-with {
