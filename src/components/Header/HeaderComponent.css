@@ -135,6 +135,7 @@ nav a:last-child{
     }
     .headerDiv{
         width: 100vw;
+        margin-bottom: 1rem;
     }
     .gtlogo{
         width: 80px;
@@ -142,6 +143,10 @@ nav a:last-child{
 
     .headerDiv a:not(.gtlogo){
         font-size: 10px;
+    }
+
+    .cart-amount{
+        display: none;
     }
 
     .product-search{
@@ -172,8 +177,10 @@ nav a:last-child{
     }
     .mobile-product-search button{
         position: absolute;
-        top: calc(2px + .5rem);
-        right: 20px;
+        top: calc(2px + .1rem);
+        right: 1rem;
+        background-color: transparent;
+        padding-right: 1rem;
     }
 
     nav{
