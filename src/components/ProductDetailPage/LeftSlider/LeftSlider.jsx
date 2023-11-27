@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import "./LeftSlider.css"
+import "./LeftSlider.css";
+import UnlockedPhones from './InfoPages/UnlockedPhones';
+
 
 const LeftSlider = ({handleHideButton, notifyTitle}) => {
-    console.log(notifyTitle)
 
     return (
         <div id='left-slider' className='hidden' onClick={handleHideButton}>
@@ -22,16 +23,8 @@ const LeftSlider = ({handleHideButton, notifyTitle}) => {
                 </div>
 
                 <div className='toggle-info'>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, ducimus natus! Autem itaque porro error laboriosam? Harum nobis omnis corrupti tempore tenetur possimus est modi laborum? Deserunt, modi asperiores optio laudantium nostrum iure fugit. Ratione reiciendis rem nulla ab, sapiente dolores nihil fuga non at quasi totam. Non nesciunt voluptatibus quam cum odio, 
-                        <br /><br />
-                        molestias exercitationem enim modi quod fugit praesentium necessitatibus repudiandae dignissimos sit, totam quis quisquam culpa ipsam, atque voluptas facere architecto? Facere ratione odio, aut error, recusandae quisquam inventore modi, libero quae distinctio nulla quod laboriosam saepe enim! Eaque sed, 
-                        
-                        <br /><br />
-                        magni molestias placeat veniam cumque atque labore, vel tempora facilis corporis voluptas quae reprehenderit possimus rem laudantium eligendi dolore obcaecati! Exercitationem inventore, molestiae soluta, reprehenderit distinctio deserunt itaque laboriosam nobis quidem eligendi dolorum repellat recusandae laborum quos impedit, sed facilis. Repellat, adipisci! Sint distinctio recusandae repudiandae qui voluptatem harum nulla voluptatibus nisi obcaecati praesentium dignissimos quibusdam totam ea minus deleniti, voluptatum
-                        <br /><br />
-                         rem sit sed aliquid repellat est nihil velit vero? Odio, molestiae dolorem? Quisquam quidem fugiat quae delectus, libero beatae modi in voluptates alias tempora minima veniam adipisci, quibusdam odio reiciendis animi dolores odit? Repellat odit iste, laudantium nam consequatur alias voluptates aut excepturi quibusdam in commodi quisquam harum laborum molestiae tenetur placeat facilis? Assumenda iure corrupti in quibusdam quam qui tenetur quo aliquid debitis culpa, unde voluptate quas perspiciatis quisquam dignissimos ab at consequatur non a repudiandae. Corrupti, vel quas? Laudantium, aut saepe dolorem possimus velit, in cum voluptatem perferendis mollitia, illo voluptatibus ea. Quasi, quod. Soluta ab possimus quibusdam tenetur a consectetur? Quae nostrum eligendi beatae perferendis dolorem ratione exercitationem laborum suscipit eveniet sint quia ipsum ipsa quas omnis doloribus natus illo facilis, rerum minima optio. Voluptatem repudiandae laborum ea nam labore velit consequuntur dolores? Voluptatem impedit provident quis minima unde nihil iusto maiores aliquid placeat repellat necessitatibus, aspernatur sed praesentium dignissimos ex ad alias sit cumque architecto id aliquam laboriosam error? Alias qui hic debitis velit consectetur libero odit facilis, quidem praesentium quae dolore nobis autem culpa expedita!
-                    </p>
+                    {notifyTitle === "Unlocked phones" && <UnlockedPhones></UnlockedPhones>}
+                   
                 </div>
             </div>
 

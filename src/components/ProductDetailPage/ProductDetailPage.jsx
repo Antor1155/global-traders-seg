@@ -4,6 +4,7 @@ import axiosInstance from '../../utilities/axiosInstance';
 import "./ProductDetailPage.css";
 import { CartContext } from '../../App';
 import { Link } from 'react-router-dom';
+import LeftSlider from './LeftSlider/LeftSlider';
 
 import eyes from "../../assets/eyes.svg";
 import stars from "../../assets/stars.svg";
@@ -25,7 +26,7 @@ import discover from "../../assets/discover.svg";
 import happyCustomers from "../../assets/happyCustomers.svg";
 import OfferProducts from '../OfferProducts/OfferProducts';
 import { Handshake } from '@mui/icons-material';
-import LeftSlider from './LeftSlider/LeftSlider';
+
 
 
 

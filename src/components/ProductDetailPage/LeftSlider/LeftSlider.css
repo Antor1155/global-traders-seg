@@ -1,4 +1,4 @@
-#left-slider{
+#left-slider {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,31 +15,28 @@
 
     transition: opacity .2s;
 
-    & p{
-        margin: 0;
-    }
-
-    &.hidden{
+    &.hidden {
         opacity: 0;
         pointer-events: none;
     }
-}   
+}
 
-#hide-show-toggle{
+#hide-show-toggle {
     width: 25vw;
+    min-height: 100vh;
     height: fit-content;
     border-top-left-radius: 1rem;
     background-color: whitesmoke;
 
     transition: transform .5s;
 
-    &.hidden{
+    &.hidden {
         position: relative;
         transform: translateX(100%);
     }
 }
 
-.toggle-title{
+.toggle-title {
     padding: .8rem .5rem;
     display: flex;
     justify-content: space-between;
@@ -52,21 +49,52 @@
     border-top-left-radius: 1rem;
 
 
-    & h2{
-        font-size:  1rem;
+    & h2 {
+        font-size: 1rem;
         font-weight: 400;
-        width:  100%;
+        width: 100%;
         text-align: center;
 
     }
 
-    & button{
+    & button {
         background-color: transparent;
     }
 }
 
-.toggle-info{
+.toggle-info {
     padding: 1rem;
+    font-family: sans-serif;
 
-    font-size: .8rem;
+    & .titleImg {
+        max-width: 250px;
+        margin: auto;
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    & h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+
+    & h2 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    & h3 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    & p {
+        font-size: .8rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+        color: rgb(107, 106, 106);
+    }
 }
