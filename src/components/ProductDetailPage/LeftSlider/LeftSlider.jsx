@@ -4,6 +4,7 @@ import UnlockedPhones from './InfoPages/UnlockedPhones';
 import Warranty from './InfoPages/Warranty';
 import Condition from './InfoPages/Condition';
 import Technical from './InfoPages/Technical';
+import PerksAndBenefits from './InfoPages/PerksAndBenefits';
 
 
 const LeftSlider = ({handleHideButton, notifyTitle, product}) => {
@@ -30,6 +31,7 @@ const LeftSlider = ({handleHideButton, notifyTitle, product}) => {
                     {notifyTitle === "Warranty Policy" && <Warranty></Warranty>}
                     {notifyTitle === "Conditions" && <Condition></Condition>}
                     {notifyTitle === "Technical specification" && <Technical product={product}></Technical>}
+                    {notifyTitle === "Perks & benefits" && <PerksAndBenefits></PerksAndBenefits>}
                 </div>
             </div>
 
