@@ -3,9 +3,10 @@ import "./LeftSlider.css";
 import UnlockedPhones from './InfoPages/UnlockedPhones';
 import Warranty from './InfoPages/Warranty';
 import Condition from './InfoPages/Condition';
+import Technical from './InfoPages/Technical';
 
 
-const LeftSlider = ({handleHideButton, notifyTitle}) => {
+const LeftSlider = ({handleHideButton, notifyTitle, product}) => {
 
     return (
         <div id='left-slider' className='hidden' onClick={handleHideButton}>
@@ -28,6 +29,7 @@ const LeftSlider = ({handleHideButton, notifyTitle}) => {
                     {notifyTitle === "Unlocked phones" && <UnlockedPhones></UnlockedPhones>}
                     {notifyTitle === "Warranty Policy" && <Warranty></Warranty>}
                     {notifyTitle === "Conditions" && <Condition></Condition>}
+                    {notifyTitle === "Technical specification" && <Technical product={product}></Technical>}
                 </div>
             </div>
 

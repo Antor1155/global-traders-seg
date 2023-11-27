@@ -94,7 +94,18 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        
+    }
+
+    & h4{
+        font-size: .85rem;
+        padding: 1rem 0;
+        color: rgb(107, 106, 106);
+        border-bottom: .5px dotted rgb(107, 106, 106);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
     }
 
     & p {

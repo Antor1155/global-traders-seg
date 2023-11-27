@@ -513,7 +513,7 @@ const ProductDetailPage = () => {
                 </div>
             </div>
 
-            <LeftSlider notifyTitle={notifyTitle} handleHideButton={handleHideButton}></LeftSlider>
+            <LeftSlider product={product} notifyTitle={notifyTitle} handleHideButton={handleHideButton}></LeftSlider>
         </section>
     );
 };
