@@ -64,6 +64,7 @@
 
 .toggle-info {
     padding: 1rem;
+    padding-left: 1.5rem;
     font-family: sans-serif;
 
     & .titleImg {
@@ -86,14 +87,24 @@
     }
 
     & h3 {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
+        font-size: .85rem;
+        margin-bottom: .7rem;
+        margin-top: 1.5rem;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
     }
 
     & p {
-        font-size: .8rem;
+        font-size: .75rem;
         font-weight: 200;
         margin-bottom: 1rem;
         color: rgb(107, 106, 106);
+    }
+
+    & hr{
+        margin: 2rem 0;
     }
 }
