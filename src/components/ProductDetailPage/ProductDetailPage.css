@@ -460,3 +460,22 @@ p.small-font{
         font-weight: 300;
     }
 }
+
+@media screen and (max-width: 550px) {
+
+    .productSection{
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+    }
+    .productImg{
+        min-height: 400px;
+    }
+    .add-to-cart{
+        display: none;
+    }
+
+    .offer-container h2{
+        text-align: center;
+    }
+}

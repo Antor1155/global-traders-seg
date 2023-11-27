@@ -100,6 +100,14 @@
 }
 
 
+@media screen and (max-width: 550px) {
+    .product-image{
+        width: 250px;
+        height: auto;
+        min-height: 250px;
+    }
+}
+
 
 
 
