@@ -363,6 +363,8 @@ section.singleProductPage {
     border-radius: 1rem;
     background-color: #E2EEF7;
 
+    margin-top: 3rem;
+
     & p{
         font-size: .9rem;
         margin: 0;

@@ -309,14 +309,14 @@ const ProductDetailPage = () => {
                             <img src={unlocked} alt="unlocked image" />
                             <div>
                                 <p className='semi-bold'>Works with all carriers</p>
-                                <p className='underline small'>Learn about unlocked phones</p>
+                                <p className='underline small' onClick={handleHideButton}>Learn about unlocked phones</p>
                             </div>
                         </div>
 
                         <div>
                             <img src={shield} alt="shield image" />
                             <div>
-                                <p className='underline'>free 30-day returns <br />1-year warranty</p>
+                                <p className='underline' onClick={handleHideButton}>free 30-day returns <br />1-year warranty</p>
                             </div>
                         </div>
 
@@ -417,11 +417,11 @@ const ProductDetailPage = () => {
                             <span>Technical specification</span>
                             <span>{">"}</span>
                         </button>
-                        <button>
+                        <button onClick={handleHideButton}>
                             <span>Perks & benefits included</span>
                             <span>{">"}</span>
                         </button>
-                        <button>
+                        <button onClick={handleHideButton}>
                             <span>Frequently asked questions</span>
                             <span>{">"}</span>
                         </button>

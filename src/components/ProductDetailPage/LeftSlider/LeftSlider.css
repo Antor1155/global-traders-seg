@@ -66,5 +66,7 @@
 }
 
 .toggle-info{
-    padding: 0 1rem;
+    padding: 1rem;
+
+    font-size: .8rem;
 }
