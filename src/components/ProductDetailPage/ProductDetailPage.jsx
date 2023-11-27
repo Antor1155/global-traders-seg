@@ -199,7 +199,7 @@ const ProductDetailPage = () => {
     return (
         <section className='singleProductPage'>
 
-            <div id='top-add-to-cart' style={scrollingDown ? { top: 0 } : { top: "-100%" }}>
+            <div id='top-add-to-cart' className='mobile-display-none' style={scrollingDown ? { top: 0 } : { top: "-100%" }}>
                 <div className='top-cart-product-info'>
                     <img src={product?.image} alt="" />
                     <h1>{product?.productName} - {product?.storage} - {product?.color?.name} - {product?.description}</h1>
@@ -510,6 +510,19 @@ const ProductDetailPage = () => {
                         <h4>COLLABORATIVE TEAMWORK</h4>
                         <p>We believe in fostering an inclusive work environment where all ideas are heard by building a positive culture and family spirit.</p>
                     </div>
+                </div>
+            </div>
+
+            <div id='mobile-add-to-cart'>
+                <div className='top-cart-info'>
+                    <p>
+                        <span>Special price: </span>${product?.price}
+                    </p>
+                    <button
+                        onClick={handleAddToCart}
+                    >
+                        Add to cart
+                    </button>
                 </div>
             </div>
 

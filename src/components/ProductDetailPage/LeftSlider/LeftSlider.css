@@ -119,3 +119,10 @@
         margin: 2rem 0;
     }
 }
+
+@media screen and (max-width: 550px) {
+    #hide-show-toggle {
+        width: 100%;
+    }
+    
+}
