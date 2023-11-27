@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { userContext } from "../../utilities/UserContextProvider";
 import { useNavigate } from "react-router-dom";
-import "./MyAccount.css"
 import axiosInstance from "../../utilities/axiosInstance";
 import SingleCustomerOrder from "./SingleCustomerOrder";
 import SingleProductOrdered from "./SingleProductOrdered";
+import "./MyAccount.css"
 
 const MyAccount = () => {
     const { user, loading, logOut } = useContext(userContext)
