@@ -1,0 +1,15 @@
+.accordion-item{
+    background-color: transparent;
+}
+
+.accordion-button{
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+
+    background-color: transparent;
+    & h3{
+        margin: 0;
+    }
+}
+

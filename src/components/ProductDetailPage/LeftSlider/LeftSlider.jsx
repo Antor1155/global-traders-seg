@@ -5,6 +5,7 @@ import Warranty from './InfoPages/Warranty';
 import Condition from './InfoPages/Condition';
 import Technical from './InfoPages/Technical';
 import PerksAndBenefits from './InfoPages/PerksAndBenefits';
+import FrequestlyAsked from './InfoPages/FrequestlyAsked';
 
 
 const LeftSlider = ({handleHideButton, notifyTitle, product}) => {
@@ -32,6 +33,7 @@ const LeftSlider = ({handleHideButton, notifyTitle, product}) => {
                     {notifyTitle === "Conditions" && <Condition></Condition>}
                     {notifyTitle === "Technical specification" && <Technical product={product}></Technical>}
                     {notifyTitle === "Perks & benefits" && <PerksAndBenefits></PerksAndBenefits>}
+                    {notifyTitle === "Frequently asked questions" && <FrequestlyAsked></FrequestlyAsked>}
                 </div>
             </div>
 
