@@ -155,8 +155,10 @@ nav a:last-child{
 
     #mobile-nav{
         display: block;
-        padding: 7px;
-        border: 1px solid;
+        padding: .5rem;
+        margin-top: -5px;
+
+        background-color: transparent;
         border-radius: 4px;
     }
 
