@@ -15,20 +15,20 @@ const Home = () => {
     const productSkip = useRef(0)
 
 
-    const requestProduct = ()=>{
+    const requestProduct = () => {
         axiosInstance.post(`products/${prodcutsReq}/${productSkip.current}`,
-        { productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
-        .then(res =>{
-           if(res.data.length){
-            setNproducts(prev => [...prev, ...res.data])
-           }else{
-            setMoreProductsInDb(false)
-           }
-        })
-        .catch(error => console.log(error))
+            { productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
+            .then(res => {
+                if (res.data.length) {
+                    setNproducts(prev => [...prev, ...res.data])
+                } else {
+                    setMoreProductsInDb(false)
+                }
+            })
+            .catch(error => console.log(error))
     }
 
-    useEffect(requestProduct,[])
+    useEffect(requestProduct, [])
 
 
     return (
@@ -38,8 +38,8 @@ const Home = () => {
 
             <div className='logos'>
                 <div>
-                    <img src="/logos/warrenty.png" alt='warrenty' />
-                    <span> 1 Year Warrenty</span>
+                    <img src="/logos/return.png" alt='return' />
+                    <span> 1 month Warrenty</span>
                 </div>
 
                 <div>
@@ -75,10 +75,10 @@ const Home = () => {
 
 
             <div className='products'>
-                {nProducts && nProducts.map(product =>{
+                {nProducts && nProducts.map(product => {
                     return <SingleProduct key={product._id} product={product}></SingleProduct>
                 })}
-                
+
             </div>
 
             <Link to="/preowned" className='see-more'> See More</Link>
@@ -95,7 +95,7 @@ const Home = () => {
             </Link>
 
             <div className='products'>
-            {nProducts && nProducts.slice(0, 4).map(product =>{
+                {nProducts && nProducts.slice(0, 4).map(product => {
                     return <SingleProduct key={product._id} product={product}></SingleProduct>
                 })}
             </div>
