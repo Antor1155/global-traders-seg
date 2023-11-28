@@ -491,7 +491,7 @@ p.small-font{
     }
 
     .productSection{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         padding: .5rem;
     }
     .productImg{
