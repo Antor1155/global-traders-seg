@@ -5,6 +5,14 @@ import ScrollToTop from "../../utilities/ScrollToTop";
 import "./Preowned.css"
 import { Slider } from "@mui/material";
 
+import freeShipping from "../../assets/freeStandardShipping.svg";
+import payOverTime from "../../assets/payOverTime.svg";
+import thirtyDaysWarrenty from "../../assets/thirtyDaysWarrenty.svg";
+import bestQuality from "../../assets/shield.svg";
+
+
+import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 const Preowned = () => {
 
@@ -16,6 +24,8 @@ const Preowned = () => {
     const [productsName, setProductsName] = useState([])
 
     const [query, setQuery] = useState({ productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
+
+    const filtersChosen = query?.productName?.length + query?.condition?.length + query?.storage?.length + query?.color?.length + ((query?.price[0] > 10 || query?.price[1] < 1480 ) ? 1 : 0)
 
     // slider price range with material ui
     const [price, setPrice] = useState([0, 1500]);
@@ -46,8 +56,6 @@ const Preowned = () => {
                 }
             })
             .catch(error => console.log(error))
-
-        console.log("requestPoruct called")
     }
 
     useEffect(() => {
@@ -107,13 +115,58 @@ const Preowned = () => {
         requestProduct()
     }
 
+    const handleFiltershowHide = () => {
+        const filter = document.getElementById("filter-options")
+        const showBtn = document.getElementById("mobile-show-products-btn")
+
+        filter.classList.toggle("show")
+        showBtn.classList.toggle("show")
+    }
+
+
     return (
         <main>
             <ScrollToTop></ScrollToTop>
+            
+            <div className="top-title-div">
+                <p>
+                    <img src={freeShipping} alt="" />
+                    <span>Free standard shipping</span>
+                </p>
+                <p>
+                    <img src={payOverTime} alt="" />
+                    <span>Pay over time.</span>
+                </p>
+                <p>
+                    <img src={thirtyDaysWarrenty} alt="" />
+                    <span>1-month warranty</span>
+                </p>
+                <p>
+                    <img src={bestQuality} alt="" />
+                    <span>Best quality</span>
+                </p>
+            </div>
+
+            <h1 className="pre-title">Pre Owned phones</h1>
 
             <section className='preowned-container'>
 
-                <div className="product-filter">
+                <div id="filter-options" className="product-filter">
+
+                    <div className="mobile-view">
+                        <p>Filter</p>
+                        <button onClick={handleFiltershowHide}>
+                            <CloseOutlinedIcon></CloseOutlinedIcon>
+                        </button>
+
+                    </div>
+
+                    <div id="mobile-show-products-btn">
+                        <button onClick={handleFiltershowHide}>
+                            See {nProducts?.length} products
+                        </button>
+                    </div>
+
                     <div className="price-range">
                         <p >Price range:</p>
                         <Slider
@@ -235,8 +288,17 @@ const Preowned = () => {
 
             </section>
 
-
-
+            <div className="mobile-filter">
+                <button
+                    id="filter-btn"
+                    onClick={handleFiltershowHide}
+                >
+                    <span>Filter</span>
+                    <TuneOutlinedIcon></TuneOutlinedIcon>
+                </button>
+                                        
+                <span>{filtersChosen ? filtersChosen : ""}</span>
+            </div>
         </main>
     );
 };
