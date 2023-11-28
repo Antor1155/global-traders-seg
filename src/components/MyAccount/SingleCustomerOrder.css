@@ -114,3 +114,14 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 550px) {
+    div.order-details {
+        grid-template-columns: 1fr;
+
+        & .shipping-info{
+            padding-top: 2rem;
+            padding-left: 1rem ;
+        }
+    }
+}

@@ -2,6 +2,7 @@ import "./SingleCustomerOrder.css"
 import React, { useEffect, useState } from 'react';
 import axiosInstance from "../../utilities/axiosInstance"
 import JsBarcode from "jsbarcode";
+import { Hidden } from "@mui/material";
 
 const SingleCustomerOrder = ({ order }) => {
     const { line_items, name, email, phone, city, postal, street, country, shipping, paid, status, createdAt, updatedAt } = order
@@ -50,7 +51,7 @@ const SingleCustomerOrder = ({ order }) => {
                 <button onClick={() => setShowDetails(prev => !prev)}>{showDetails ? "Hide details" : "Show details"} </button>
             </div>
 
-            <div className="order-details" style={showDetails ? {} : { gridTemplateRows: "0fr", marginTop: "0", padding: "0" }}>
+            <div className="order-details" style={showDetails ? {} : { height:"0",overflow:"hidden", marginTop: "0", padding: "0" }}>
                 <div>
                     <h5 className="title">Product Details</h5>
                     {line_items.map((item, ind) => {
@@ -81,8 +82,6 @@ const SingleCustomerOrder = ({ order }) => {
                     </div>
                     
                     <img id="barcodeOfOrderId" />
-
-
                 </div>
 
                 <div className="shipping-info">
