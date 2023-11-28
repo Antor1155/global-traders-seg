@@ -10,7 +10,7 @@ const MyAccount = () => {
     const { user, loading, logOut } = useContext(userContext)
     const navigate = useNavigate()
 
-    const [showRecipt, setShowRecipt] = useState(false)
+    const [showRecipt, setShowRecipt] = useState(true)
 
     const handleSingOut = () => {
         logOut().then(() => {
@@ -50,10 +50,10 @@ const MyAccount = () => {
                 <button onClick={handleSingOut}>Sign Out</button>
             </div>
 
-            <div className="orderButtons">
+            {/* <div className="orderButtons">
                 <button onClick={() => setShowRecipt(false)}>Orders</button>
                 <button onClick={() => setShowRecipt(true)}>Order recipts</button>
-            </div>
+            </div> */}
 
             {showRecipt && orders ? 
                 orders.map(order => <SingleCustomerOrder key={order._id} order={order}>
