@@ -95,4 +95,8 @@ section.resource {
     .resource-blogs{
         justify-content: center;
     }
+
+    .accordion-container {
+        padding: 1rem;
+    }
 }
