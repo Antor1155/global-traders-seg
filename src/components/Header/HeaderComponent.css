@@ -95,6 +95,8 @@ nav{
     padding: 10px;
     display: flex;
     justify-content: center;
+
+    font-family: inherit;
 }
 
 nav a{
