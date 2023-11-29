@@ -1,8 +1,6 @@
 section.singleProductPage {
     max-width: 1080px;
     margin: auto;
-
-    overflow: hidden;
 }
 
 #top-add-to-cart{
@@ -468,6 +466,9 @@ p.small-font{
 }
 
 @media screen and (max-width: 550px) {
+    section.singleProductPage {
+        overflow: hidden;
+    }
     #top-add-to-cart{
         display: none;
     }
