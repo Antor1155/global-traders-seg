@@ -75,6 +75,12 @@
 
 .filter-div {
     margin-bottom: 3rem;
+
+    & label{
+        font-weight: 400;
+        color: rgb(58, 59, 60);
+        font-size: .9rem;
+    }
 }
 
 .filter-name {
