@@ -1,10 +1,9 @@
+import Refubrished from "../Refubrished/Refubrished";
 
 
 const Offer = () => {
     return (
-        <div>
-            offer
-        </div>
+        <Refubrished></Refubrished>
     );
 };
 
