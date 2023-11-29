@@ -1,9 +1,20 @@
 import "./Wholesale.css"
+// import axiosInstance from "../../utilities/axiosInstance";
 
 const Wholesale = () => {
 
     const handleWholesale = (e) => {
         e.preventDefault()
+        const name = e.target.name.value
+        const phone = e.target.phone.value
+        const email = e.target.email.value
+        const company = e.target.company.value
+        const note = e.target.note.value
+        
+        const data = {name, phone, email, company, note}
+
+
+        e.target.reset()
 
     }
     return (
