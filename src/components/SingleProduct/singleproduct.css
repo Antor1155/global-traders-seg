@@ -57,8 +57,8 @@
         font-size: .9rem;
         line-height: 1.2rem;
 
-        &price {
-            font-size: .8rem;
+        &.price {
+            color: #1170DE;
         }
     }
 
@@ -105,12 +105,49 @@
 
 @media screen and (max-width: 550px) {
     .single-product {
-        margin: auto;
+        /* border: 2px solid red; */
+
+        flex-direction: row;
+        align-items: center;
+
+        width: 100%;
+
+        padding: 1rem;
+        padding-bottom: 1rem;
     }
 
     .product-image {
-        width: 250px;
+        /* border: 1px solid red; */
+
+        width:8rem;
         height: auto;
-        min-height: 250px;
+        margin: 0;
+        display: block;
+    }
+
+    .product-brand-logo{
+        display: none;
+    }
+
+    .single-product .productDesc{
+        /* border: 1px solid red; */
+
+        align-self: center;
+        margin: 0;
+        width: 100%;
+        height: auto;
+
+        & p{
+            font-size: 1rem;
+            line-height: normal;
+        }
+
+        & span{
+            font-size: .8rem;
+        }
+    }
+
+    .single-product .buttons{
+        display: none;
     }
 }
