@@ -40,7 +40,7 @@ header {
     font-size: 1rem;
     border-radius: 4px;
     padding-left: 5px;
-    border: 1px solid #3E3E3B;
+    border: 1px solid #259EF4;
 }
 
 .product-search button {
@@ -52,6 +52,7 @@ header {
     display: inline-block;
     height: 1rem;
     width: 3rem;
+    fill: #259EF4;
 
 }
 
@@ -144,11 +145,14 @@ nav a:last-child {
 
     .headerDiv {
         width: 100vw;
-        margin-bottom: 1rem;
     }
 
     .gtlogo {
         width: 80px;
+    }
+
+    .gtlogo img {
+        width: 110px;
     }
 
     .headerDiv a:not(.gtlogo) {
@@ -169,11 +173,7 @@ nav a:last-child {
 
     #mobile-nav {
         display: block;
-        padding: .5rem;
-        margin-top: -5px;
-
         background-color: transparent;
-        border-radius: 4px;
 
         & svg{
             fill: #249EF6;
@@ -195,7 +195,7 @@ nav a:last-child {
         height: 2rem;
         padding: 5px 5px 7px 10px;
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1px solid #259EF4;
 
     }
 
@@ -205,6 +205,8 @@ nav a:last-child {
         right: 0;
         background-color: transparent;
         padding-right: 1rem;
+
+        fill: #249EF6;
     }
 
     nav {
