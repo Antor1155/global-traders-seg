@@ -70,7 +70,7 @@ const Home = () => {
 
             <div className='pre-and-refub'>
                 <Link to="preowned"> PRE-OWNED</Link>
-                <Link to="refubrished"> REFUBRISHED</Link>
+                <Link to="refubrished"> REFURBISHED</Link>
             </div>
 
 
