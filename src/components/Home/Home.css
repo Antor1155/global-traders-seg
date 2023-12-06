@@ -1,9 +1,8 @@
 
 
-.logos{
+.logos {
+    /* border: 1px solid red; */
     background-color: white;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
     width: 90%;
     max-width: 1080px;
     margin: auto;
@@ -17,11 +16,9 @@
     }
 }
 
-.logos div{
+.logos-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+    justify-content: space-between;
 }
 
 .logos div img{
@@ -105,10 +102,34 @@
 
 @media screen and (max-width:550px) {
     .logos{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        width: 90vw;
+        overflow-x: hidden;
+        padding-left: 0;
     }
+    .logos-container{
+        display: grid;
+        grid-template-columns: repeat(9, 120px);
+
+        animation: home-logo-slider 18s steps(6) infinite;
+
+        & div{
+            display: flex;
+            align-items: center;
+
+            width: 120px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    }
+
+    @keyframes home-logo-slider{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-720px);
+        }
+    }
+
 
     .pre-and-refub{
         /* border: 1px solid; */

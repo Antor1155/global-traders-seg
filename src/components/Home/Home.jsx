@@ -37,34 +37,55 @@ const Home = () => {
             <BootstrapCarousel></BootstrapCarousel>
 
             <div className='logos'>
-                <div>
-                    <img src="/logos/return.png" alt='return' />
-                    <span> 1 month Warrenty</span>
-                </div>
+                <div className="logos-container">
+                    <div>
+                        <img src="/logos/return.png" alt='return' />
+                        <span> 1 month Warrenty</span>
+                    </div>
 
-                <div>
-                    <img src="/logos/giftcard.png" alt='giftcard' />
-                    <span> GT Gift Card</span>
-                </div>
+                    <div>
+                        <img src="/logos/giftcard.png" alt='giftcard' />
+                        <span> GT Gift Card</span>
+                    </div>
 
-                <div>
-                    <img src="/logos/fastdelivery.png" alt='fastdelivery' />
-                    <span> Fast Delivery</span>
-                </div>
+                    <div>
+                        <img src="/logos/fastdelivery.png" alt='fastdelivery' />
+                        <span> Fast Delivery</span>
+                    </div>
 
-                <div>
-                    <img src="/logos/trustedseller.png" alt='trustedseller' />
-                    <span> Trusted Seller</span>
-                </div>
+                    
+                    <div>
+                        <img src="/logos/return.png" alt='return' />
+                        <span> 30 Days Return</span>
+                    </div>
 
-                <div>
-                    <img src="/logos/klarna.png" alt='klarna' />
-                    <span> Payment Plan</span>
-                </div>
+                    <div>
+                        <img src="/logos/trustedseller.png" alt='trustedseller' />
+                        <span> Trusted Seller</span>
+                    </div>
 
-                <div>
-                    <img src="/logos/return.png" alt='return' />
-                    <span> 30 Days Return</span>
+                    <div>
+                        <img src="/logos/klarna.png" alt='klarna' />
+                        <span> Payment Plan</span>
+                    </div>
+
+
+                    {/* show on mobile screen only  */}
+                    <div className="mobile-view">
+                        <img src="/logos/return.png" alt='return' />
+                        <span> 1 month Warrenty</span>
+                    </div>
+
+                    <div className="mobile-view">
+                        <img src="/logos/giftcard.png" alt='giftcard' />
+                        <span> GT Gift Card</span>
+                    </div>
+
+                    <div className="mobile-view">
+                        <img src="/logos/fastdelivery.png" alt='fastdelivery' />
+                        <span> Fast Delivery</span>
+                    </div>
+
                 </div>
             </div>
 
