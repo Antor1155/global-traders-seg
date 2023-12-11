@@ -131,7 +131,7 @@ const ProductDetailPage = () => {
         return () => {
             scrollElement.removeEventListener('wheel', handleScroll);
         };
-    }, [])
+    }, [productId])
 
     // this function to find proudct when select new option 
     const handleFilterButtonClick = (option, value) => {
