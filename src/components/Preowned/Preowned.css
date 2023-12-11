@@ -189,7 +189,7 @@
         left: 0;
         background-color: white;
         width: 100vw;
-        padding: 1rem;
+        padding: 0;
         border-top: 1px dotted black;
         display: flex;
         align-items: center;
