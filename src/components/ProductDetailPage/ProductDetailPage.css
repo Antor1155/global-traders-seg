@@ -481,8 +481,7 @@ p.small-font{
         width: 100vw;
         background-color: white;
 
-        padding: 1rem;
-        padding-bottom: 2rem;
+        padding:.5rem 1rem;
         box-sizing: border-box;
 
         .top-cart-info{
