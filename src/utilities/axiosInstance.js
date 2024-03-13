@@ -3,8 +3,15 @@ import axios from "axios";
 // const axiosInstance = axios.create({
 //     baseURL:"http://localhost:5000/"
 // })
-const axiosInstance = axios.create({
-    baseURL:"https://us-central1-global-traders-usa-84059.cloudfunctions.net/app/"
-})
 
+// using cloud functions with firebase
+// const axiosInstance = axios.create({
+//     baseURL:"https://us-central1-global-traders-usa-84059.cloudfunctions.net/app/"
+// })
+
+
+// using cyclic .sh app 
+const axiosInstance = axios.create({
+    baseURL:"https://long-gold-tadpole-shoe.cyclic.app/"
+})
 export default axiosInstance
