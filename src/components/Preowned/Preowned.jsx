@@ -13,11 +13,13 @@ import bestQuality from "../../assets/shield.svg";
 
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import Loading from "../Loading/Loading";
 
 const Preowned = () => {
 
     const [nProducts, setNproducts] = useState([])
     const [moreProductsInDb, setMoreProductsInDb] = useState(true)
+    const [loading, setLoading] = useState(false)
     const prodcutsReq = 12
     const productSkip = useRef(0)
 
@@ -25,7 +27,7 @@ const Preowned = () => {
 
     const [query, setQuery] = useState({ productName: [], condition: [], storage: [], color: [], price: [0, 1500] })
 
-    const filtersChosen = query?.productName?.length + query?.condition?.length + query?.storage?.length + query?.color?.length + ((query?.price[0] > 10 || query?.price[1] < 1480 ) ? 1 : 0)
+    const filtersChosen = query?.productName?.length + query?.condition?.length + query?.storage?.length + query?.color?.length + ((query?.price[0] > 10 || query?.price[1] < 1480) ? 1 : 0)
 
     // slider price range with material ui
     const [price, setPrice] = useState([0, 1500]);
@@ -46,6 +48,7 @@ const Preowned = () => {
     ]
 
     const requestProduct = () => {
+        setLoading(true)
         axiosInstance.post(`products/${prodcutsReq}/${productSkip.current}`, query)
             .then(res => {
                 if (res.data.length) {
@@ -56,6 +59,7 @@ const Preowned = () => {
                 }
             })
             .catch(error => console.log(error))
+        .finally(() => setLoading(false))
     }
 
     useEffect(() => {
@@ -127,7 +131,7 @@ const Preowned = () => {
     return (
         <main>
             <ScrollToTop></ScrollToTop>
-            
+
             <div className="top-title-div">
                 <p>
                     <img src={freeShipping} alt="" />
@@ -276,15 +280,22 @@ const Preowned = () => {
 
                 </div>
 
-                <div className="pre-products">
-                    <div className='preowned'>
-                        {nProducts && nProducts.map(product => {
-                            return <SingleProduct key={product._id} product={product}></SingleProduct>
-                        })}
 
-                    </div>
-                    <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false : true}> See More</button>
+
+                <div className="pre-products">
+                    {loading ? <Loading /> :
+                        <>
+                            <div className='preowned'>
+                                {nProducts && nProducts.map(product => {
+                                    return <SingleProduct key={product._id} product={product}></SingleProduct>
+                                })}
+
+                            </div>
+                            <button className='see-more' onClick={handleSeeMore} disabled={moreProductsInDb ? false : true}> See More</button>
+                        </>
+                    }
                 </div>
+
 
             </section>
 
@@ -296,7 +307,7 @@ const Preowned = () => {
                     <span>Filter</span>
                     <TuneOutlinedIcon></TuneOutlinedIcon>
                 </button>
-                                        
+
                 <span>{filtersChosen ? filtersChosen : ""}</span>
             </div>
         </main>
