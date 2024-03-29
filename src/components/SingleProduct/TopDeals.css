@@ -73,6 +73,7 @@
 
         &.old-price{
             text-decoration: line-through;
+            font-size: .7rem;
         }
 
         &.price {
