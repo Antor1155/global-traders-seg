@@ -3,6 +3,7 @@ import BootstrapCarousel from "../BootstrapCarousel/BootstrapCarousel";
 import "./Home.css"
 
 import SingleProduct from "../SingleProduct/SingleProduct";
+import TopDeals from "../SingleProduct/TopDeals";
 import Comments from "../Comments/Comments";
 import { useEffect, useRef, useState } from "react";
 import axiosInstance from "../../utilities/axiosInstance";
@@ -115,9 +116,11 @@ const Home = () => {
                 <img className='sub-banner' src="/staticImages/third-banner.png" alt="second banner" />
             </Link>
 
+            <h3 className="text-top-deals">TOP <span>DEALS</span> </h3>
+
             <div className='products'>
-                {nProducts && nProducts.slice(0, 4).map(product => {
-                    return <SingleProduct key={product._id} product={product}></SingleProduct>
+                {nProducts && nProducts.map(product => {
+                    return <TopDeals key={product._id} product={product}></TopDeals>
                 })}
             </div>
 

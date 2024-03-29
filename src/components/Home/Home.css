@@ -98,7 +98,16 @@
     box-shadow: 0 12px 12px -6px rgba(0,0,0, .5);
 }
 
+.text-top-deals{
+    text-align: center;
+    margin-top: 70px ;
+    font-size: 64px;
+    font-weight: bold;
 
+    & span{
+        color: #0653CE;
+    }
+}
 
 @media screen and (max-width:550px) {
     .logos{

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import "./singleproduct.css"
+import "./TopDeals.css"
 import { CartContext } from "../../App"
 import { useNavigate } from "react-router"
 
