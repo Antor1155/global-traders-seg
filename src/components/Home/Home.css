@@ -109,6 +109,17 @@
     }
 }
 
+.top-delas-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 90vw;
+    max-width: 1080px;
+    margin: auto;
+}
+
 @media screen and (max-width:550px) {
     .logos{
         overflow-x: hidden;

@@ -28,22 +28,16 @@ const SingleProduct = ({ product }) => {
 
       <img className='product-image' src={image} alt='product image'></img>
 
-      <img className="product-brand-logo" src="/logos/apple.png" alt='product company ' />
-
       <div className="productDesc">
-        <p>{productName} {description}</p>
-        <p><span>{storage}</span> | <span>{color.name}</span> | <span>{condition}</span></p>
+        <p>{productName} {storage}</p>
+        <p>UNLOCKED</p>
 
-        <p><span>Warrenty : 30 days</span></p>
+        <p className="sm">Condition: {condition}</p>
+        <p className="sm">Color: {color.name}</p>
 
-        <p><span>Special Price : </span></p>
-        <p className="price">${price}</p>
-      </div>
-      {/* <span>{price}$</span> */}
-
-      <div className="buttons">
-        <button className="buy-button"> CHECK IT </button>
-        <button onClick={handleAddCart} className="cart-button"> ADD TO CART</button>
+        <div className="hr"></div>
+        <p className="sm old-price">$ {price + 150}.00</p>
+        <p className="price">${price}.00</p>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ import ScrollToTop from "../../utilities/ScrollToTop";
 const Home = () => {
     const [nProducts, setNproducts] = useState([])
     const [moreProductsInDb, setMoreProductsInDb] = useState(true)
-    const prodcutsReq = 8
+    const prodcutsReq = 10
     const productSkip = useRef(0)
 
 
@@ -118,7 +118,7 @@ const Home = () => {
 
             <h3 className="text-top-deals">TOP <span>DEALS</span> </h3>
 
-            <div className='products'>
+            <div className='top-delas-products'>
                 {nProducts && nProducts.map(product => {
                     return <TopDeals key={product._id} product={product}></TopDeals>
                 })}
