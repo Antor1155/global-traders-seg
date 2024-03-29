@@ -101,7 +101,7 @@
 .text-top-deals{
     text-align: center;
     margin: 3rem ;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
 
     & span{
