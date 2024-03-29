@@ -46,9 +46,10 @@
 }
 
 .single-product .productDesc {
-    text-align: left;
-    align-self: self-start;
+    text-align: center;
+    align-self: center;
     margin-bottom: .8rem;
+    margin-top: .4rem;
 
     & p {
         margin: 0;

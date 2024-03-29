@@ -91,12 +91,12 @@ const Home = () => {
 
             <div className='pre-and-refub'>
                 <Link to="preowned"> PRE-OWNED</Link>
-                <Link to="refubrished"> REFURBISHED</Link>
+                <Link to="wholesale"> WHOLESALE</Link>
             </div>
 
 
             <div className='products'>
-                {nProducts && nProducts.map(product => {
+                {nProducts && nProducts.slice(0, 4).map(product => {
                     return <SingleProduct key={product._id} product={product}></SingleProduct>
                 })}
 
