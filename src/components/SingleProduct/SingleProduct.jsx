@@ -31,12 +31,12 @@ const SingleProduct = ({ product }) => {
       <img className="product-brand-logo" src="/logos/apple.png" alt='product company ' />
 
       <div className="productDesc">
-        <p>{productName} {description}</p>
-        <p><span>{storage}</span> | <span>{color.name}</span> | <span>{condition}</span></p>
+        <p className="sinpleP">{productName} {description}</p>
+        <p className="sinpleP"><span>{storage}</span> | <span>{color.name}</span> | <span>{condition}</span></p>
 
-        <p><span>Warrenty : 30 days</span></p>
+        <p className="sinpleP"><span>Warrenty : 30 days</span></p>
 
-        <p><span>Special Price : </span></p>
+        <p className="sinpleP"><span>Special Price : </span></p>
         <p className="price">${price}</p>
       </div>
       {/* <span>{price}$</span> */}

@@ -100,8 +100,8 @@
 
 .text-top-deals{
     text-align: center;
-    margin-top: 70px ;
-    font-size: 64px;
+    margin: 3rem ;
+    font-size: 4rem;
     font-weight: bold;
 
     & span{
