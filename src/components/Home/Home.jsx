@@ -113,7 +113,7 @@ const Home = () => {
             </div>
 
             <Link to="/preowned">
-                <img className='sub-banner' src="/staticImages/third-banner.png" alt="second banner" />
+                <img className='sub-banner' src="/staticImages/second-banner.png" alt="second banner" />
             </Link>
 
             <h3 className="text-top-deals">TOP <span>DEALS</span> </h3>
