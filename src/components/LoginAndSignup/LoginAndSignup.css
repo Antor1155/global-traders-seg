@@ -2,7 +2,13 @@
     max-width: 850px;
     margin: auto;
 
-    padding: 10px;
+    padding: 10px 0  50px 0;
+    
+
+    border: 5px solid #BDD1E2;
+    border-top: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #BDD1E2;
 
     & form{
         display: flex;

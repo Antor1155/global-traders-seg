@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const axiosInstance = axios.create({
-//     baseURL:"http://localhost:5000/"
-// })
+const axiosInstance = axios.create({
+    baseURL:"http://localhost:5000/"
+})
 
 // using cloud functions with firebase
 // const axiosInstance = axios.create({
@@ -11,7 +11,7 @@ import axios from "axios";
 
 
 // using cyclic .sh app 
-const axiosInstance = axios.create({
-    baseURL:"https://long-gold-tadpole-shoe.cyclic.app/"
-})
+// const axiosInstance = axios.create({
+//     baseURL:"https://long-gold-tadpole-shoe.cyclic.app/"
+// })
 export default axiosInstance
