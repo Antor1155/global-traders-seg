@@ -25,7 +25,6 @@ const Preowned = () => {
     const productSkip = useRef(0)
 
     const loaction = useLocation()
-    console.log("location of current path is: ", location.search)
 
     const [productsName, setProductsName] = useState([])
 
@@ -63,11 +62,10 @@ const Preowned = () => {
                 }
             })
             .catch(error => console.log(error))
-        .finally(() => setLoading(false))
+            .finally(() => setLoading(false))
     }
 
     useEffect(() => {
-        requestProduct()
         axiosInstance.get("catagory")
             .then(result => {
                 const data = result.data
@@ -76,7 +74,26 @@ const Preowned = () => {
                 setProductsName(res)
             })
             .catch(error => console.log(error))
+
     }, [])
+
+    useEffect(() => {
+
+        if (!location.search) {
+            requestProduct()
+
+        } else {
+            setLoading(true)
+            axiosInstance.get(`searchproducts?search=${location.search}`)
+                .then(res => setNproducts([...res.data]))
+                .catch(error => console.log("error in preowned search: ", error))
+                .finally(() => setLoading(false))
+        }
+
+        console.log("location search: ", location.search)
+
+
+    }, [location, location.search])
 
 
     const handleRangeChange = (event, newValue) => {
