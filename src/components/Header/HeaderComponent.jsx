@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import "./HeaderComponent.css"
 import { CartContext } from '../../App'
@@ -14,14 +14,17 @@ const HeaderComponent = () => {
   const [navOn, setNavOn] = useState(false)
   const navEle = useRef()
 
+  const navigate = useNavigate()
+
   const { cart } = useContext(CartContext)
 
   function handleSearch(e) {
     e.preventDefault()
-    const searchValue = e.target.search.value
+    const searchValue = encodeURIComponent(e.target.search.value)
     e.target.search.value = ""
 
-    console.log(searchValue)
+    navigate(`/preowned?search=${searchValue}`)
+
   }
 
   function handleNav() {
