@@ -14,6 +14,7 @@ import bestQuality from "../../assets/shield.svg";
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import Loading from "../Loading/Loading";
+import { useLocation } from "react-router-dom";
 
 const Preowned = () => {
 
@@ -22,6 +23,9 @@ const Preowned = () => {
     const [loading, setLoading] = useState(false)
     const prodcutsReq = 12
     const productSkip = useRef(0)
+
+    const loaction = useLocation()
+    console.log("location of current path is: ", location.search)
 
     const [productsName, setProductsName] = useState([])
 
