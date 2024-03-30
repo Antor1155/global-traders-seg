@@ -16,6 +16,17 @@
     text-align: center;
 
     margin-top: 3rem;
+
+    & h3{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    & p{
+        max-width: 550px;
+        margin: auto;
+    }
 }
 
 .container-td {

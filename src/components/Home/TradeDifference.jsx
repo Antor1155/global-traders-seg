@@ -20,13 +20,13 @@ const TradeDifference = () => {
                 <div className="container-td">
                     <div>
                         <img src="/logos/beforeIcons1.svg" alt="before service icons" />
-                        <p>HAGGLING WAS MANDATORY</p>
+                        <p>HAGGLING WAS <br /> MANDATORY</p>
                         <p>You had to negotiate a good deal with a dealer or private seller. To complicate things, you never knew if you were dealing with someone trustworthy.
                         </p>
                     </div>
                     <div>
                         <img src="/logos/beforeIcons2.svg" alt="before service icons" />
-                        <p>HIDDEN
+                        <p>HIDDEN <br />
                             PROBLEMS</p>
                         <p>You thought you scored a great phone,
                             only to find out later that the phone has
@@ -35,7 +35,7 @@ const TradeDifference = () => {
                     </div>
                     <div>
                         <img src="/logos/beforeIcons3.svg" alt="before service icons" />
-                        <p>BUYER’S REMORSE?
+                        <p>BUYER’S REMORSE? <br />
                             YOU’RE STUCK</p>
                         <p>You thought you scored a great phone,
                             only to find out later that the phone has
@@ -44,7 +44,7 @@ const TradeDifference = () => {
                     </div>
                     <div>
                         <img src="/logos/beforeIcons4.svg" alt="before service icons" />
-                        <p>ONLY NEW PHONES
+                        <p>ONLY NEW PHONES <br />
                             WERE PROTECTED</p>
                         <p>Device protections generally cover new phones.
                             This leaves second hand owners vulnerable when
@@ -62,7 +62,7 @@ const TradeDifference = () => {
                 <div className="container-td">
                     <div>
                         <img src="/logos/afterIcons1.svg" alt="before service icons" />
-                        <p>PHONES PRICED A
+                        <p>PHONES PRICED A <br />
                             FAIR MARKET VALUE</p>
                         <p>You won’t find scammers here. This means you get
                             what you pay for, at a fair deal, with no surprises.
@@ -70,7 +70,7 @@ const TradeDifference = () => {
                     </div>
                     <div>
                         <img src="/logos/afterIcons2.svg" alt="before service icons" />
-                        <p>MULTI-POINT
+                        <p>MULTI-POINT <br />
                             INSPECTION</p>
                         <p>Every phone we sell passes our rigorous inspection
                             process and includes a full phone history report.
@@ -80,7 +80,7 @@ const TradeDifference = () => {
                     </div>
                     <div>
                         <img src="/logos/afterIcons3.svg" alt="before service icons" />
-                        <p>30 DAY
+                        <p>30 DAY <br />
                             TRIAL</p>
                         <p>Use the phone for up to two weeks.
                             Get familiar with your new phone and put
@@ -91,7 +91,7 @@ const TradeDifference = () => {
                     </div>
                     <div>
                         <img src="/logos/afterIcons4.svg" alt="before service icons" />
-                        <p>GLOBAL TRADERS
+                        <p>GLOBAL TRADERS <br />
                             PROTECT</p>
                         <p>Extended hardware warranty, protection against
                             accidental damage, and technical support
