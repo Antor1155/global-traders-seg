@@ -61,3 +61,10 @@
 #comments-container p:last-child {
     scrollbar-width: none;
 }
+
+@media screen and (max-width:700px) {
+    #comments-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
