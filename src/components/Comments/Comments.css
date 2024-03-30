@@ -1,41 +1,63 @@
-.comments{
-    background-color: black;    
-    padding: 50px;
-    margin-top: 50px;
+.comments {
+    width: 90%;
+    max-width: 1440px;
+    margin: auto;
+
+    & h3 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 3rem 0 4rem 0;
+
+        & span {
+            color: #0653CE;
+        }
+    }
 }
 
-.comments h3{
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    margin-top: -20px;
-}
-
-.comments section{
+#comments-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: auto;
-}
 
-.comments div{
-    background-color:aliceblue;
-    padding: 10px;
-    border-radius: 7px;
-}
+    gap: 2rem;
 
-.comments small{
-    color: rgb(137, 134, 134);
-    display: block;
-    margin: 5px 0;
-}
+    & div {
+        text-align: center;
+        color: white;
+        padding: 40px 10px;
+        position: relative;
+        border-radius: 2rem;
 
+        background-color: #0653CE;
 
-
-@media screen and (max-width: 550px) {
-    .comments section{
-
-        grid-template-columns: repeat(1, 1fr);
+        & .name {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
     }
+}
+
+.stars img {
+    width: 25px;
+}
+
+.avatar {
+    width: 70px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#comments-container p:last-child {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#comments-container p:last-child::-webkit-scrollbar {
+    display: none;
+}
+#comments-container p:last-child {
+    scrollbar-width: none;
 }
