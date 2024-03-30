@@ -23,8 +23,8 @@ const MyFooter = () => {
                 <div>
                     <p>Quick Links</p>
 
-                    <Link to="all-products"> SEE ALL PRODUCTS</Link>
-                    <Link to="faq"> FAQS</Link>
+                    <Link to="preowned"> SEE ALL PRODUCTS</Link>
+                    <Link to="contactus"> FAQS</Link>
                     <Link to="return-policy"> RETURN & EXCHANGE POLICY</Link>
                     <Link to="privacy-policy"> PRIVACY POLICY </Link>
                     <Link to="about-us"> WHO WE ARE </Link>

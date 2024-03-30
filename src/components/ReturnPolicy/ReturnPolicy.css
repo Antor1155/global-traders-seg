@@ -1,0 +1,14 @@
+#returnPolicy{
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+
+    & a{
+        color: blue;
+    }
+}
+
+.note{
+    font-size: 1.5rem;
+    font-weight: bold;
+}

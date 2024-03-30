@@ -34,6 +34,8 @@ import LoginAndSignup from './components/LoginAndSignup/LoginAndSignup.jsx';
 import PrivateRoute from './utilities/PrivateRoute.jsx';
 import UserContextProvider from './utilities/UserContextProvider.jsx';
 import ProductDetailPage from './components/ProductDetailPage/ProductDetailPage.jsx';
+import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy.jsx';
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
 
 
 
@@ -89,6 +91,14 @@ const router = createBrowserRouter([
       {
         path: "offer",
         element: <Offer></Offer>
+      },
+      {
+        path:"return-policy",
+        element: <ReturnPolicy></ReturnPolicy>
+      },
+      {
+        path:"privacy-policy",
+        element:<PrivacyPolicy></PrivacyPolicy>
       },
       {
         path: "admin-secret",
