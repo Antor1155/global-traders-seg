@@ -36,6 +36,7 @@ import UserContextProvider from './utilities/UserContextProvider.jsx';
 import ProductDetailPage from './components/ProductDetailPage/ProductDetailPage.jsx';
 import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy.jsx';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
+import AboutUs from './components/AboutUs/AboutUs.jsx';
 
 
 
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
       {
         path:"privacy-policy",
         element:<PrivacyPolicy></PrivacyPolicy>
+      },
+      {
+        path:"about-us",
+        element:<AboutUs></AboutUs>
       },
       {
         path: "admin-secret",

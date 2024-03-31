@@ -1,0 +1,61 @@
+#our-mission {
+    background-image: url("/staticImages/bgAboutUs.png");
+    color: white;
+    text-align: center;
+    padding: 3rem;
+
+    & h4{
+        margin-bottom: 2rem;
+        font-size: 1.4rem;
+    }
+    & div{
+        background-color: black;
+        padding: 2rem;
+    }
+}
+
+
+#why-better h3 {
+    text-align: center;
+    margin: 5rem 0 2rem 0;
+    font-size: 1.5rem;
+}
+
+#why-better>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    & .icons {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: #0084D6;
+
+        margin-bottom: .5rem;
+    }
+
+    &>div {
+        width: 300px;
+        text-align: center;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    & h4 {
+        font-size: 1rem;
+        color: #0084D6;
+    }
+
+    & p {
+        font-size: .8rem;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #our-mission{
+        padding: 2rem 0;
+    }
+}
