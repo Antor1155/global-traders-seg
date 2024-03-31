@@ -4,7 +4,20 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
+import { toast } from 'react-toastify';
+
 const MyFooter = () => {
+
+
+    const handleSubmit = (e)=> {
+        e.preventDefault()
+        const email= e.target.email.value
+
+        toast("Thank you for subscribe")
+
+        e.target.email.value = ''
+    }
+
     return (
         <footer>
             <div className='footer-section'>
@@ -33,8 +46,8 @@ const MyFooter = () => {
 
                 <div>
                     <h4> Subscribe To Our Newsletter</h4>
-                    <form>
-                        <input type="email" required></input>
+                    <form onSubmit={handleSubmit}>
+                        <input type="email" name="email" required></input>
                         <button type="submit">SUBSCRIBE</button>
                     </form>
                 </div>

@@ -8,6 +8,9 @@ import { Outlet, ScrollRestoration } from 'react-router-dom'
 import HeaderComponent from './components/Header/HeaderComponent'
 import MyFooter from './components/Footer/MyFooter'
 
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { createContext, useEffect, useState } from 'react'
 export const CartContext = createContext([])
 
@@ -31,6 +34,7 @@ function App() {
         <Outlet></Outlet>
 
         <MyFooter></MyFooter>
+        <ToastContainer></ToastContainer>
       </CartContext.Provider>
     </>
   )
