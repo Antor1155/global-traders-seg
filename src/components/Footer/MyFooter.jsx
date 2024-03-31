@@ -2,7 +2,6 @@ import "./MyFooter.css"
 import { Link } from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import { toast } from 'react-toastify';
 
