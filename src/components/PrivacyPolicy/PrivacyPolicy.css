@@ -2,8 +2,22 @@
     width: 90%;
     margin: auto;
     margin-top: 2rem;
+
+    & h1{
+        text-align: center;
+    }
 }
 
 #privacy-container{
-    
+    margin-top: 1rem;
+    border-radius: 1rem;
+    padding:.1rem 1rem;
+    box-shadow: 1px 1px 5px rgb(78, 76, 76);
+
+    & h2{
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+    }
 }
