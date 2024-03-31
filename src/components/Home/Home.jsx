@@ -118,6 +118,34 @@ const Home = () => {
                     <img className='sub-banner' src="/staticImages/second-banner.png" alt="second banner" />
                 </Link>
 
+                {/* what makes glob... best section  */}
+                <div id="what-makes">
+                    <h3>What makes <span>Global Traders</span> the best?</h3>
+
+                    <div className="info">
+                        <div>
+                            <p>HIGH QUALITY PHONES</p>
+                            <img src="/logos/whatBest1.svg" alt="phone" />
+                            <small>Only the best fully functional phone
+                                are sold here. 30 day hassle free returns.</small>
+                        </div>
+
+                        <div>
+                            <p>AUTHENTIC PHOTOS</p>
+                            <img src="/logos/whatBest2.svg" alt="good quality" />
+                            <small>No shortcuts taken.
+                                What you see is what you get.</small>
+                        </div>
+
+                        <div>
+                            <p>TRADE CERTIFIED</p>
+                            <img src="/logos/whatBest3.svg" alt="approved logo" />
+                            <small>All phones are inspected and certified. Includes full phone history report.</small>
+                        </div>
+                    </div>
+
+                </div>
+
                 <h3 className="text-top-deals">TOP <span>DEALS</span> </h3>
 
                 <div className='top-delas-products'>
