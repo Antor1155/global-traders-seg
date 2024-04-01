@@ -66,10 +66,10 @@ const Preowned = () => {
     }
 
     useEffect(() => {
-        axiosInstance.get("catagory")
+        axiosInstance.get("available-catagories")
             .then(result => {
-                const data = result.data
-                const res = data.map(d => d.modelName)
+                const res = result.data[0]?.categories
+
                 res.sort()
                 setProductsName(res)
             })
