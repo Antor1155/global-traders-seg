@@ -6,12 +6,12 @@ import { getStorage } from "firebase/storage"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBFoGhOr2l4aRV_wP-1TLt3HymKtTW_Qy0",
-  authDomain: "global-traders-usa-84059.firebaseapp.com",
-  projectId: "global-traders-usa-84059",
-  storageBucket: "global-traders-usa-84059.appspot.com",
-  messagingSenderId: "1069022321540",
-  appId: "1:1069022321540:web:419c5d35f4cdd4c64f5bd1"
+  apiKey:import.meta.env.VITE_API_KEY ,
+  authDomain:import.meta.env.VITE_AUTHdOMAIN ,
+  projectId:import.meta.env.VITE_PROJECT_ID ,
+  storageBucket:import.meta.env.VITE_STORAGE_BUCKET ,
+  messagingSenderId:import.meta.env.VITE_MESSAGING_SENDER ,
+  appId:import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase
