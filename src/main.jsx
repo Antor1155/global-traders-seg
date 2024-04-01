@@ -37,6 +37,8 @@ import ProductDetailPage from './components/ProductDetailPage/ProductDetailPage.
 import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy.jsx';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
 import AboutUs from './components/AboutUs/AboutUs.jsx';
+import AdminPrivateRoute from './utilities/AdminPrivateRoute.jsx';
+import ThankYou from './components/ThankYou/ThankYou.jsx';
 
 
 
@@ -106,8 +108,12 @@ const router = createBrowserRouter([
         element:<AboutUs></AboutUs>
       },
       {
+        path:"succeed",
+        element: <ThankYou></ThankYou>
+      },
+      {
         path: "admin-secret",
-        element: <AdminSecret></AdminSecret>,
+        element: <AdminPrivateRoute><AdminSecret></AdminSecret></AdminPrivateRoute>,
         children: [
           {
             path: "",
