@@ -7,6 +7,7 @@ import axiosInstance from '../../utilities/axiosInstance'
 
 import { styled } from 'styled-components'
 import ImageToSelect from '../ImageToSelect/ImageToSelect'
+import { toast } from 'react-toastify'
 
 const StyledDiv = styled.div`
   margin: 1rem;
@@ -53,6 +54,8 @@ const AddProduct = () => {
                 setProduct({productName: "", parentCatagory: "", description: "", storage: "", color: "", price: "", originalPrice: "", reviewScore: "", peopleReviewed: "", condition: "", color: { name: "", value: "" } })
 
                 setSelectedImage("")
+
+                toast("product added !")
 
             })
             .catch(error => alert("error happened !!"))
