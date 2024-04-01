@@ -10,7 +10,7 @@ const LoginAndSignup = () => {
     const auth = getAuth(app)
 
     const navigate = useNavigate()
-    const loaction = useLocation()
+    const location = useLocation()
 
     const [signin, setSignin] = useState(true)
     const [errorMessage, setErrorMessage] = useState("")
