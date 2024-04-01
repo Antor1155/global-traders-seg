@@ -53,7 +53,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
 
     return (
         <StyledForm onSubmit={handleSubmit}>
-            <label htmlFor='parent'>Please select The Product name</label>
+            <label htmlFor='parent'>Please select The Product name *</label>
             <select id="parent" required
                 value={product.parentCatagory}
 
@@ -94,7 +94,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
 
             <br />
 
-            <label htmlFor='storage'>select storage</label>
+            <label htmlFor='storage'>select storage *</label>
             <select name="storage" id="storage" required
                 value={product.storage}
                 onChange={(e) => setProduct(prev => {
@@ -113,7 +113,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
 
             <br />
 
-            <label htmlFor='condition'>select condition</label>
+            <label htmlFor='condition'>select condition *</label>
             <select name="condition" id="condition" required
                 value={product.condition}
                 onChange={(e) => setProduct(prev => {
@@ -133,7 +133,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
             <br />
 
 
-            <label htmlFor='color'> select Color</label>
+            <label htmlFor='color'> select Color *</label>
             <select id='color' name='color' required
                 value={product.color?.name ? product.color.name + ":" + product.color.value : ""}
 
@@ -161,7 +161,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
 
             <br />
 
-            <label htmlFor='price'> Please select the price $</label>
+            <label htmlFor='price'> Please select the price $ *</label>
             <input id='price' name="price" type='number' required 
                 value={product.price}
                 onChange={(e) => setProduct(prev => {
@@ -198,7 +198,7 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
 
             <br />
 
-            <label htmlFor='reviewScore'> Add review score / 5</label>
+            <label htmlFor='reviewScore'> Add review score / 5 *</label>
             <input id='reviewScore' name="reviewScore" type='number' min={0} max={5} step={0.5} required 
                 value={product.reviewScore}
                 onChange={(e) => setProduct(prev => {
