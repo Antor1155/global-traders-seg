@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import { app } from '../../utilities/firebaseConfig';
 import "./LoginAndSignup.css"
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const LoginAndSignup = () => {
@@ -10,9 +10,20 @@ const LoginAndSignup = () => {
     const auth = getAuth(app)
 
     const navigate = useNavigate()
+    const loaction = useLocation()
 
     const [signin, setSignin] = useState(true)
     const [errorMessage, setErrorMessage] = useState("")
+
+    const handleSigninUp = () => {
+        const admin = location.search
+
+        if (admin) {
+            navigate("/admin-secret")
+        } else {
+            navigate("/myaccount")
+        }
+    }
 
     const settingSingin = () => {
         setSignin(true)
@@ -26,8 +37,8 @@ const LoginAndSignup = () => {
     const handleGoogleSignin = () => {
         signInWithPopup(auth, provider)
             .then(result => {
-                navigate("/myaccount")
-                
+                handleSigninUp()
+
             })
             .catch(error => {
                 console.log(error)
@@ -39,16 +50,16 @@ const LoginAndSignup = () => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
-        
+
         setErrorMessage("")
-        
+
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
 
                 console.log("siggned in properly")
                 e.target.reset()
-                navigate("/myaccount")
+                handleSigninUp()
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -64,7 +75,7 @@ const LoginAndSignup = () => {
         const email = e.target.email.value
         const password = e.target.password.value
         const rePassword = e.target.rePassword.value
-        
+
         setErrorMessage("")
 
         createUserWithEmailAndPassword(auth, email, password)
@@ -72,7 +83,7 @@ const LoginAndSignup = () => {
                 settingSingin()
 
                 e.target.reset()
-                navigate("/myaccount")
+                handleSigninUp()
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -96,7 +107,7 @@ const LoginAndSignup = () => {
 
                     <button type='submit' className='submit'> Sign in</button>
 
-                    {errorMessage && 
+                    {errorMessage &&
                         <p className='error'>{errorMessage}</p>
                     }
 
@@ -117,7 +128,7 @@ const LoginAndSignup = () => {
 
                     <button type='submit' className='submit'> Sign up</button>
 
-                    {errorMessage && 
+                    {errorMessage &&
                         <p className='error'>{errorMessage}</p>
                     }
 
