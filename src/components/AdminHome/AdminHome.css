@@ -1,0 +1,44 @@
+#adminHome{
+    width: 90%;
+    margin: auto;
+
+    & h3{
+        margin: 2rem 0;
+        font-size: 1.1rem;
+
+        & span{
+            font-size: 1.5rem;
+            color: #259EF6;
+        }
+    }
+}
+
+#stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    & div{
+        box-shadow: 1px 1px 10px #CEE2F2;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+
+        & .big{
+            color: #259EF6;
+            font-size: 2.2rem;
+        }
+
+        & p:first-child{
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    #stats{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
