@@ -26,6 +26,7 @@ import discover from "../../assets/discover.svg";
 import happyCustomers from "../../assets/happyCustomers.svg";
 import OfferProducts from '../OfferProducts/OfferProducts';
 import { Handshake } from '@mui/icons-material';
+import { toast } from 'react-toastify';
 
 
 
@@ -57,6 +58,8 @@ const ProductDetailPage = () => {
     const handleAddToCart = () => {
         if (product?.storage) {
             setCart(prev => [...prev, product?._id])
+
+            toast("Product Added to cart")
         }
     }
     // style selected button 
