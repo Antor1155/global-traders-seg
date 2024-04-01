@@ -105,6 +105,7 @@ nav {
 nav a {
     margin: 0 20px;
     font-weight: 500;
+    color: #3E3E3B;
 }
 
 nav a:hover {
@@ -113,6 +114,12 @@ nav a:hover {
 
 nav a:last-child {
     color: rgba(242, 110, 33, 1);
+}
+
+nav a.active{
+    background-color: transparent;
+    color: black;
+    text-decoration: underline;
 }
 
 .cart-and-account {
