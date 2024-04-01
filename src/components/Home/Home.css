@@ -219,6 +219,11 @@
         margin-top: 2rem;
     }
 
+    .sub-banner{
+        width: 90vw;
+        height: 150px;
+    }
+
     .adds{
         grid-template-columns: 1fr 1fr;
     }

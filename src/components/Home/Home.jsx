@@ -97,7 +97,6 @@ const Home = () => {
                     <Link to="wholesale"> WHOLESALE</Link>
                 </div>
 
-
                 <div className='products'>
                     {nProducts && nProducts.slice(0, 4).map(product => {
                         return <SingleProduct key={product._id} product={product}></SingleProduct>
@@ -107,16 +106,22 @@ const Home = () => {
 
                 <Link to="/preowned" className='see-more'> See More</Link>
 
-                <div className='adds'>
+                {/* <div className='adds'>
                     <img src='/adds/add1.png' alt='product add' />
                     <img src='/adds/add2.png' alt='product add' />
                     <img src='/adds/add3.png' alt='product add' />
                     <img src='/adds/add4.png' alt='product add' />
-                </div>
+                </div> */}
 
                 <Link to="/preowned">
                     <img className='sub-banner' src="/staticImages/second-banner.png" alt="second banner" />
                 </Link>
+
+                <div className='top-delas-products' style={{marginTop: "2rem"}}>
+                    {nProducts && nProducts.slice(5, 10).map(product => {
+                        return <TopDeals key={product._id} product={product}></TopDeals>
+                    })}
+                </div>
 
                 {/* what makes glob... best section  */}
                 <div id="what-makes">
