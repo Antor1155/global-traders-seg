@@ -214,6 +214,8 @@ const ProductDetailPage = () => {
                     </p>
                     <button
                         onClick={handleAddToCart}
+                        disabled={product?.image ? false : true}
+                        className='add-to-cart-btn'
                     >
                         Add to cart
                     </button>
@@ -247,7 +249,7 @@ const ProductDetailPage = () => {
 
             <div className='productSection'>
                 <div className='productImg'>
-                    <img src={product?.image ? product.image : "/staticImages/notAvailable.webp" } alt='product image'/>
+                    <img src={product?.image ? product.image : "/staticImages/notAvailable.webp"} alt='product image' />
                 </div>
 
                 <div className='options'>
@@ -280,19 +282,21 @@ const ProductDetailPage = () => {
                                 </div>
 
                                 <p>4.4/5</p>
-                                <p className='underline' style={{textDecoration:"none"}}>( {product?.condition} )</p>
+                                <p className='underline' style={{ textDecoration: "none" }}>( {product?.condition} )</p>
                             </div>
 
                             <div>
                                 <img src={klarna} alt='klarna image'></img>
                                 <p>Pay over time</p>
-                                <p className='underline' style={{textDecoration:"none"}}>with Klarna</p>
+                                <p className='underline' style={{ textDecoration: "none" }}>with Klarna</p>
                             </div>
                         </div>
 
                         <div className='cart-div'>
                             <button
                                 onClick={handleAddToCart}
+                                disabled={product?.image ? false : true}
+                                className='add-to-cart-btn'
                             >
                                 Add to cart
                             </button>
@@ -314,21 +318,21 @@ const ProductDetailPage = () => {
                             <img src={unlocked} alt="unlocked image" />
                             <div>
                                 <p className='semi-bold'>Works with all carriers</p>
-                                <p className='underline small' onClick={(e)=>{handleHideButton(e); setNotifyTitle("Unlocked phones")}}>Learn about unlocked phones</p>
+                                <p className='underline small' onClick={(e) => { handleHideButton(e); setNotifyTitle("Unlocked phones") }}>Learn about unlocked phones</p>
                             </div>
                         </div>
 
                         <div>
                             <img src={shield} alt="shield image" />
                             <div>
-                                <p className='underline' onClick={(e)=>{handleHideButton(e); setNotifyTitle("Warranty Policy")}}>free 30-days returns <br />30-days warranty</p>
+                                <p className='underline' onClick={(e) => { handleHideButton(e); setNotifyTitle("Warranty Policy") }}>free 30-days returns <br />30-days warranty</p>
                             </div>
                         </div>
 
                         <div>
                             <img src={rRate} className='r-rate' alt="verified rating" />
                             <div>
-                                <p className='underline' style={{textDecoration:"none"}}>Verified refubrished in the US</p>
+                                <p className='underline' style={{ textDecoration: "none" }}>Verified refubrished in the US</p>
                             </div>
                         </div>
                     </div>
@@ -358,7 +362,7 @@ const ProductDetailPage = () => {
                     </div>
 
                     <div className='filter-button-container'>
-                        <p className='condition-learn'>Condition  <span onClick={(e)=>{handleHideButton(e); setNotifyTitle("Conditions")}}>Learn more</span></p>
+                        <p className='condition-learn'>Condition  <span onClick={(e) => { handleHideButton(e); setNotifyTitle("Conditions") }}>Learn more</span></p>
                         <div className='filter-buttons'>
                             {availableConditions.map(condition => (
                                 <button
@@ -418,15 +422,15 @@ const ProductDetailPage = () => {
                     </div>
 
                     <div className='info-buttons'>
-                        <button onClick={(e)=>{handleHideButton(e); setNotifyTitle("Technical specification")}}>
+                        <button onClick={(e) => { handleHideButton(e); setNotifyTitle("Technical specification") }}>
                             <span>Technical specification</span>
                             <span>{">"}</span>
                         </button>
-                        <button onClick={(e)=>{handleHideButton(e); setNotifyTitle("Perks & benefits")}}>
+                        <button onClick={(e) => { handleHideButton(e); setNotifyTitle("Perks & benefits") }}>
                             <span>Perks & benefits included</span>
                             <span>{">"}</span>
                         </button>
-                        <button onClick={(e)=>{handleHideButton(e); setNotifyTitle("Frequently asked questions")}}>
+                        <button onClick={(e) => { handleHideButton(e); setNotifyTitle("Frequently asked questions") }}>
                             <span>Frequently asked questions</span>
                             <span>{">"}</span>
                         </button>
@@ -524,6 +528,8 @@ const ProductDetailPage = () => {
                     </p>
                     <button
                         onClick={handleAddToCart}
+                        disabled={product?.image ? false : true}
+                        className='add-to-cart-btn'
                     >
                         Add to cart
                     </button>

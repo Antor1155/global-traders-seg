@@ -64,6 +64,10 @@ section.singleProductPage {
     }
 }
 
+.add-to-cart-btn:disabled{
+    background-color: rgb(63, 62, 62);
+}
+
 .breadcrumb {
     display: block;
     padding: 1rem;
