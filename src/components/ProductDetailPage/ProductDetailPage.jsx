@@ -244,9 +244,10 @@ const ProductDetailPage = () => {
                 </span>
 
             </nav>
+
             <div className='productSection'>
                 <div className='productImg'>
-                    <img src={product?.image} />
+                    <img src={product?.image ? product.image : "/staticImages/notAvailable.webp" } alt='product image'/>
                 </div>
 
                 <div className='options'>
