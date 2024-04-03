@@ -74,13 +74,13 @@ const AdminHome = () => {
 
                 <div>
                     <p>THIS WEEK</p>
-                    <p className="big">{ordersToday?.amount}</p>
+                    <p className="big">{ordersWeek?.amount}</p>
                     <small>Total orders this week</small>
                 </div>
 
                 <div>
                     <p>THIS MONTH</p>
-                    <p className="big">{ordersToday?.amount}</p>
+                    <p className="big">{ordersMonth?.amount}</p>
                     <small>Total orders this month</small>
                 </div>
 
@@ -94,13 +94,13 @@ const AdminHome = () => {
 
                 <div>
                     <p>THIS WEEK</p>
-                    <p className="big">$ {ordersToday?.money}</p>
+                    <p className="big">$ {ordersWeek?.money}</p>
                     <small>Total orders amount this week</small>
                 </div>
 
                 <div>
                     <p>THIS MONTH</p>
-                    <p className="big">$ {ordersToday?.money}</p>
+                    <p className="big">$ {ordersMonth?.money}</p>
                     <small>Total orders amount this month</small>
                 </div>
 
