@@ -49,6 +49,8 @@ function ProductForm({ allCatagories, handleSubmit, product, setProduct, setImag
     { name: "BLUE", value: "#215E7C" },
     { name: "PINK", value: "#FAE0D8" },
     { name: "GREEN", value: "#364935" },
+    { name: "WHITE", value: "#FFFFFF" },
+    { name: "SPACE GRAY", value: "#5e5e5e" },
     ]
 
     return (
