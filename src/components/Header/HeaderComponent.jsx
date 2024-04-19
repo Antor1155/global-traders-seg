@@ -53,14 +53,14 @@ const HeaderComponent = () => {
         <div className='cart-and-account'>
           {cart?.length ? <span className='cart-amount'>{cart?.length}</span> : ""}
 
-          <Link to="/cart">
+          <Link to="/myaccount">
             <span className='nav-icon-mobile'><PersonIcon></PersonIcon></span>
-            <span className='mobile-hide'>Cart</span>
+            <span className='mobile-hide'>My Account</span>
           </Link>
 
-          <Link to="/myaccount">
+          <Link to="/cart">
             <span className='nav-icon-mobile'><ShoppingCartIcon></ShoppingCartIcon></span>
-            <span className='mobile-hide'>My Account</span>
+            <span className='mobile-hide'>Cart</span>
           </Link>
 
           <button id='mobile-nav' onClick={handleNav}>
