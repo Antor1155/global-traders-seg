@@ -93,10 +93,10 @@ export default function AddRunPage() {
           <h3>CHOOSE US?</h3>
 
           <p>
-            WE ARE HERE WHEN YOU NEED US, GET TOP-QUALITY FIXING SERVICES.When
+            We are here when you need us, get top-quality fixing services.When
             looking for a suitable device. come to Global Traders. We have
             different devices to make navigating online more manageable and
-            efficient. Our expert technicians are well-versed in all Apple@
+            efficient. Our expert technicians are well-versed in all Apple
             Products. You can trust that we will provide you with excellent
             customer service and quality products.
           </p>
