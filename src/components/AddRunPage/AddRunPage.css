@@ -155,8 +155,11 @@
   }
 
   #what-makes-best {
-    padding: 2rem 5% 4rem 5%;
+    padding: 4rem 5% 6rem 5%;
     background-image: url("/addrunpage/last-section.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     h2 {
       text-align: center;
