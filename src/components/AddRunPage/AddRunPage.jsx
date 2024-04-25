@@ -1,14 +1,15 @@
-import React from "react";
+import "./AddRunPage.css";
 
 export default function AddRunPage() {
   return (
-    <section id="ad-run  ">
+    <section id="ads-run">
       <div id="ads-top">
         <div>
           <h1>
             BUY <br />
             WHOLESALE <br />
-            IN BULK <br />
+            IN BULK!
+            <br />
           </h1>
           <p>
             Fill-up the form to send your wholesale purchase request. One of our
@@ -53,6 +54,7 @@ export default function AddRunPage() {
             customer service and quality products.
           </p>
         </div>
+
         <img src="/addrunpage/doublearrow.png" alt="logo of gt" />
       </div>
 
