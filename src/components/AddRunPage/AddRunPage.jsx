@@ -60,7 +60,9 @@ export default function AddRunPage() {
 
       <div id="phone-call">
         <img src="/addrunpage/phone-call.svg" alt="phone icon" />
-        <p>740-407-0060</p>
+        <p>
+          <a href="tel:740-407-0060">740-407-0060</a>
+        </p>
       </div>
 
       <div id="what-makes-best">
