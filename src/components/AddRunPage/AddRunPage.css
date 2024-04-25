@@ -221,6 +221,12 @@
       }
     }
 
+    #stock {
+      #available-products {
+        justify-content: center;
+      }
+    }
+
     #choose-us {
       grid-template-columns: 1fr;
     }
