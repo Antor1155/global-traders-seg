@@ -1,6 +1,42 @@
+import { toast } from "react-toastify";
+import axiosInstance from "../../utilities/axiosInstance";
 import "./AddRunPage.css";
+import { useEffect, useState } from "react";
+import SingleProductForWholesale from "../SingleProduct/SingleProductForWholesale";
+import Loading from "../Loading/Loading";
+import { Link } from "react-router-dom";
 
 export default function AddRunPage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axiosInstance
+      .get("all-products-single-variation")
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const phone = e.target.phone.value;
+    const devices = e.target.devices.value;
+
+    axiosInstance.post("add-run-form-submit", {
+      name,
+      email,
+      phone,
+      devices,
+    });
+
+    e.target.reset();
+    toast("We will contact you soon !!!");
+  };
   return (
     <section id="ads-run">
       <div id="ads-top">
@@ -18,11 +54,11 @@ export default function AddRunPage() {
         </div>
         <div>
           <h2>LET'S GET CONNECT</h2>
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="text" placeholder="Phone" />
-            <input type="text" placeholder="Devices" />
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="phone" placeholder="Phone" required />
+            <input type="text" name="devices" placeholder="Devices" />
             <button type="submit">Submit Form</button>
           </form>
         </div>
@@ -30,8 +66,19 @@ export default function AddRunPage() {
 
       <div id="stock">
         <h3>DEVICES WE HAVE IN STOCK</h3>
-        <div></div>
-        <button>View More</button>
+
+        {/* every products available we have  */}
+        {products.length === 0 ? (
+          <Loading />
+        ) : (
+          <div id="available-products">
+            {products.map((product) => (
+              <SingleProductForWholesale product={product} key={product._id} />
+            ))}
+          </div>
+        )}
+
+        <Link to={"/preowned"}>View More</Link>
       </div>
 
       <div id="client-satisfaction">

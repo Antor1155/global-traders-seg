@@ -1,0 +1,12 @@
+.SingleProductForWholesale {
+  text-align: center;
+  img {
+    height: 180px;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+}
