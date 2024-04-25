@@ -39,6 +39,7 @@ import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
 import AboutUs from './components/AboutUs/AboutUs.jsx';
 import AdminPrivateRoute from './utilities/AdminPrivateRoute.jsx';
 import ThankYou from './components/ThankYou/ThankYou.jsx';
+import AddRunPage from './components/AddRunPage/AddRunPage.jsx';
 
 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home></Home>
+      },
+      {
+        path: "special-service",
+        element: <AddRunPage></AddRunPage>
       },
       {
         path: "cart",
