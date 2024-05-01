@@ -231,6 +231,10 @@
       }
     }
 
+    #client-satisfaction {
+      background-position: 85%;
+    }
+
     #choose-us {
       grid-template-columns: 1fr;
     }
