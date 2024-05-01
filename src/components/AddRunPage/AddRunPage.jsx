@@ -53,7 +53,7 @@ export default function AddRunPage() {
           </p>
         </div>
         <div>
-          <h2>LET'S GET CONNECT</h2>
+          <h2>LET'S CONNECT</h2>
           <form onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="Name" required />
             <input type="email" name="email" placeholder="Email" required />

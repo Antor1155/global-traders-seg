@@ -242,5 +242,11 @@
         text-align: center;
       }
     }
+
+    #phone-call {
+      a {
+        font-size: 30px;
+      }
+    }
   }
 }

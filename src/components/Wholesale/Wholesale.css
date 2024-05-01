@@ -1,96 +1,267 @@
-.wholesale-contact {
-    background-color: #BDD1E2;
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
-    padding: 1rem 0;
-    position: relative;
+#ads-run {
+  margin-bottom: -70px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  #top-banner {
+    img {
+      width: 100vw;
+      height: 80vh;
+    }
+  }
+
+  #ads-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-image: url("/addrunpage/top-mobile-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem 5%;
+
+    h1 {
+      font-size: 70px;
+      color: #1da1f2;
+    }
+
+    p {
+      color: white;
+    }
+
+    div:last-child {
+      background-color: rgba(217, 217, 217, 0.6);
+      padding: 2rem;
+      border-radius: 1rem;
+
+      max-width: 700px;
+
+      h2 {
+        color: #0f5b8a;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input {
+          padding: 0.5rem 1rem;
+          background-color: #d9d9d9;
+          border: none;
+          border-radius: 0.5rem;
+        }
+
+        button {
+          background-color: #1da1f2;
+          width: fit-content;
+          margin: auto;
+          padding: 0.5rem 3rem;
+          border-radius: 2rem;
+          border: 1px solid white;
+          font-weight: bolder;
+          color: white;
+        }
+      }
+    }
+  }
+
+  #stock {
+    h3 {
+      font-size: 40px;
+      text-align: center;
+      color: #ff5e00;
+      padding: 1rem;
+      background-color: rgba(0, 132, 214, 20%);
+    }
+
+    #available-products {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: auto;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    a {
+      background-color: #1da1f2;
+      width: fit-content;
+      display: block;
+      margin: auto;
+      padding: 0.5rem 3rem;
+      border-radius: 2rem;
+      border: 1px solid white;
+      font-weight: bolder;
+      color: white;
+    }
+  }
+
+  #client-satisfaction {
+    background-image: url("/addrunpage/client-satisfaction.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    h3 {
+      font-size: 36px;
+    }
+
+    h4 {
+      font-size: 64px;
+      font-family: "Arial Narrow", Arial, sans-serif;
+      font-weight: 100;
+      color: #1da1f2;
+    }
+
+    p {
+      color: #ff5e00;
+      font-weight: bold;
+    }
+  }
+
+  #choose-us {
+    background-image: url("/addrunpage/why-choose-us.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
 
-    & h1 {
-        font-family: serif;
-        font-size: 3rem;
-        font-weight: bold;
-        margin: 0;
+    min-height: 35rem;
 
-        text-align: center;
+    h3 {
+      color: #1da1f2;
+      font-size: 70px;
+      letter-spacing: -2px;
+      margin-bottom: 1rem;
 
-        & span.decorated {
-            text-shadow: 1px 5px 5px black;
-            color: #166db7;
-        }
+      &:first-child {
+        margin-bottom: -20px;
+      }
     }
 
-    & p {
-        font-size: 1rem;
-        margin-top: 2rem;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 400;
+    p {
+      color: white;
     }
-}
 
-.contact-div {
-    position: relative;
-    z-index: 2;
-    margin-top: -5px;
+    img {
+      margin: auto;
+    }
+  }
 
-}
-
-#wholeSale-form {
+  #phone-call {
     display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px .5px rgb(73, 73, 73);
-    width: 400px;
-
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 132, 214, 20%);
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: rgba(85, 85, 85, 0.1);
 
-    margin: auto;
+    a {
+      color: #ff5e00;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
 
-    & input,
-    textarea {
+  #what-makes-best {
+    padding: 4rem 5% 6rem 5%;
+    background-image: url("/addrunpage/last-section.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 7rem;
+
+      span {
+        color: #1da1f2;
+      }
+    }
+
+    #cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+
+      .card {
+        color: white;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
         border: none;
-        border-radius: 5px;
-        padding: .5rem;
-        margin-top: .2rem;
-        margin-bottom: .5rem;
-    }
 
-    & button {
-
-        border-radius: 1rem;
-        background-color: #BDD1E2;
-        margin-top: 1rem;
-        padding: .2rem;
-        font-weight: 500; 
-        transition: all .3s;
-
-        &:hover {
-            box-shadow: 3px 6px 8px 3px #8b8a8a;
-            
+        img {
+          height: 5rem;
         }
+      }
     }
-
+  }
 }
 
-@media screen and (max-width: 550px) {
-    .wholesale-contact {
-        & h1 {
-            display: flex;
-            flex-direction: column;
-        }
-
-        & p {
-            padding: 0 1rem;
-            text-align: center;
-        }
+@media screen and (max-width: 700px) {
+  #ads-run {
+    #top-banner {
+      img {
+        width: 100vw;
+        height: auto;
+      }
     }
 
-    #wholeSale-form {
-        width: 94vw;
+    #ads-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 1rem;
+      padding-bottom: 2rem;
+      text-align: center;
+
+      h1 {
+        font-size: 40px;
+      }
+
+      br {
+        display: none;
+      }
     }
+
+    #stock {
+      #available-products {
+        justify-content: center;
+      }
+    }
+
+    #choose-us {
+      grid-template-columns: 1fr;
+    }
+
+    #what-makes-best {
+      #cards {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+    }
+
+    #phone-call {
+      a {
+        font-size: 30px;
+      }
+    }
+  }
 }
