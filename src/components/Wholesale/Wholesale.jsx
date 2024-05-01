@@ -37,6 +37,12 @@ export default function AddRunPage() {
     e.target.reset();
     toast("We will contact you soon !!!");
   };
+
+  const hanldeProductclick = () => {
+    const div = document.getElementById("ads-top");
+    div.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="ads-run">
       <div id="top-banner">
@@ -52,7 +58,9 @@ export default function AddRunPage() {
         ) : (
           <div id="available-products">
             {products.map((product) => (
-              <SingleProductForWholesale product={product} key={product._id} />
+              <div onClick={hanldeProductclick} key={product._id}>
+                <SingleProductForWholesale product={product} />
+              </div>
             ))}
           </div>
         )}
