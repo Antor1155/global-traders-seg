@@ -1,35 +1,53 @@
-import { useContext } from "react"
-import "./TopDeals.css"
-import { CartContext } from "../../App"
-import { useNavigate } from "react-router"
+import { useContext } from "react";
+import "./TopDeals.css";
+import { CartContext } from "../../App";
+import { useNavigate } from "react-router";
 
 const SingleProduct = ({ product }) => {
-  const { parentCatagory, _id, productName, description, storage, color, price, discountPrice, originalPrice, reviewScore, peopleReviewed, condition, image } = product
-  
-  const { cart, setCart } = useContext(CartContext)
+  const {
+    parentCatagory,
+    _id,
+    productName,
+    description,
+    storage,
+    color,
+    price,
+    discountPrice,
+    originalPrice,
+    reviewScore,
+    peopleReviewed,
+    condition,
+    image,
+  } = product;
 
-  const navigate  = useNavigate()
+  const { cart, setCart } = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   const handleAddCart = (event) => {
-    event.stopPropagation()
-    setCart(prev => [...prev, _id])
-  }
+    event.stopPropagation();
+    setCart((prev) => [...prev, _id]);
+  };
 
-  const handleShowProduct = () =>{
-    navigate(`/iphone/${parentCatagory}/${_id}`)
-  }
+  const handleShowProduct = () => {
+    navigate(`/iphone/${parentCatagory}/${_id}`);
+  };
 
   return (
-    <div className='single-product' onClick={handleShowProduct}>
-      <div className='sticker'>
-        <img src="/logos/product-label.png" alt='product sticker' />
-        <small>UP TO <br></br> 3.23% <br></br> OFF</small>
+    <div className="top-product" onClick={handleShowProduct}>
+      <div className="sticker">
+        <img src="/logos/product-label.png" alt="product sticker" />
+        <small>
+          UP TO <br></br> 3.23% <br></br> OFF
+        </small>
       </div>
 
-      <img className='product-image' src={image} alt='product image'></img>
+      <img className="product-image" src={image} alt="product image"></img>
 
       <div className="productDesc">
-        <p>{productName} {storage}</p>
+        <p>
+          {productName} {storage}
+        </p>
         <p>UNLOCKED</p>
 
         <p className="sm">Condition: {condition}</p>
@@ -40,7 +58,7 @@ const SingleProduct = ({ product }) => {
         <p className="price">${price}.00</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SingleProduct
+export default SingleProduct;
