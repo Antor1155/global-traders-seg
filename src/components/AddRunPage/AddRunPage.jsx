@@ -78,7 +78,7 @@ export default function AddRunPage() {
           </div>
         )}
 
-        <Link to={"/preowned"}>View More</Link>
+        <Link to={"/wholesale"}>View More</Link>
       </div>
 
       <div id="client-satisfaction">
