@@ -1,0 +1,46 @@
+#paymentGateway {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #btns {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 500px;
+
+    padding: 5rem;
+    border-radius: 1rem;
+    position: relative;
+
+    button.cancel {
+      padding: 0;
+      background-color: transparent;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500) {
+  #paymentGateway {
+    #btns {
+      width: 300px;
+
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+  }
+}
