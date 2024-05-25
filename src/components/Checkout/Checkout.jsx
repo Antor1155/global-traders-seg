@@ -64,13 +64,13 @@ const Checkout = () => {
 
     setOrderData(data);
 
-    axiosInstance
-      .post("checkout-customer", data)
-      .then((res) => {
-        window.location = res.data;
-        console.log(res.data);
-      })
-      .catch((error) => console.log(error));
+    // axiosInstance
+    //   .post("checkout-customer", data)
+    //   .then((res) => {
+    //     window.location = res.data;
+    //     console.log(res.data);
+    //   })
+    //   .catch((error) => console.log(error));
   };
 
   return (
