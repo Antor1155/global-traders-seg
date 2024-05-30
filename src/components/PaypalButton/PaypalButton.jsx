@@ -3,6 +3,7 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import "./PaypalButton.css";
 import axiosInstance from "../../utilities/axiosInstance";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function PaypalButton({ setFormSubmitted, orderData }) {
   // const initialOptions = {
@@ -45,9 +46,14 @@ export default function PaypalButton({ setFormSubmitted, orderData }) {
     console.log("response form approval: ", response);
 
     if (response?.data?.payer?.name?.given_name) {
-      alert(
-        `Transaction completed by ${response?.data?.payer?.name?.given_name}`
+      setFormSubmitted(false);
+
+      toast(
+        `Payment completed by : ${response?.data?.payer?.name?.given_name}. Thank you ! `
       );
+      setTimeout(() => {
+        toast("Navigate to ** My Account** page to see all your orders !");
+      }, 500);
     }
   };
 
