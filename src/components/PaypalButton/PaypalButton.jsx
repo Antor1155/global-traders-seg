@@ -4,6 +4,7 @@ import "./PaypalButton.css";
 import axiosInstance from "../../utilities/axiosInstance";
 import axios from "axios";
 import { toast } from "react-toastify";
+import ScrollToTop from "../../utilities/ScrollToTop";
 
 export default function PaypalButton({ setFormSubmitted, orderData }) {
   // const initialOptions = {
@@ -59,6 +60,7 @@ export default function PaypalButton({ setFormSubmitted, orderData }) {
 
   return (
     <div id="paymentGateway">
+      <ScrollToTop />
       <div id="btns">
         <PayPalScriptProvider>
           <PayPalButtons
