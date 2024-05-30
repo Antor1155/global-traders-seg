@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import "./PaypalButton.css";
 import axiosInstance from "../../utilities/axiosInstance";
+import axios from "axios";
 
 export default function PaypalButton({ setFormSubmitted, orderData }) {
-  const initialOptions = {
-    "client-id": "test",
-    "enable-funding": "paylater,venmo,card",
-    "disable-funding": "",
-    "data-sdk-integration-source": "integrationbuilder_sc",
-  };
+  // const initialOptions = {
+  //   "client-id": "test",
+  //   "enable-funding": "paylater,venmo,card",
+  //   "disable-funding": "",
+  //   "data-sdk-integration-source": "integrationbuilder_sc",
+  // };
 
   const CreatePaypalOrder = async () => {
     try {
-      const response = await axiosInstance.post("checkout-customer", orderData);
+      const { data: response } = await axiosInstance.post(
+        "checkout-customer",
+        orderData
+      );
 
-      console.log(response);
+      console.log("response from create Paypal button : ", response);
 
       if (response?.id) {
         return response.id;
@@ -33,19 +37,24 @@ export default function PaypalButton({ setFormSubmitted, orderData }) {
   };
 
   const handlePaypalApprove = async (data, actions) => {
-    try {
-      const response = await axiosInstance.post(
-        `checkout-customer/${data.orderId}`
+    const response = await axiosInstance.post(
+      "/checkout-customer/capture",
+      data
+    );
+
+    console.log("response form approval: ", response);
+
+    if (response?.data?.payer?.name?.given_name) {
+      alert(
+        `Transaction completed by ${response?.data?.payer?.name?.given_name}`
       );
-    } catch (error) {
-      console.log("error in paypal handle approve");
     }
   };
 
   return (
     <div id="paymentGateway">
       <div id="btns">
-        <PayPalScriptProvider options={initialOptions}>
+        <PayPalScriptProvider>
           <PayPalButtons
             createOrder={CreatePaypalOrder}
             onApprove={handlePaypalApprove}
