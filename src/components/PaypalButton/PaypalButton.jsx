@@ -7,12 +7,9 @@ import { toast } from "react-toastify";
 import ScrollToTop from "../../utilities/ScrollToTop";
 
 export default function PaypalButton({ setFormSubmitted, orderData }) {
-  // const initialOptions = {
-  //   "client-id": "test",
-  //   "enable-funding": "paylater,venmo,card",
-  //   "disable-funding": "",
-  //   "data-sdk-integration-source": "integrationbuilder_sc",
-  // };
+  const initialOptions = {
+    "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID,
+  };
 
   const CreatePaypalOrder = async () => {
     try {
@@ -62,7 +59,7 @@ export default function PaypalButton({ setFormSubmitted, orderData }) {
     <div id="paymentGateway">
       <ScrollToTop />
       <div id="btns">
-        <PayPalScriptProvider>
+        <PayPalScriptProvider options={initialOptions}>
           <PayPalButtons
             createOrder={CreatePaypalOrder}
             onApprove={handlePaypalApprove}
