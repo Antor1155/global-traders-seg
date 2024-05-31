@@ -34,13 +34,19 @@
   }
 }
 
-@media screen and (max-width: 500) {
+@media screen and (max-width: 500px) {
   #paymentGateway {
     #btns {
-      width: 300px;
+      width: 100vw;
 
-      padding: 2rem;
+      padding: 3rem 2rem;
       border-radius: 1rem;
+
+      button.cancel {
+        img {
+          width: 35px;
+        }
+      }
     }
   }
 }
