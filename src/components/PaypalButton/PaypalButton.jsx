@@ -9,6 +9,9 @@ import ScrollToTop from "../../utilities/ScrollToTop";
 export default function PaypalButton({ setFormSubmitted, orderData }) {
   const initialOptions = {
     "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID,
+    "enable-funding": "paylater,venmo,card",
+    "disable-funding": "",
+    "data-sdk-integration-source": "integrationbuilder_sc",
   };
 
   const CreatePaypalOrder = async () => {
