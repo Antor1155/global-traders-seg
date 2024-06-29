@@ -107,6 +107,7 @@ const Checkout = () => {
                   name="shipping"
                   id="first-class"
                   value="first-class"
+                  checked={shipping === "first-class"}
                 />
                 <label htmlFor="first-class">
                   First Class | 5-7 business days
@@ -143,7 +144,7 @@ const Checkout = () => {
           </div>
 
           <p className="all-total">
-            <span>Total</span> <span>{totalWithShipping}</span>
+            <span>Total</span> <span>$ {totalWithShipping}</span>
           </p>
         </div>
       </div>
