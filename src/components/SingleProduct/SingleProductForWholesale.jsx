@@ -6,6 +6,8 @@ export default function SingleProductForWholesale({ product }) {
     <div className="SingleProductForWholesale">
       <img src={image} alt="product image" />
       <p>{productName}</p>
+
+      <button>Contact for Price</button>
     </div>
   );
 }
