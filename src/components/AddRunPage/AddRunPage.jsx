@@ -8,12 +8,24 @@ import { Link } from "react-router-dom";
 
 export default function AddRunPage() {
   const [products, setProducts] = useState([]);
+  const [soldAmount, setSoldAmount] = useState(533);
 
   useEffect(() => {
     axiosInstance
       .get("all-products-single-variation")
       .then((response) => {
         setProducts(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axiosInstance
+      .get("this-month-sold-items")
+      .then((response) => {
+        if (response?.data?.amount) {
+          setSoldAmount(response?.data?.amount);
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -83,7 +95,7 @@ export default function AddRunPage() {
 
       <div id="client-satisfaction">
         <h3>100% Client Satisfaction</h3>
-        <h4>40,326</h4>
+        <h4>{soldAmount}</h4>
         <p>UNIT SOLD IN THE LAST 30 DAYS</p>
       </div>
 
