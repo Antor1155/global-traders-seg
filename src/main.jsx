@@ -1,47 +1,45 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// styles and css 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css'
+// styles and css
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
+import App from "./App.jsx";
 
-import App from './App.jsx'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Cart from "./components/Cart/Cart.jsx";
+import MyAccount from "./components/MyAccount/MyAccount.jsx";
 
-import { createBrowserRouter, RouterProvider} from "react-router-dom"
-import Cart from './components/Cart/Cart.jsx'
-import MyAccount from './components/MyAccount/MyAccount.jsx'
+import Preowned from "./components/Preowned/Preowned.jsx";
+import Refubrished from "./components/Refubrished/Refubrished.jsx";
+import Wholesale from "./components/Wholesale/Wholesale.jsx";
+import Resources from "./components/Resources/Resources.jsx";
+import Contactus from "./components/Contactus/Contactus.jsx";
+import Offer from "./components/Offer/Offer.jsx";
+import Home from "./components/Home/Home.jsx";
 
-import Preowned from "./components/Preowned/Preowned.jsx"
-import Refubrished from "./components/Refubrished/Refubrished.jsx"
-import Wholesale from "./components/Wholesale/Wholesale.jsx"
-import Resources from "./components/Resources/Resources.jsx"
-import Contactus from "./components/Contactus/Contactus.jsx"
-import Offer from "./components/Offer/Offer.jsx"
-import Home from './components/Home/Home.jsx'
-
-import Catagory from './components/AllCatagory/Catagory.jsx';
-import AdminSecret from './components/AdminSecret/AdminSecret';
-import AddCatagory from './components/AddCatagory/AddCatagory';
-import AdminCatagory from './components/AdminCatagory/AdminCatagory';
-import AdminHome from './components/AdminHome/AdminHome';
-import AllProduct from './components/AllProduct/AllProduct';
-import AddProduct from './components/AddProduct/AddProduct';
-import EditProduct from './components/EditProduct/EditProduct';
-import Checkout from './components/Checkout/Checkout';
-import AdminOrder from './components/AdminOrder/AdminOrder';
-import LoginAndSignup from './components/LoginAndSignup/LoginAndSignup.jsx';
-import PrivateRoute from './utilities/PrivateRoute.jsx';
-import UserContextProvider from './utilities/UserContextProvider.jsx';
-import ProductDetailPage from './components/ProductDetailPage/ProductDetailPage.jsx';
-import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy.jsx';
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy.jsx';
-import AboutUs from './components/AboutUs/AboutUs.jsx';
-import AdminPrivateRoute from './utilities/AdminPrivateRoute.jsx';
-import ThankYou from './components/ThankYou/ThankYou.jsx';
-import AddRunPage from './components/AddRunPage/AddRunPage.jsx';
-
-
+import Catagory from "./components/AllCatagory/Catagory.jsx";
+import AdminSecret from "./components/AdminSecret/AdminSecret";
+import AddCatagory from "./components/AddCatagory/AddCatagory";
+import AdminCatagory from "./components/AdminCatagory/AdminCatagory";
+import AdminHome from "./components/AdminHome/AdminHome";
+import AllProduct from "./components/AllProduct/AllProduct";
+import AddProduct from "./components/AddProduct/AddProduct";
+import EditProduct from "./components/EditProduct/EditProduct";
+import Checkout from "./components/Checkout/Checkout";
+import AdminOrder from "./components/AdminOrder/AdminOrder";
+import LoginAndSignup from "./components/LoginAndSignup/LoginAndSignup.jsx";
+import PrivateRoute from "./utilities/PrivateRoute.jsx";
+import UserContextProvider from "./utilities/UserContextProvider.jsx";
+import ProductDetailPage from "./components/ProductDetailPage/ProductDetailPage.jsx";
+import ReturnPolicy from "./components/ReturnPolicy/ReturnPolicy.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
+import AboutUs from "./components/AboutUs/AboutUs.jsx";
+import AdminPrivateRoute from "./utilities/AdminPrivateRoute.jsx";
+import ThankYou from "./components/ThankYou/ThankYou.jsx";
+import AddRunPage from "./components/AddRunPage/AddRunPage.jsx";
+import GradingPolicy from "./components/GradingPolicy/GradingPolicy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,83 +48,95 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "special-service",
-        element: <AddRunPage></AddRunPage>
+        element: <AddRunPage></AddRunPage>,
       },
       {
         path: "cart",
-        element: <Cart></Cart>
+        element: <Cart></Cart>,
       },
       {
         path: "iphone/:parentId/:productId",
-        element: <ProductDetailPage></ProductDetailPage>
+        element: <ProductDetailPage></ProductDetailPage>,
       },
       {
         path: "checkout/:id",
-        element: <Checkout></Checkout>
+        element: <Checkout></Checkout>,
       },
       {
         path: "login",
-        element: <LoginAndSignup></LoginAndSignup>
+        element: <LoginAndSignup></LoginAndSignup>,
       },
       {
         path: "myaccount",
-        element: <PrivateRoute><MyAccount></MyAccount></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <MyAccount></MyAccount>
+          </PrivateRoute>
+        ),
       },
       {
         path: "preowned",
-        element: <Preowned></Preowned>
+        element: <Preowned></Preowned>,
       },
       {
         path: "refubrished",
-        element: <Refubrished></Refubrished>
+        element: <Refubrished></Refubrished>,
       },
       {
         path: "wholesale",
-        element: <Wholesale></Wholesale>
+        element: <Wholesale></Wholesale>,
       },
       {
         path: "resources",
-        element: <Resources></Resources>
+        element: <Resources></Resources>,
       },
       {
         path: "contactus",
-        element: <Contactus></Contactus>
+        element: <Contactus></Contactus>,
       },
       {
         path: "offer",
-        element: <Offer></Offer>
+        element: <Offer></Offer>,
       },
       {
-        path:"return-policy",
-        element: <ReturnPolicy></ReturnPolicy>
+        path: "return-policy",
+        element: <ReturnPolicy></ReturnPolicy>,
       },
       {
-        path:"privacy-policy",
-        element:<PrivacyPolicy></PrivacyPolicy>
+        path: "privacy-policy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
       },
       {
-        path:"about-us",
-        element:<AboutUs></AboutUs>
+        path: "grading-policy",
+        element: <GradingPolicy></GradingPolicy>,
       },
       {
-        path:"succeed",
-        element: <ThankYou></ThankYou>
+        path: "about-us",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "succeed",
+        element: <ThankYou></ThankYou>,
       },
       {
         path: "admin-secret",
-        element: <AdminPrivateRoute><AdminSecret></AdminSecret></AdminPrivateRoute>,
+        element: (
+          <AdminPrivateRoute>
+            <AdminSecret></AdminSecret>
+          </AdminPrivateRoute>
+        ),
         children: [
           {
             path: "",
-            element: <AdminHome></AdminHome>
+            element: <AdminHome></AdminHome>,
           },
           {
             path: "orders",
-            element: <AdminOrder></AdminOrder>
+            element: <AdminOrder></AdminOrder>,
           },
           {
             path: "catagory",
@@ -138,9 +148,9 @@ const router = createBrowserRouter([
               },
               {
                 path: "addcatagory",
-                element: <AddCatagory></AddCatagory>
-              }
-            ]
+                element: <AddCatagory></AddCatagory>,
+              },
+            ],
           },
           {
             path: "products",
@@ -148,26 +158,20 @@ const router = createBrowserRouter([
           },
           {
             path: "addproduct",
-            element: <AddProduct></AddProduct>
+            element: <AddProduct></AddProduct>,
           },
           {
             path: "editProduct/:id",
-            element: <EditProduct></EditProduct>
-          }
-        ]
+            element: <EditProduct></EditProduct>,
+          },
+        ],
       },
-
-    ]
+    ],
   },
+]);
 
-])
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  
-
-    <UserContextProvider>
-      <RouterProvider router={router} />
-    </UserContextProvider>
-
-  
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <UserContextProvider>
+    <RouterProvider router={router} />
+  </UserContextProvider>
+);
